@@ -1,11 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
+import Boton from './Componentes/Utilidades/Boton';
 
 function App() {
   return (
-    <div className="App">
-    <p>HOLA A TODOS</p>
-    </div>
+    <>
+    </>
   );
 }
 
