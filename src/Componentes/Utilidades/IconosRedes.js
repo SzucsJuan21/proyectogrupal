@@ -38,7 +38,7 @@ const IconoRedes = (props) => {
       style={{
         filter: isHover
           ? "invert(51%) sepia(90%) saturate(1001%) hue-rotate(342deg) brightness(90%) contrast(101%)"
-          : "invert(51%) sepia(90%) saturate(1001%) hue-rotate(342deg) brightness(103%) contrast(100%)",
+          : "invert(51%) sepia(90%) saturate(1001%) hue-rotate(342deg) brightness(103%) contrast(101%)",
       }}
       onMouseEnter={() => setisHover(true)}
       onMouseLeave={() => setisHover(false)}
