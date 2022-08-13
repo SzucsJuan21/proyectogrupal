@@ -6,7 +6,7 @@ import NavDropdownBtn from "./NavDropdownBtn";
 // - texto = (string)
 // - botones = (array)   usa un array de objetos, cada objeto es un boton del menu y debe tener un string en la propiedad "textoBtn"
 //
-// Ejemplo: 
+// Ejemplo:
 // <NavDropdownBtn texto='boton' botones=[{ textoBtn: 'boton1' },{ textoBtn: 'boton2' },{ textoBtn: 'boton3' }] />
 // Eventualmente se podria hacer que cada objeto acepte una funcion en una nueva propiedad
 
