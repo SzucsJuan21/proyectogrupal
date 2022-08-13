@@ -1,8 +1,8 @@
 import { useState } from "react"
 
 // El boton se implementa con dos props:
-// color = [string con color]
-// texto = [string]
+// - color = [string con color]
+// - texto = [string]
 // 
 // Ejemplo:
 // <Boton color='##FF8126' texto='Hola' />

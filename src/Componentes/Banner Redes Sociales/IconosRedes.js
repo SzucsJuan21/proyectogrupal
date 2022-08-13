@@ -6,7 +6,6 @@ import { useState } from "react";
 // - height = (tamaño)
 // Por ahora los iconos tienen un color fijo, eventualmente quiero encontrar una forma de cambiar los colores sin usar css filter
 
-
 const IconoRedes = (props) => {
   const [isHover, setisHover] = useState(false);
 
@@ -21,7 +20,10 @@ const IconoRedes = (props) => {
       onMouseEnter={() => setisHover(true)}
       onMouseLeave={() => setisHover(false)}
     >
-      <img src={require(`./Iconos/${props.icono}.png`)} style={{ width:props.width, height:props.height }}></img>
+      <img
+        src={require(`../Utilidades/Iconos/${props.icono}.png`)}
+        style={{ width: "100%", height: "100%" }}
+      ></img>
     </a>
   );
 };
