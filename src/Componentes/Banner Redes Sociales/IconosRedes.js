@@ -21,7 +21,7 @@ const IconoRedes = (props) => {
       onMouseEnter={() => setisHover(true)}
       onMouseLeave={() => setisHover(false)}
     >
-      <img src={require(`./Iconos/${props.icono}.png`)} style={{ width:props.width, height:props.height }}></img>
+      <img src={require(`../Utilidades/Iconos/${props.icono}.png`)} style={{ width:'100%', height:'100%' }}></img>
     </a>
   );
 };
