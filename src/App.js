@@ -1,5 +1,6 @@
 import BannerRS from "./Componentes/Banner Redes Sociales/BannerRS";
 import Header from "./Componentes/Header/Header";
+import MainContainer from "./Componentes/Seccion info/MainContainer";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       </header>
 
       <main style={s.main}>
+        <MainContainer />
         <BannerRS />
       </main>
     </>
