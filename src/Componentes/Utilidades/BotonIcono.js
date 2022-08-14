@@ -24,6 +24,7 @@ const BotonIcono = (props) => {
         filter: isHover
           ? props.colorHover
           : props.color,
+        transition: '200ms'
       }}
       onMouseEnter={() => setisHover(true)}
       onMouseLeave={() => setisHover(false)}
