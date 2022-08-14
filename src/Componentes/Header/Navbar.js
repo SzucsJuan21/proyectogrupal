@@ -16,11 +16,12 @@ const Navbar = () => {
 
 const s = {
     ul: {
-        display: 'flex'
+        display: 'flex',
     },
 
     item: {
         listStyle: 'none',
+        margin: '0 10px'
     }
 }
 

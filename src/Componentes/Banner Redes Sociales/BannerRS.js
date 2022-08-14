@@ -4,7 +4,7 @@ const BannerRS = () => {
   return (
     <div style={s.container}>
       <div style={s.titleContainer}>
-        <h1>Tell a friend</h1>
+        <h1 style={s.h1}>Tell a friend</h1>
       </div>
       <div style={s.iconContainer}>
         <div style={s.icon}>
@@ -40,6 +40,11 @@ const s = {
 
   titleContainer: {
     margin: "0",
+  },
+
+  h1: {
+    fontFamily: 'Times New Roman',
+    fontSize: '44px'
   },
 
   iconContainer: {
