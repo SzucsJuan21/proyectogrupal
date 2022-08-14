@@ -8,19 +8,19 @@ import NavDropdownBtn from "./NavDropdownBtn";
 //
 // Ejemplo:
 // <NavDropdownBtn texto='boton' botones=[{ textoBtn: 'boton1' },{ textoBtn: 'boton2' },{ textoBtn: 'boton3' }] />
-// Eventualmente se podria hacer que cada objeto acepte una funcion en una nueva propiedad
+// Eventualmente se podria hacer que cada objeto acepte una funcion en una nueva propiedad en esos objetos
 
 const NavDropdown = (props) => {
   const [isHover, setIsHover] = useState(false);
   const dropdownAnim = {
-    bottom: isHover ? "-75px" : "10000px",
+    bottom: isHover ? "-125px" : "10000px",
     opacity: isHover ? "1" : "0",
   };
 
   return (
     <div style={s.dropdownContainer}>
       <button
-        style={s.btn}
+        style={{...s.btn, textShadow: isHover ? '0.4px 0.4px black' : ''}}
         onMouseEnter={() => {
           setIsHover(true);
         }}
@@ -49,18 +49,18 @@ const NavDropdown = (props) => {
 
 const s = {
   dropdownContainer: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: "column",
     position: "relative",
+    display: 'flex',
+    flexDirection:'column',
+    alignItems: 'center',
   },
 
   btn: {
     all: "unset",
     cursor: "pointer",
     padding: "10px",
-    fontFamily: "Verdana",
+    fontFamily: "Poppins, sans-serif",
+    transition: '200ms',
   },
 
   arrow: {
