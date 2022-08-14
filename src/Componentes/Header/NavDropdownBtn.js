@@ -13,8 +13,7 @@ const NavDropdownBtn = (props) => {
           console.log("TEST");
         }}
       >
-        {" "}
-        {props.boton}{" "}
+        {props.boton}
       </button>
     </div>
   );
@@ -26,7 +25,7 @@ const s = {
     textAlign: "center",
     width: "100%",
     padding: "10px 0 10px 0",
-    fontFamily: "Verdana",
+    fontFamily: "Poppins, sans-serif",
   },
 };
 

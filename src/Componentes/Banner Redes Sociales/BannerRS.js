@@ -1,4 +1,4 @@
-import IconoRedes from "./IconosRedes";
+import BotonIcono from "../Utilidades/BotonIcono";
 
 const BannerRS = () => {
   return (
@@ -8,22 +8,19 @@ const BannerRS = () => {
       </div>
       <div style={s.iconContainer}>
         <div style={s.icon}>
-          <IconoRedes icono="facebook" />
+          <BotonIcono icono="facebook.png" colorHover='invert(20%)' />
         </div>
         <div style={s.icon}>
-          <IconoRedes icono="instagram" />
+          <BotonIcono icono="instagram.png" colorHover='invert(20%)' />
         </div>
         <div style={s.icon}>
-          <IconoRedes icono="twitter" />
+          <BotonIcono icono="twitter.png" colorHover='invert(20%)' />
         </div>
         <div style={s.icon}>
-          <IconoRedes icono="twitter" />
+          <BotonIcono icono="messenger.png" colorHover='invert(20%)' />
         </div>
         <div style={s.icon}>
-          <IconoRedes icono="messenger" />
-        </div>
-        <div style={s.icon}>
-          <IconoRedes icono="telegram" />
+          <BotonIcono icono="telegram.png" colorHover='invert(20%)' />
         </div>
       </div>
     </div>
@@ -47,7 +44,7 @@ const s = {
 
   iconContainer: {
     margin: "0 20px 20px 20px",
-    width: "40%",
+    width: "50%",
     display: "flex",
     justifyContent: "space-evenly",
   },
