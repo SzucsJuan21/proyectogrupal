@@ -23,7 +23,7 @@ const s = {
   },
 
   main: {
-    margin: '124px 0 0 0'
+    margin: '130px 0 0 0'
   }
 };
 
