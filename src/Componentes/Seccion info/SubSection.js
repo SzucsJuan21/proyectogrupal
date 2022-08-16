@@ -6,7 +6,7 @@ const SubSection = (props) => {
          width: "570px",
          height: "500px",
          fontFamily: "Poppins, sans-serif",
-         lineHeight: "1.6"
+         lineHeight: "1.6",
         }}>
             {props.children}
         </div>

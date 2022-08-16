@@ -68,6 +68,7 @@ const MainContainer = () => {
           src={img1}
         ></img>
       </SubSection>
+      
     </div>
   );
 };
