@@ -1,33 +1,23 @@
-import { useState } from "react";
+import styled from "styled-components";
 
 const NavbarBtn = (props) => {
-const [isHover, setIsHover] = useState(false)
-
   return (
     <div>
-      <button
-        style={{...s.btn, textShadow: isHover ? '0.4px 0.4px black' : ''}}
-        onMouseEnter={() => {
-          setIsHover(true);
-        }}
-        onMouseLeave={() => {
-          setIsHover(false);
-        }}
-      >
-        {props.texto} <i style={s.arrow}></i>
-      </button>
+      <Btn>
+        {props.texto}
+      </Btn>
     </div>
   );
 };
 
-const s = {
-    btn: {
-        all: "unset",
-        cursor: "pointer",
-        padding: "10px",
-        fontFamily: "Poppins, sans-serif",
-        transition: '200ms',
-      },
-}
-
+const Btn = styled.button`
+  all: unset;
+  cursor: pointer;
+  padding: 10px;
+  font-family: Poppins, sans-serif;
+  transition: 200ms;
+  &:hover {
+    text-shadow: 0.2px 0.2px 1px;
+  }
+`
 export default NavbarBtn;

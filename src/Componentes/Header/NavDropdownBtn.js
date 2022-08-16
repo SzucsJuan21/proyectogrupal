@@ -1,32 +1,28 @@
-import { useState } from "react";
+import styled from "styled-components";
 
 const NavDropdownBtn = (props) => {
-  const [isHover, setIsHover] = useState(false);
-
   return (
-    <div style={s.btnWrapper}>
-      <button
-        style={{ ...s.btn, backgroundColor: isHover ? "#d9d9d9" : "" }}
-        onMouseEnter={() => setIsHover(true)}
-        onMouseLeave={() => setIsHover(false)}
+    <div>
+      <Btn
         onMouseDown={() => {
           console.log("TEST");
         }}
       >
         {props.boton}
-      </button>
+      </Btn>
     </div>
   );
 };
 
-const s = {
-  btn: {
-    all: "unset",
-    textAlign: "center",
-    width: "100%",
-    padding: "10px 0 10px 0",
-    fontFamily: "Poppins, sans-serif",
-  },
-};
+const Btn = styled.button`
+  all: unset;
+  text-align: center;
+  width: 100%;
+  padding: 10px 0;
+  font-family: Poppins, sans-serif;
+  &:hover {
+    background-color: #e1e1e1;
+  }
+`;
 
 export default NavDropdownBtn;
