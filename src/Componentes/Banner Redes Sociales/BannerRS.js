@@ -1,75 +1,63 @@
 import BotonIcono from "../Utilidades/BotonIcono";
-import styled from "styled-components";
 
 const BannerRS = () => {
   return (
-    <Container>
-      <TitleContainer>
-        <Title>Tell a friend</Title>
-      </TitleContainer>
-      <IconContainer>
-        <Icon>
-          <BotonIcono icono="facebook.png" colorHover="invert(20%)" />
-        </Icon>
-        <Icon>
-          <BotonIcono icono="instagram.png" colorHover="invert(20%)" />
-        </Icon>
-        <Icon>
-          <BotonIcono icono="twitter.png" colorHover="invert(20%)" />
-        </Icon>
-        <Icon>
-          <BotonIcono icono="messenger.png" colorHover="invert(20%)" />
-        </Icon>
-        <Icon>
-          <BotonIcono icono="telegram.png" colorHover="invert(20%)" />
-        </Icon>
-      </IconContainer>
-    </Container>
+    <div style={s.container}>
+      <div style={s.titleContainer}>
+        <h1 style={s.h1}>Tell a friend</h1>
+      </div>
+      <div style={s.iconContainer}>
+        <div style={s.icon}>
+          <BotonIcono icono="facebook.png" colorHover='invert(20%)' />
+        </div>
+        <div style={s.icon}>
+          <BotonIcono icono="instagram.png" colorHover='invert(20%)' />
+        </div>
+        <div style={s.icon}>
+          <BotonIcono icono="twitter.png" colorHover='invert(20%)' />
+        </div>
+        <div style={s.icon}>
+          <BotonIcono icono="messenger.png" colorHover='invert(20%)' />
+        </div>
+        <div style={s.icon}>
+          <BotonIcono icono="telegram.png" colorHover='invert(20%)' />
+        </div>
+      </div>
+    </div>
   );
 };
 
-const Container = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 100%;
-  background-color: #e1e1e1;
-`;
+const s = {
+  container: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "column",
+    width: "100%",
+    backgroundColor: "#e1e1e1",
+    padding: "3rem",
+  },
 
-const TitleContainer = styled.div`
-  margin: 0;
-`;
+  titleContainer: {
+    margin: "0",
+  },
 
-const Title = styled.h1`
-  font-family: "Times New Roman", Times, serif;
-  font-size: 44px;
-`;
+  h1: {
+    fontFamily: 'Times New Roman',
+    fontSize: '44px'
+  },
 
-const IconContainer = styled.div`
-  margin: 0 0px 20px 0px;
-  width: 70%;
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-`;
+  iconContainer: {
+    margin: "0 20px 20px 20px",
+    width: "50%",
+    display: "flex",
+    justifyContent: "space-evenly",
+  },
 
-const Icon = styled.div`
-  width: 25%;
-  height: 25%;
-  margin: 0.5rem;
-  @media (min-width: 480px) {
-    width: 22%;
-    height: 22%;
-  }
-  @media (min-width: 780px) {
-    width: 14%;
-    height: 14%;
-  }
-  @media (min-width: 1260px) {
-    width: 8%;
-    height: 8%;
-  }
-`;
+  icon: {
+    width: "80px",
+    height: "80px",
+  },
+};
 
 export default BannerRS;
