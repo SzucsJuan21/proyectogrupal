@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 import NavDropdownBtn from "./NavDropdownBtn";
 
@@ -65,22 +65,35 @@ const Btn = styled.button`
   }
 `;
 
+const anim = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
+const animOut = keyframes`
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+`;
+
+
 const DropdownMenu = styled.div`
   border: 1px solid rgb(0, 0, 0, 0.2);
   background-color: #f9f9f9;
   border-radius: 2px;
   width: 200px;
   position: absolute;
-  transition: 200ms;
+  transition: 1s;
   box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.2);
   bottom: -125px;
-  opacity: 0;
-  &:hover {
-    opacity: 1;
-  }
-  ${DropdownContainer}:hover & {
-    opacity: 1;
-  }
+  animation: ${anim} 400ms;
 `;
 
 export default NavDropdown;
