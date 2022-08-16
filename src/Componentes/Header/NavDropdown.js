@@ -60,6 +60,9 @@ const Btn = styled.button`
   &:hover {
     text-shadow: 0.2px 0.2px 1px;
   }
+  ${DropdownContainer}:hover & {
+    text-shadow: 0.2px 0.2px 1px;
+  }
 `;
 
 const DropdownMenu = styled.div`

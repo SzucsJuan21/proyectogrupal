@@ -1,28 +1,59 @@
-import NavDropdown from "./NavDropdown"
-import NavbarBtn from "./NavbarBtn"
+import styled from "styled-components";
+import NavDropdown from "./NavDropdown";
+import NavbarBtn from "./NavbarBtn";
+import useWindowSize from "../Utilidades/windowSize";
+
 const Navbar = () => {
   return (
-    <div style={s.navbarContainer}>
-        <ul style={s.ul}>
-            <li style={s.item}><NavDropdown texto='Occasions' botones={[{ textoBtn: 'boton1' },{ textoBtn: 'boton2' },{ textoBtn: 'boton3' }]} /></li>
-            <li style={s.item}><NavDropdown texto='All Categories' botones={[{ textoBtn: 'boton1' },{ textoBtn: 'boton2' },{ textoBtn: 'boton3' }]} /></li>
-            <li style={s.item}><NavDropdown texto='Gifts &amp; Bundles' botones={[{ textoBtn: 'boton1' },{ textoBtn: 'boton2' },{ textoBtn: 'boton3' }]} /></li>
-            <li style={s.item}><NavbarBtn texto='Our Brands' /></li>
-            <li style={s.item}><NavbarBtn texto='About Us' /></li>
-        </ul>
+    <div>
+      <NavbarButtonsContainer>
+        <NavbarButtons>
+          <NavDropdown
+            texto="Occasions"
+            botones={[
+              { textoBtn: "boton1" },
+              { textoBtn: "boton2" },
+              { textoBtn: "boton3" },
+            ]}
+          />
+        </NavbarButtons>
+        <NavbarButtons>
+          <NavDropdown
+            texto="All Categories"
+            botones={[
+              { textoBtn: "boton1" },
+              { textoBtn: "boton2" },
+              { textoBtn: "boton3" },
+            ]}
+          />
+        </NavbarButtons>
+        <NavbarButtons>
+          <NavDropdown
+            texto="Gifts &amp; Bundles"
+            botones={[
+              { textoBtn: "boton1" },
+              { textoBtn: "boton2" },
+              { textoBtn: "boton3" },
+            ]}
+          />
+        </NavbarButtons>
+        <NavbarButtons>
+          <NavbarBtn texto="Our Brands" />
+        </NavbarButtons>
+        <NavbarButtons>
+          <NavbarBtn texto="About Us" />
+        </NavbarButtons>
+      </NavbarButtonsContainer>
     </div>
-  )
-}
+  );
+};
 
-const s = {
-    ul: {
-        display: 'flex',
-    },
+const NavbarButtonsContainer = styled.ul`
+  display: flex;
+`;
+const NavbarButtons = styled.li`
+  list-style: none;
+  margin: 0 10px;
+`;
 
-    item: {
-        listStyle: 'none',
-        margin: '0 10px'
-    }
-}
-
-export default Navbar
+export default Navbar;

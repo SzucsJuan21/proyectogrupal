@@ -62,7 +62,7 @@ const Icon = styled.div`
     width: 22%;
     height: 22%;
   }
-  @media (min-width: 780px) {
+  @media (min-width: 768px) {
     width: 14%;
     height: 14%;
   }
