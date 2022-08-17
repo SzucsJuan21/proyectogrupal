@@ -74,16 +74,6 @@ const anim = keyframes`
   }
 `;
 
-const animOut = keyframes`
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-`;
-
-
 const DropdownMenu = styled.div`
   border: 1px solid rgb(0, 0, 0, 0.2);
   background-color: #f9f9f9;
@@ -92,8 +82,12 @@ const DropdownMenu = styled.div`
   position: absolute;
   transition: 1s;
   box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.2);
-  bottom: -125px;
+  bottom: -115px;
   animation: ${anim} 400ms;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 7px 0;
 `;
 
 export default NavDropdown;

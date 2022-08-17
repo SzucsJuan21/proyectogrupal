@@ -56,7 +56,7 @@ const MainContainer = () => {
           <li>Because it supports local jobs</li>
           <li>Because it makes more sense for the environment</li>
         </ul>
-        <Boton color="#FF8126" texto="Discover our Producers" />
+        <Boton color="#FF8126" colorHover="#D96817" texto="Discover our Producers" />
       </SubSection>
       <SubSection>
         <img

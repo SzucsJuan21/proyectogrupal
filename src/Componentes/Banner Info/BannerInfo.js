@@ -39,7 +39,7 @@ const BannerInfo = (props) => {
           paddingTop: "30px",
         }}
       >
-        <Boton color="#FF8126" texto="Discover our Producers" />
+        <Boton color="#FF8126" colorHover="#D96817" texto="Discover our Producers" />
       </div>
     </div>
   );
