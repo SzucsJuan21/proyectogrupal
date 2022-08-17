@@ -39,7 +39,9 @@ const Header = () => {
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
+  width: 100%;
   margin: 0 40px 0 0;
+  box-shadow: 0px 0px 20px 0px rgb(0,0,0,0.2);
   @media (min-width: 1280px) {
     display: grid;
     grid-template-columns: 160px 1fr;

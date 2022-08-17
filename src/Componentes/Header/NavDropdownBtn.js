@@ -17,11 +17,15 @@ const NavDropdownBtn = (props) => {
 const Btn = styled.button`
   all: unset;
   text-align: center;
-  width: 100%;
-  padding: 10px 0;
+  width: 180px;
+  height: 35px;
+  margin: 0px;
   font-family: Poppins, sans-serif;
+  border-radius: 10px;
+  transition: 200ms;
   &:hover {
-    background-color: #e1e1e1;
+    background-color: #ff8126;
+    color: #fff;
   }
 `;
 
