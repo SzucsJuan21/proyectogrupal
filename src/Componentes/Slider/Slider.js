@@ -1,27 +1,42 @@
-import React from 'react'
+import { useRef, useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import img from './Img/export'
-import useWindowSize from '../Utilidades/windowSize'
+import { RiArrowLeftCircleFill, RiArrowRightCircleFill } from "react-icons/ri";
+import SliderImg from './SliderImg';
 
 const Slider = () => {
-  const { width, height } = useWindowSize();
-  const animationWindowSize = (width - width*0.21) * -1;
-  console.log(animationWindowSize)
+  const [width, setWidth] = useState(0)
+  const slider = useRef()
+  useEffect(() => {
+    setWidth(slider.current.scrollWidth - slider.current.offsetWidth);
+  }, [])
 
 
   return (
     <Container>
       <h1 style={s.h1}><a href="" style={s.a}>@PremiumBakery</a> on Instagram</h1>
       <SliderContainer>
-        <motion.div style={s.slider} drag='x' dragConstraints={{ right:0, left:-2970 + width }}>
-          {img.map(image => (
-            <motion.div style={s.item}>
-              <img src={image} style={s.img}></img>
-            </motion.div>
-          ))}
-        </motion.div>
+
+        <Btn>
+          <RiArrowLeftCircleFill size={40} color='#FF8126' />
+        </Btn>
+
+        <SliderWrapper ref={slider}>
+          <motion.div style={s.slider} drag='x' dragConstraints={{ right: 0, left: -width }} whileTap={{ cursor: 'grabbing' }} >
+            {img.map(image => (
+              <SliderImg img={image} />
+            ))}
+          </motion.div>
+        </SliderWrapper>
+
+        <Btn>
+          <RiArrowRightCircleFill size={40} color='#FF8126' />
+        </Btn>
+
       </SliderContainer>
+
+
     </Container>
   )
 }
@@ -39,8 +54,23 @@ const SliderContainer = styled.div`
   height: 200px;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   overflow-x: hidden;
+`
+
+const SliderWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+`
+
+const Btn = styled.button`
+  all: unset;
+  cursor: pointer;
+  &:hover {
+    filter: brightness(90%);
+  }
 `
 
 const s = {
@@ -51,8 +81,7 @@ const s = {
     cursor: 'grab',
     width: '100%'
   },
-  item: {
-  },
+
   img: {
     padding: '10px',
     margin: '0 10px',
@@ -62,11 +91,13 @@ const s = {
     border: '2px solid rgb(0,0,0,0.1)',
     boxShadow: '1px 1px 10px rgb(0,0,0,0.4)',
   },
+
   h1: {
     fontFamily: 'Times New Roman, sans-serif',
     textAlign: 'center',
     marginTop: '0'
   },
+
   a: {
     color: 'orange',
   },
