@@ -27,8 +27,8 @@ const NavDropdown = (props) => {
           onMouseEnter={() => setisHover(true)}
           onMouseLeave={() => setisHover(false)}
         >
-          {props.botones.map((el) => (
-            <NavDropdownBtn boton={el.textoBtn} />
+          {props.botones.map((el, index) => (
+            <NavDropdownBtn boton={el.textoBtn} key={index} />
           ))}
         </DropdownMenu>
       )}

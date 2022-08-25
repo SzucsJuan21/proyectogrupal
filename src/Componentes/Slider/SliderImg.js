@@ -15,15 +15,14 @@ const ImgWrapper = styled.div`
 const Img = styled.img`
     padding: 10px;
     margin: 0 10px;
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     border: 2px solid rgb(0,0,0,0.1);
     box-shadow: 1px 1px 10px rgb(0,0,0,0.4);
-    transition: 1s;
     pointer-events: none;
-    &:hover {
-        width: 200px;
-        height: 200px;
+    @media (min-width: 780px) {
+        width: 250px;
+        height: 250px;
     }
 `
 

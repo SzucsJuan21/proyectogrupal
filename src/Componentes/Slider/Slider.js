@@ -1,38 +1,53 @@
 import { useRef, useState, useEffect } from 'react'
+import { motion, useDragControls } from 'framer-motion'
+import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
 import styled from 'styled-components'
-import { motion } from 'framer-motion'
 import img from './Img/export'
-import { RiArrowLeftCircleFill, RiArrowRightCircleFill } from "react-icons/ri";
 import SliderImg from './SliderImg';
+import useWindowSize from '../Utilidades/windowSize';
 
 const Slider = () => {
-  const [width, setWidth] = useState(0)
+  const [sliderWidth, setSliderWidth] = useState(0)
+  const [sliderPos, setSliderPos] = useState(0)
   const slider = useRef()
   useEffect(() => {
-    setWidth(slider.current.scrollWidth - slider.current.offsetWidth);
+    window.addEventListener("resize", setSliderWidth(slider.current.scrollWidth - slider.current.offsetWidth));
   }, [])
+  const { width } = useWindowSize()
 
 
   return (
     <Container>
-      <h1 style={s.h1}><a href="" style={s.a}>@PremiumBakery</a> on Instagram</h1>
+      <h1 style={s.h1}><Link href="">@PremiumBakery</Link> on Instagram</h1>
       <SliderContainer>
 
-        <Btn>
-          <RiArrowLeftCircleFill size={40} color='#FF8126' />
-        </Btn>
+        {width >= 780 &&
+          <Btn onClick={() => setSliderPos(sliderPos + 800 < 0 ? sliderPos + 800 : 0)}>
+            <BsArrowLeftCircle size={45} color='#FF8126' />
+          </Btn>
+        }
 
         <SliderWrapper ref={slider}>
-          <motion.div style={s.slider} drag='x' dragConstraints={{ right: 0, left: -width }} whileTap={{ cursor: 'grabbing' }} >
+          <motion.div style={s.slider}
+            drag={`${width < 780 ? 'x' : ''}`}
+            dragConstraints={{ right: 0, left: -sliderWidth }}
+            initial={{ translateX: 1 }}
+            animate={{ translateX: sliderPos }}
+            transition={{ duration: 0.5 }}
+          >
+
             {img.map(image => (
-              <SliderImg img={image} />
+              <SliderImg img={image} key={image} />
             ))}
+
           </motion.div>
         </SliderWrapper>
 
-        <Btn>
-          <RiArrowRightCircleFill size={40} color='#FF8126' />
-        </Btn>
+        {width >= 780 &&
+          <Btn onClick={() => setSliderPos(sliderPos - 800 > -sliderWidth ? sliderPos - 800 : -sliderWidth)}>
+            <BsArrowRightCircle size={45} color='#FF8126' />
+          </Btn>
+        }
 
       </SliderContainer>
 
@@ -49,9 +64,16 @@ const Container = styled.div`
   margin: 2rem 0;
 `
 
+const Link = styled.a`
+  text-decoration: none;
+  color: #FF8126;
+  &:hover {
+    color: #D96918;
+  }
+`
+
 const SliderContainer = styled.div`
   width: 80%;
-  height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -68,6 +90,7 @@ const SliderWrapper = styled.div`
 const Btn = styled.button`
   all: unset;
   cursor: pointer;
+  margin: 0 10px;
   &:hover {
     filter: brightness(90%);
   }
@@ -79,7 +102,8 @@ const s = {
     alignItems: 'center',
     justifyContent: 'flex-start',
     cursor: 'grab',
-    width: '100%'
+    width: '100%',
+    translateX: '0',
   },
 
   img: {
@@ -96,10 +120,6 @@ const s = {
     fontFamily: 'Times New Roman, sans-serif',
     textAlign: 'center',
     marginTop: '0'
-  },
-
-  a: {
-    color: 'orange',
   },
 }
 
