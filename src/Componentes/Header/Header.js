@@ -1,45 +1,73 @@
-import React from 'react'
-import HeaderIconos from './HeaderIconos'
-import Navbar from './Navbar'
+import React from "react";
+import useWindowSize from "../Utilidades/windowSize";
+import HeaderIconos from "./HeaderIconos";
+import Navbar from "./Navbar";
+import styled from "styled-components";
+import Menu from "./Menu";
+import Notificacion from "./Notificacion";
 
 const Header = () => {
+  const { width, height } = useWindowSize();
+
   return (
-    <div style={s.header}>
+    <>
+      <Notificacion></Notificacion>
+      <Container>
         <div>
-            <a href=""><img src="https://www.kadencewp.com/wp-content/uploads/2020/10/alogo-2.png" style={s.logo} alt="" /></a>
+          <a href="">
+            <img
+              src="https://www.kadencewp.com/wp-content/uploads/2020/10/alogo-2.png"
+              width="115px"
+              height="90px"
+              alt=""
+            />
+          </a>
         </div>
-        <div style={s.navbarWrapper}>
-            <Navbar />
-        </div>
-        <div style={s.iconsWrapper}>
-            <HeaderIconos />
-        </div>
-    </div>
-  )
-}
 
-const s = {
-    header: {
-        display: 'grid',
-        gridTemplateColumns: '160px 6fr 1fr',
-    },
-    
-    logo: {
-        width: '153px',
-        height: '120px',
-    },
+        {width > 1279 && (
+          <NavContainer>
+            <NavbarWrapper>
+              <Navbar />
+            </NavbarWrapper>
+            <IconsWrapper>
+              <HeaderIconos />
+            </IconsWrapper>
+          </NavContainer>
+        )}
+        {width < 1280 && <Menu></Menu>}
+      </Container>
+    </>
 
-    navbarWrapper: {
-        display: 'flex',
-        alignItems: 'center',
-    },
+  );
+};
 
-    iconsWrapper: {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginRight: '60px'
-    },
-}
+const Container = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 40px 0 0;
+  box-shadow: 0px 4px 20px 0px rgb(0,0,0,0.2);
+  @media (min-width: 1280px) {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+  }
+`;
 
-export default Header
+const NavContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const NavbarWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const IconsWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 60px;
+`;
+
+export default Header;
