@@ -21,6 +21,7 @@ const MainContainer = () => {
         <h1
           style={{
             color: "#FF8126",
+            margin: '0',
           }}
         >
           Who Makes{" "}
@@ -46,7 +47,7 @@ const MainContainer = () => {
             live here.
           </li>
           <li>
-            Because it’s more meaningful to cook and eat something made by a
+            Because it's more meaningful to cook and eat something made by a
             person nearby than by some distant corporation
           </li>
           <li>

@@ -3,6 +3,7 @@ import BannerRS from "./Componentes/Banner Redes Sociales/BannerRS";
 import Header from "./Componentes/Header/Header";
 import MainContainer from "./Componentes/Seccion info/MainContainer";
 import BannerInfo from "./Componentes/Banner Info/BannerInfo";
+import Slider from './Componentes/Slider/Slider';
 
 function App() {
   return (
@@ -14,12 +15,12 @@ function App() {
       <main style={s.main}>
         <MainContainer />
         <BannerInfo />
+        <Slider /> 
         <BannerRS />
       </main>
     </>
   );
 }
-
 
 
 const s = {
@@ -28,6 +29,7 @@ const s = {
     position: "fixed",
     top: "0",
     width: "100%",
+    zIndex:'2',
   },
 
   main: {
