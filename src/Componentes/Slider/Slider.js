@@ -16,20 +16,21 @@ const Slider = () => {
   const { width } = useWindowSize()
 
 
+
   return (
     <Container>
       <h1 style={s.h1}><Link href="">@PremiumBakery</Link> on Instagram</h1>
       <SliderContainer>
 
         {width >= 780 &&
-          <Btn onClick={() => setSliderPos(sliderPos + 800 < 0 ? sliderPos + 800 : 0)}>
-            <BsArrowLeftCircle size={45} color='#FF8126' />
+          <Btn sldr={{sliderPos,sliderWidth}} onClick={() => setSliderPos(sliderPos + 800 < 0 ? sliderPos + 800 : 0)}>
+            <BsArrowLeftCircle size={45} color={ sliderPos === 0 ? '#999' : '#FF8126' } />
           </Btn>
         }
 
         <SliderWrapper ref={slider}>
           <motion.div style={s.slider}
-            drag={`${width < 780 ? 'x' : ''}`}
+            drag={width < 780 ? 'x' : ''}
             dragConstraints={{ right: 0, left: -sliderWidth }}
             initial={{ translateX: 1 }}
             animate={{ translateX: sliderPos }}
@@ -44,8 +45,8 @@ const Slider = () => {
         </SliderWrapper>
 
         {width >= 780 &&
-          <Btn onClick={() => setSliderPos(sliderPos - 800 > -sliderWidth ? sliderPos - 800 : -sliderWidth)}>
-            <BsArrowRightCircle size={45} color='#FF8126' />
+          <Btn sldr={{sliderPos,sliderWidth}} onClick={() => setSliderPos(sliderPos - 800 > -sliderWidth ? sliderPos - 800 : -sliderWidth)}>
+            <BsArrowRightCircle size={45} color={ sliderPos === -sliderWidth ? '#999' : '#FF8126' } />
           </Btn>
         }
 
@@ -92,7 +93,7 @@ const Btn = styled.button`
   cursor: pointer;
   margin: 0 10px;
   &:hover {
-    filter: brightness(90%);
+    filter: ${props => props.sldr.sliderPos === 0 || props.sldr.sliderPos === -props.sldr.sliderWidth ? '' : 'brightness(90%)'};
   }
 `
 
