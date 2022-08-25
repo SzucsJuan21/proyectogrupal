@@ -1,21 +1,16 @@
 import React from "react";
 import Boton from "../Utilidades/Boton";
 import logo from "../Banner Info/img/logo.png";
-import background from '../Banner Info/img/background.jpg'
+import background from "../Banner Info/img/background.jpg";
+import styled from "styled-components";
 
 const BannerInfo = (props) => {
   return (
-    <div
-      style={{
-        width: "100%",
-        height: "395px",
-        backgroundImage: `url(${background})`
-      }}
-    >
+    <Container>
       <h1
         style={{
           textAlign: "center",
-          paddingTop: "70px",
+          paddingTop: "30px",
           color: "white",
           fontFamily: "Poppins, sans-serif",
         }}
@@ -25,23 +20,21 @@ const BannerInfo = (props) => {
       <img
         style={{
           width: "100px",
-          display: 'block',
-          marginLeft: 'auto',
-          marginRight: 'auto',
-          paddingTop: '20px'
+          display: "block",
+          marginLeft: "auto",
+          marginRight: "auto",
         }}
         src={logo}
       ></img>
-      <div
-        style={{
-          position: "relative",
-          paddingLeft: "830px",
-          paddingTop: "30px",
-        }}
-      >
-        <Boton color="#FF8126" colorHover="#D96817" texto="Discover our Producers" />
-      </div>
-    </div>
+    </Container>
   );
 };
+
+const Container = styled.div`
+  width: 100%;
+  height: 300px;
+  background-image: url(${background});
+  align-items: center;
+`;
+
 export default BannerInfo;
