@@ -2,12 +2,12 @@ import React from "react";
 import './Cards.css'
 
 const Cards = (props) => {
-  return (
+    return (
     <figure>
-  {props.children}
-  </figure>
+    {props.children}
+    </figure>
     
-  );
+);
 };
 
 
