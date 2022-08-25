@@ -2,21 +2,11 @@ import React from "react";
 import SubSection from "./SubSection";
 import img1 from "../Seccion info/img/img1.jpg";
 import Boton from "../Utilidades/Boton";
+import styled from "styled-components";
 
 const MainContainer = () => {
   return (
-    <div
-      style={{
-        width: "65%",
-        height: "600px",
-        margin: "auto",
-        display: "grid",
-        gridTemplateColumns: "auto auto",
-        justifyContent: "space-between",
-        borderRadius: "5px",
-        alignItems: "center",
-      }}
-    >
+    <Container>
       <SubSection>
         <h1
           style={{
@@ -40,6 +30,8 @@ const MainContainer = () => {
         <ul
           style={{
             lineHeight: "220%",
+            
+            
           }}
         >
           <li>
@@ -63,15 +55,45 @@ const MainContainer = () => {
         <img
           style={{
             objectFit: "fill",
-            width: "100%",
-            height: "100%",
           }}
           src={img1}
         ></img>
-      </SubSection>
+        </SubSection>
       
-    </div>
+      
+    </Container>
   );
 };
+
+const Container = styled.div `
+width: 90%;
+height: 110vh;
+margin: auto;
+display: grid;
+grid-template-rows: 90%, auto;
+border-radius: 5px; 
+margin-bottom: 100px;
+
+@media (min-width: 620px) {
+  height: 130vh;
+ margin: 20px
+}
+@media (min-width: 900px) {
+  height: 150vh;
+ margin: 20px;
+
+}
+
+@media (min-width: 1260px) {
+  width: 80%;
+  height: 600px;
+  display: grid;
+  grid-template-columns: auto auto;
+  border-radius: 5px;
+  align-items: center;
+  margin: auto;
+  padding-bottom: 25px
+};
+`
 
 export default MainContainer;
