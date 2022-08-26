@@ -4,6 +4,8 @@ import Header from "./Componentes/Header/Header";
 import MainContainer from "./Componentes/Seccion info/MainContainer";
 import BannerInfo from "./Componentes/Banner Info/BannerInfo";
 import Slider from "./Componentes/Slider/Slider";
+import Tc from "./Componentes/info/tc";
+import Itemlista from "./Componentes/Footer/item";
 
 function App() {
   return (
@@ -17,12 +19,8 @@ function App() {
         <BannerInfo />
         <Slider />
         <BannerRS />
-        <div className="App">
-          <Tc />
-          <div>
-            <Itemlista />
-          </div>
-        </div>
+        <Tc />
+        <Itemlista />
       </main>
     </>
   );

@@ -4,14 +4,14 @@ import React from "react";
 import "../hojas-de-estilo/tc.css"
 
 
-function tc () {
+function Tc () {
   return ( 
     
     <div className="componentes-tc">
       
     <div className="imagen-tc">
      <img  className= "imagen-tc"
-      src={require ("../imgtc/canasta.png")}
+      src={require ("./canasta.png")}
       alt="imagen-tc"/>
     </div>
 
@@ -26,4 +26,4 @@ To buy for a large group of people, get in touch and we can discuss bespoke bund
 );
 
 }
-export default tc;
+export default Tc;
