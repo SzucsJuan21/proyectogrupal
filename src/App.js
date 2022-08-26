@@ -17,9 +17,9 @@ function App() {
       <main style={s.main}>
         <MainContainer />
         <BannerInfo />
+        <Tc />
         <Slider />
         <BannerRS />
-        <Tc />
         <Itemlista />
       </main>
     </>
