@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from 'react'
-import { motion, useDragControls } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
 import styled from 'styled-components'
 import img from './Img/export'
