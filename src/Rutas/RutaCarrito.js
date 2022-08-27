@@ -2,9 +2,9 @@ import Carrito from "../Componentes/Carrito/Carrito"
 
 const RutaCarrito = () => {
   return (
-    <main>
+    <div>
         <Carrito/>
-    </main>
+    </div>
   )
 }
 

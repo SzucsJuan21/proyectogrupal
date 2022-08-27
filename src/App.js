@@ -12,16 +12,19 @@ import RutaCarrito from "./Rutas/RutaCarrito";
 function App() {
   return (
     <>
-      <header>
+      <header style={s.header}>
         <Header />
       </header>
 
-      <Routes>
+      <main style={s.main}>
+        <Routes>
 
-        <Route path='/' exact element={<Home />}/>
-        <Route path='/carrito' element={<RutaCarrito/>}/>
-        
-      </Routes>
+          <Route path='/' exact element={<Home />} />
+          <Route path='/carrito' element={<RutaCarrito />} />
+
+        </Routes>
+
+      </main>
 
       <footer>
         <Itemlista />
@@ -38,6 +41,9 @@ const s = {
     top: "0",
     width: "100%",
     zIndex: "2",
+  },
+  main: {
+    margin: '14 0px 0',
   },
 };
 
