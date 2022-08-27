@@ -1,28 +1,34 @@
 import "./App.css";
-import BannerRS from "./Componentes/Banner Redes Sociales/BannerRS";
 import Header from "./Componentes/Header/Header";
-import MainContainer from "./Componentes/Seccion info/MainContainer";
-import BannerInfo from "./Componentes/Banner Info/BannerInfo";
-import Slider from "./Componentes/Slider/Slider";
-import Tc from "./Componentes/info/tc";
 import Itemlista from "./Componentes/Footer/item";
+import Home from "./Rutas/Home";
+
+import {
+  Route,
+  Routes,
+} from "react-router-dom";
+import RutaCarrito from "./Rutas/RutaCarrito";
 
 function App() {
   return (
     <>
-      <header style={s.header}>
+      <header>
         <Header />
       </header>
 
-      <main style={s.main}>
-        <MainContainer />
-        <BannerInfo />
-        <Tc />
-        <Slider />
-        <BannerRS />
+      <Routes>
+
+        <Route path='/' exact element={<Home />}/>
+        <Route path='/carrito' element={<RutaCarrito/>}/>
+        
+      </Routes>
+
+
+      <footer>
         <Itemlista />
-      </main>
+      </footer>
     </>
+
   );
 }
 
@@ -33,10 +39,6 @@ const s = {
     top: "0",
     width: "100%",
     zIndex: "2",
-  },
-
-  main: {
-    margin: "130px 0 0 0",
   },
 };
 

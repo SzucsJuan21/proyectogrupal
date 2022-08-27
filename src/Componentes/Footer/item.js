@@ -4,7 +4,7 @@ import { type } from "@testing-library/user-event/dist/type";
 import React from "react";
 import "../hojas-de-estilo/estilo.css"
 
-const itemlista = () => {
+const ItemLista = () => {
   return (
     <div className="caja">
       <div className="contenedor-de-lista">
@@ -81,7 +81,7 @@ const itemlista = () => {
   )
 }
 
-export default itemlista;
+export default ItemLista;
 
 
 

@@ -1,4 +1,5 @@
 import BotonIcono from "../Utilidades/BotonIcono";
+import { Link } from 'react-router-dom';
 
 const HeaderIconos = () => {
   return (
@@ -10,7 +11,9 @@ const HeaderIconos = () => {
         <BotonIcono icono="login.png" colorHover="invert(30%)" />
       </li>
       <li style={s.li}>
-        <BotonIcono icono="carrito.png" colorHover="invert(30%)" />
+        <Link to='/carrito'>
+          <BotonIcono icono="carrito.png" colorHover="invert(30%)" />
+        </Link>
       </li>
     </div>
   );
