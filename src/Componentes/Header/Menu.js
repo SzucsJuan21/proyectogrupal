@@ -1,49 +1,69 @@
 import { useState } from "react";
 import styled, { keyframes } from "styled-components";
 import MenuBtn from "./MenuBtn";
+import useWindowSize from "../Utilidades/windowSize";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoClose } from "react-icons/io5";
+import { motion, useCycle } from "framer-motion";
 
 const Burger = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const { width } = useWindowSize()
+  const [x, cycleX] = useCycle(-500,0)
+  const [op, cycleOp] = useCycle(0,1)
 
   return (
     <Wrapper>
-      
+
       <button
         style={{ all: "unset", cursor: "pointer" }}
-        onClick={() => setShowMenu(!showMenu)}
+        onClick={() => {
+          setShowMenu(true)
+          cycleX()
+          cycleOp()
+        }}
       >
         <GiHamburgerMenu size="40" />
       </button>
 
-      <MenuCont style={{ right: showMenu ? "0" : "-100%" }}>
-
-        <MenuTopCont>
-          <div
-            style={{ margin: "20px", display: "flex", justifyContent: "end" }}
-          >
-            <button
-              onClick={() => setShowMenu(!showMenu)}
-              style={{ all: "unset", pointer: "cursor" }}
+      {showMenu &&
+        <motion.div
+          style={{...s.menuCont, width: width <= 480 ? '80%' : width <= 720 ? '50%' : '40%'}}
+          initial= {{ right: -500, opacity: 0 }}
+          animate= {{ right: x, opacity: op }}
+          transition= {{ duration: 0.5, ease: 'easeOut' }}
+        >
+          <MenuTopCont>
+            <div
+              style={{ margin: "20px", display: "flex", justifyContent: "end" }}
             >
-              <IoClose size="30" />
-            </button>
-          </div>
+              <button
+                onClick={() => {
+                  cycleX()
+                  cycleOp()
+                  setTimeout(() => {setShowMenu(false)},500)
+                }}
+                style={{ all: "unset", pointer: "cursor" }}
+              >
+                <IoClose size="30" />
+              </button>
+            </div>
+            <div>
+              <hr style={{ boxShadow: "0px 3px 15px 0.1px", width: "100%" }} />
+            </div>
+          </MenuTopCont>
+
           <div>
-            <hr style={{ boxShadow: "0px 3px 15px 0.1px", width: "100%" }} />
+            <MenuBtn texto="Occasions" />
+            <MenuBtn texto="All Categories" />
+            <MenuBtn texto="Gifts &amp; Bundles" />
+            <MenuBtn texto="Our Brand" />
+            <MenuBtn texto="About Us" />
           </div>
-        </MenuTopCont>
 
-        <div>
-          <MenuBtn texto="Occasions" />
-          <MenuBtn texto="All Categories" />
-          <MenuBtn texto="Gifts &amp; Bundles" />
-          <MenuBtn texto="Our Brand" />
-          <MenuBtn texto="About Us" />
-        </div>
+        </motion.div>
+      }
 
-      </MenuCont>
     </Wrapper>
   );
 };
@@ -53,25 +73,20 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   margin-right: 30px;
+  overflow-x: hidden;
 `;
-
-const MenuCont = styled.div`
-  position: absolute;
-  display: grid;
-  grid-template-rows: 84px 1fr;
-  top: 0;
-  height: 100vh;
-  width: 80%;
-  background-color: rgb(240, 240, 240, 0.90);
-  box-shadow: -1px -1px 10px;
-  transition: 400ms;
-  @media (min-width: 480px) {
-    width: 50%;
+const s = {
+  menuCont: {
+    position: 'absolute',
+    display: 'grid',
+    overflowX: 'hidden',
+    gridTemplateRows: '84px 1fr',
+    top: 0,
+    height: '100vh',
+    backgroundColor: 'rgb(240, 240, 240, 0.90)',
+    boxShadow: '-1px -1px 10px',
   }
-  @media (min-width: 720px) {
-    width: 40%;
-  }
-`;
+}
 
 const MenuTopCont = styled.div`
   width: 100%;

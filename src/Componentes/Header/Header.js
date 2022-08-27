@@ -5,6 +5,7 @@ import Navbar from "./Navbar";
 import styled from "styled-components";
 import Menu from "./Menu";
 import Notificacion from "./Notificacion";
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const { width, height } = useWindowSize();
@@ -14,14 +15,14 @@ const Header = () => {
       <Notificacion></Notificacion>
       <Container>
         <div>
-          <a href="">
+          <Link to='/' >
             <img
               src="https://www.kadencewp.com/wp-content/uploads/2020/10/alogo-2.png"
               width="115px"
               height="90px"
               alt=""
             />
-          </a>
+          </Link>
         </div>
 
         {width > 1279 && (

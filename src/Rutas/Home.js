@@ -6,13 +6,19 @@ import Slider from '../Componentes/Slider/Slider'
 
 const Home = () => {
   return (
-    <main>
+    <main style={s.main}>
         <MainContainer/>
         <BannerInfo/>
         <Tc/>
         <Slider/>
     </main>
   )
+}
+
+const s = {
+    main: {
+        overflowX:'hidden',
+    }
 }
 
 export default Home
