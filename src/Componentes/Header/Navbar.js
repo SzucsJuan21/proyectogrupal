@@ -24,6 +24,8 @@ const Navbar = () => {
               { textoBtn: "boton1" },
               { textoBtn: "boton2" },
               { textoBtn: "boton3" },
+              { textoBtn: "boton1" },
+              { textoBtn: "boton1" },
             ]}
           />
         </NavbarButtons>
