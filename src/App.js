@@ -43,7 +43,7 @@ const s = {
     zIndex: "2",
   },
   main: {
-    margin: '14 0px 0',
+    margin: '140px 0',
   },
 };
 
