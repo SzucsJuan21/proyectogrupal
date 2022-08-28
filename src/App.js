@@ -23,7 +23,6 @@ function App() {
           <Route path='/carrito' element={<RutaCarrito />} />
 
         </Routes>
-
       </main>
 
       <footer>

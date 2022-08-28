@@ -85,7 +85,7 @@ const DropdownMenu = styled.div`
   position: absolute;
   transition: 1s;
   box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.2);
-  bottom: -115px;
+  top: 40px;
   animation: ${anim} 400ms;
   display: flex;
   flex-direction: column;

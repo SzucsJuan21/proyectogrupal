@@ -9,8 +9,9 @@ import { motion, useCycle } from "framer-motion";
 const Burger = () => {
   const [showMenu, setShowMenu] = useState(false);
   const { width } = useWindowSize()
-  const [x, cycleX] = useCycle(-500,0)
-  const [op, cycleOp] = useCycle(0,1)
+  const [x, cycleX] = useCycle(-500, -70)
+  const [op, cycleOp] = useCycle(0, 1)
+
 
   return (
     <Wrapper>
@@ -28,20 +29,20 @@ const Burger = () => {
 
       {showMenu &&
         <motion.div
-          style={{...s.menuCont, width: width <= 480 ? '80%' : width <= 720 ? '50%' : '40%'}}
-          initial= {{ right: -500, opacity: 0 }}
-          animate= {{ right: x, opacity: op }}
-          transition= {{ duration: 0.5, ease: 'easeOut' }}
+          style={{ ...s.menuCont, width: width <= 480 ? '90%' : width <= 720 ? '50%' : '40%' }}
+          initial={{ right: -500, opacity: 0 }}
+          animate={{ right: x, opacity: op }}
+          transition={{ duration: 0.5, ease: 'easeOut', type: 'spring', stiffness: 100 }}
         >
           <MenuTopCont>
             <div
-              style={{ margin: "20px", display: "flex", justifyContent: "end" }}
+              style={{ margin: "20px 80px", display: "flex", justifyContent: "end" }}
             >
               <button
                 onClick={() => {
                   cycleX()
                   cycleOp()
-                  setTimeout(() => {setShowMenu(false)},500)
+                  setTimeout(() => { setShowMenu(false) }, 400)
                 }}
                 style={{ all: "unset", pointer: "cursor" }}
               >
