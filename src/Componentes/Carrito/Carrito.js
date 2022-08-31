@@ -10,8 +10,11 @@ const Carrito = () => {
   const [state, dispatch] = useReducer(cartReducer, cartInitialState);
   const { products, cart } = state
   const addToCart = (id) => dispatch({type: TYPES.ADD_TO_CART, payload: id});
-  const removeFromCart = (ty,id) => dispatch({type: ty, payload: id});
+  const removeFromCart = (btnType,id) => dispatch({type: btnType, payload: id});
   const clearCart = () => dispatch({type: TYPES.CLEAR_CART});
+
+  let total = 0;
+  cart.map(item => total += item.price * item.count);
 
   return (
     <MainContainer>
@@ -22,6 +25,8 @@ const Carrito = () => {
         }
       </div>
       <button onClick={() => clearCart()}>limpiar</button>
+
+      <h3>total: ${total}</h3>
 
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         {

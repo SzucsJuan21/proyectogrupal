@@ -2,9 +2,9 @@ import { TYPES } from "../Utilidades/actions";
 
 export const cartInitialState = {
     products: [
-        { id: 1, name: 'Producto 1', price: 10 },
-        { id: 2, name: 'Producto 2', price: 50 },
-        { id: 3, name: 'Producto 3', price: 100 },
+        { id: 1, name: 'Producto 1', price: 10, stock:80 },
+        { id: 2, name: 'Producto 2', price: 50, stock:100 },
+        { id: 3, name: 'Producto 3', price: 100, stock:5 },
     ],
     cart: []
 }
@@ -46,7 +46,7 @@ export function cartReducer(state, action) {
                 cart: state.cart.filter(item => item.id !== action.payload)
             }
         }
-        case TYPES.CLEAR_CART: return { ...state, cart: [] }
+        case TYPES.CLEAR_CART: return cartInitialState
 
         default: return state;
     }
