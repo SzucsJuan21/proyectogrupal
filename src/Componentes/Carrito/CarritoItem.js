@@ -6,9 +6,9 @@ const CarritoItem = ({ data, removeFromCart }) => {
     return (
         <Container>
             <div style={{ display: 'flex', justifyContent: 'space-evenly' }}>
-                <p>x{data.count} </p>
+                <p>x{data.count ? data.count : 1} </p>
                 <p>{data.name}</p>
-                <p>${data.price * data.count}</p>
+                <p>${data.count ? data.price * data.count : data.price}</p>
             </div>
             <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <button onClick={() => removeFromCart(TYPES.REMOVE_ONE_PRODUCT, data.id )} style={{height:'30px', margin:'auto 10px'}}>remover</button>
