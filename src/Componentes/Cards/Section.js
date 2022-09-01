@@ -1,30 +1,30 @@
 import React from "react";
 import './Section.css'
 import Cards from './Cards'
-import pizza from "../Imagenes/pizza.jpg";
-import pancakes from "../Imagenes/pancakes.jpg";
-import hamburguesa from "../Imagenes/hamburguesa.jpg";
-import helado from "../Imagenes/helado.jpg";
+import budinlimon from "../Imagenes/budinlimon.jpg";
+import chipa from "../Imagenes/chipa.jpg";
+import pastafrola from "../Imagenes/pastafrola.jpg";
+import tostado from "../Imagenes/tostado.jpg";
 
 const data = [
   {
-    src: pizza,
-    title: "Pepperoni Pizza",
+    src: budinlimon,
+    title: "Budin de limón",
     txt: <p>$19.99</p>,
   },
   {
-    src: pancakes,
-    title: "Pancakes",
+    src: chipa,
+    title: "Chipá",
     txt: <p>$25.99</p>,
   },
   {
-    src: hamburguesa,
-    title: "Hamburguer",
+    src: pastafrola,
+    title: "Pastafrola de membrillo",
     txt: <p>$30.99</p>,
   },
   {
-    src: helado,
-    title: "Ice Cream",
+    src: tostado,
+    title: "Tostado jamón y queso",
     txt: <p>$15.99</p>,
   },
   
@@ -32,25 +32,24 @@ const data = [
 
 const Section = () => {
   return (
-    <div>
+    <div className="cards-container">
       {data.map((item) => (
         <Cards>
-          <img
+          <img className="img-bakery"
             src={item.src}
             alt={item.title}
           />
           <figcaption>
-            <h3>
+            <h3 className="item-title">
               {item.title}
             </h3>
-            <p>
+            <p className="valores">
               {item.txt}
             </p>
           </figcaption>
         </Cards>
       ))}
     </div>
-
   );
 };
 
