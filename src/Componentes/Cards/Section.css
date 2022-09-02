@@ -1,34 +1,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Crete+Round&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Anek+Tamil&display=swap');
 
-div {
-    margin: auto;
+.cards-container {
+    /* margin: auto;
+    display: flex;
+    justify-content: center; */
+
+    position: relative;
     display: flex;
     justify-content: center;
-    /* position: absolute;
-    display: flex;
-    left: 160px;
-    top: 330px; */
 }
 
-img {
+.img-bakery {
     width: 270px;
     height: 190px;
+    /* width: 14rem;
+    height: 11rem;
+    object-fit: cover; */
 }
 
-h3,p {
-    margin: 4px;
+.item-title,.valores {
+    margin: 0;
     padding: 1px;
     text-align: center;
 }
 
-h3 {
+.card-fcaption {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+}
+
+.item-title {
     font-family: 'Crete Round', serif;
     font-size: 1.3rem;
 }
 
-p {
-    margin-top: 0.3rem;
+.valores {
     font-family: 'Anek Tamil', sans-serif;
     font-size: 1.3rem;
     font-weight: bold;

@@ -1,18 +1,12 @@
- 
-
-
-
-
 import React from "react";
 import './Cards.css'
 
 const Cards = (props) => {
     return (
-    <figure>
-    {props.children}
-    </figure>
-    
-);
+        <figure className="figure-card">
+            {props.children}
+        </figure>
+    );
 };
 
 

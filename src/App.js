@@ -3,6 +3,7 @@ import Header from "./Componentes/Header/Header";
 import Itemlista from "./Componentes/Footer/item";
 import Home from "./Rutas/Home";
 import RutaCarrito from "./Rutas/RutaCarrito";
+import BannerRS from './Componentes/Banner Redes Sociales/BannerRS'
 import {
   Route,
   Routes,
@@ -28,6 +29,7 @@ function App() {
       </main>
 
       <footer>
+        <BannerRS />
         <Itemlista />
       </footer>
     </>
