@@ -42,16 +42,18 @@ const Carrito = () => {
       }
 
       let res = await axios(`http://localhost:3001/cart/${id}`, options)
+      //let item = await res.data
 
     } else {
 
       let options = {
         method: 'POST',
         headers: { "content-type": "application/json" },
-        data: JSON.stringify(addedItem)
+        data: JSON.stringify({...addedItem, count: 1})
       }
 
       let res = await axios('http://localhost:3001/cart', options)
+      //let item = await res.data
 
     }
   };
@@ -77,7 +79,7 @@ const Carrito = () => {
 
       <h3>total: ${total}</h3>
 
-      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+      <div style={{ display: 'flex', alignItems:'center', justifyContent:'center', flexWrap: 'wrap' }}>
         {
           products.map(product => <Producto key={product.id} data={product} addToCart={addToCart} />)
         }
