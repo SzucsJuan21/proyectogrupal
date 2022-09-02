@@ -3,11 +3,10 @@ import './Cards.css'
 
 const Cards = (props) => {
     return (
-    <figure className="figure-card">
-    {props.children}
-    </figure>
-    
-);
+        <figure className="figure-card">
+            {props.children}
+        </figure>
+    );
 };
 
 

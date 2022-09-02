@@ -5,6 +5,7 @@ import budinlimon from "../Imagenes/budinlimon.jpg";
 import chipa from "../Imagenes/chipa.jpg";
 import pastafrola from "../Imagenes/pastafrola.jpg";
 import tostado from "../Imagenes/tostado.jpg";
+import Boton from "../Utilidades/Boton"
 
 const data = [
   {
@@ -27,7 +28,7 @@ const data = [
     title: "Tostado jamón y queso",
     txt: <p>$15.99</p>,
   },
-  
+
 ];
 
 const Section = () => {
@@ -39,13 +40,19 @@ const Section = () => {
             src={item.src}
             alt={item.title}
           />
-          <figcaption>
-            <h3 className="item-title">
-              {item.title}
-            </h3>
-            <p className="valores">
-              {item.txt}
-            </p>
+          <figcaption className="card-fcaption">
+            <div style={{ marginTop: '15px' }}>
+              <h3 className="item-title">
+                {item.title}
+              </h3>
+              <p className="valores">
+                {item.txt}
+              </p>
+            </div>
+            <div style={{ marginTop: '10px' }}>
+              <Boton color="#FF8126" colorHover="#D96817" texto="Añadir al carro" />
+            </div>
+
           </figcaption>
         </Cards>
       ))}
