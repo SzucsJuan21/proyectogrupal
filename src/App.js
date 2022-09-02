@@ -2,6 +2,7 @@ import "./App.css";
 import Header from "./Componentes/Header/Header";
 import Itemlista from "./Componentes/Footer/item";
 import Home from "./Rutas/Home";
+import BannerRS from './Componentes/Banner Redes Sociales/BannerRS'
 
 import {
   Route,
@@ -26,6 +27,7 @@ function App() {
       </main>
 
       <footer>
+        <BannerRS />
         <Itemlista />
       </footer>
     </>
