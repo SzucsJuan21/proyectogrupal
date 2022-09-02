@@ -1,4 +1,3 @@
-import BotonIcono from "../Utilidades/BotonIcono";
 import { Link } from 'react-router-dom';
 import { useState } from "react";
 import { BiCart, BiUser, BiSearchAlt2 } from "react-icons/bi";
