@@ -3,6 +3,8 @@ import Header from "./Componentes/Header/Header";
 import Itemlista from "./Componentes/Footer/item";
 import Home from "./Rutas/Home";
 import RutaCarrito from "./Rutas/RutaCarrito";
+import CatalogoA from "./Rutas/CatalogoA";
+import CatalogoB from "./Rutas/CatalogoB"
 import BannerRS from './Componentes/Banner Redes Sociales/BannerRS';
 import axios from "axios";
 import { useReducer, useEffect } from "react";
@@ -42,6 +44,8 @@ function App() {
         <Routes>
 
           <Route path='/' exact element={<Home data={state} dispatch={dispatch} />} />
+          <Route path='/tienda/a' element={<CatalogoA data={state} dispatch={dispatch} />} />
+          <Route path='/tienda/b' element={<CatalogoB data={state} dispatch={dispatch} />} />
           <Route path='/carrito' element={<RutaCarrito data={state} dispatch={dispatch} />} />
 
         </Routes>

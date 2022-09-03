@@ -71,7 +71,7 @@ const Section = ({data, dispatch}) => {
   return (
     <div className="cards-container">
       {products.map((product) => (
-        <Cards key={product.id} data={product} addToCart={addToCart}  />
+        product.id < 5 && <Cards key={product.id} data={product} addToCart={addToCart}  />
       ))}
     </div>
   );

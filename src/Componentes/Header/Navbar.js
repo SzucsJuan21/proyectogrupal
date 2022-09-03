@@ -8,40 +8,28 @@ const Navbar = () => {
     <div>
       <NavbarButtonsContainer>
         <NavbarButtons>
+          <NavbarBtn texto='Inicio' path='/' />
+        </NavbarButtons>
+        <NavbarButtons>
           <NavDropdown
-            texto="Occasions"
+            texto="Productos"
             botones={[
-              { textoBtn: "boton1" },
-              { textoBtn: "boton2" },
-              { textoBtn: "boton3" },
+              { textoBtn: "Panadería", path: '/tienda/a' },
+              { textoBtn: "Pastelería", path: '/tienda/b' },
             ]}
           />
         </NavbarButtons>
         <NavbarButtons>
           <NavDropdown
-            texto="All Categories"
+            texto="Box de Regalo"
             botones={[
-              { textoBtn: "boton1" },
-              { textoBtn: "boton2" },
-              { textoBtn: "boton3" },
+              { textoBtn: "Team Dulce", path: '/' },
+              { textoBtn: "Team Salado", path: '/' },
             ]}
           />
         </NavbarButtons>
         <NavbarButtons>
-          <NavDropdown
-            texto="Gifts &amp; Bundles"
-            botones={[
-              { textoBtn: "boton1" },
-              { textoBtn: "boton2" },
-              { textoBtn: "boton3" },
-            ]}
-          />
-        </NavbarButtons>
-        <NavbarButtons>
-          <NavbarBtn texto="Our Brands" />
-        </NavbarButtons>
-        <NavbarButtons>
-          <NavbarBtn texto="About Us" />
+          <NavbarBtn texto="Sobre Nosotros" path='/' />
         </NavbarButtons>
       </NavbarButtonsContainer>
     </div>

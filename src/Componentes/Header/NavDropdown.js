@@ -30,7 +30,7 @@ const NavDropdown = (props) => {
         >
           <div>
           {props.botones.map((el, index) => (
-            <NavDropdownBtn boton={el.textoBtn} key={index} />
+            <NavDropdownBtn path={el.path} textoBtn={el.textoBtn} key={index} />
           ))}
           </div>
         </DropdownMenu>
