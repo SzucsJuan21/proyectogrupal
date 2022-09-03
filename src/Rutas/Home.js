@@ -5,11 +5,12 @@ import Slider from '../Componentes/Slider/Slider'
 import Section from '../Componentes/Cards/Section'
 
 
-const Home = () => {
+const Home = (props) => {
+
   return (
     <div style={s.mainContainer}>
         <MainContainer/>
-        <Section /> 
+        <Section data={props.data} dispatch={props.dispatch}/> 
         <BannerInfo/>
         <Tc/>
         <Slider/>

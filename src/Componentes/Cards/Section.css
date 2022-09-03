@@ -44,3 +44,7 @@
     font-weight: bold;
     color: orange;
 }
+
+.valores p {
+    margin: 0;
+}

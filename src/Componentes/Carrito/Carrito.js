@@ -1,20 +1,22 @@
-import { useReducer } from "react"
+import { useReducer, useEffect } from "react"
 import { TYPES } from "../Utilidades/actions"
 import { cartInitialState, cartReducer } from "./cartReducer"
 import styled from "styled-components"
 import Producto from "./Producto"
 import CarritoItem from "./CarritoItem"
+import axios from 'axios'
 
-const Carrito = () => {
+const Carrito = ({data, dispatch}) => {
+  const { products, cart } = data
 
-  const [state, dispatch] = useReducer(cartReducer, cartInitialState);
-  const { products, cart } = state
-  const addToCart = (id) => dispatch({type: TYPES.ADD_TO_CART, payload: id});
-  const removeFromCart = (btnType,id) => dispatch({type: btnType, payload: id});
-  const clearCart = () => dispatch({type: TYPES.CLEAR_CART});
+  const removeFromCart = (btnType, id) => dispatch({ type: btnType, payload: id });
+
+  const clearCart = () => dispatch({ type: TYPES.CLEAR_CART });
 
   let total = 0;
   cart.map(item => total += item.price * item.count);
+
+
 
   return (
     <MainContainer>
@@ -26,13 +28,7 @@ const Carrito = () => {
       </div>
       <button onClick={() => clearCart()}>limpiar</button>
 
-      <h3>total: ${total}</h3>
-
-      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-        {
-          products.map(product => <Producto key={product.id} data={product} addToCart={addToCart} />)
-        }
-      </div>
+      <h3>total: ${total.toFixed(2)}</h3>
     </MainContainer>
   )
 }

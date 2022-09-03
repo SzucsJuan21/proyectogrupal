@@ -7,7 +7,7 @@ import Menu from "./Menu";
 import Notificacion from "./Notificacion";
 import { Link } from 'react-router-dom';
 
-const Header = () => {
+const Header = (props) => {
   const { width, height } = useWindowSize();
 
   return (
@@ -31,7 +31,7 @@ const Header = () => {
               <Navbar />
             </NavbarWrapper>
             <IconsWrapper>
-              <HeaderIconos />
+              <HeaderIconos data={props.data} />
             </IconsWrapper>
           </NavContainer>
         )}
