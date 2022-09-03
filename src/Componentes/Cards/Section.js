@@ -10,30 +10,6 @@ import { cartReducer, cartInitialState } from "../Carrito/cartReducer"
 import axios from "axios";
 import { TYPES } from "../Utilidades/actions"
 
-const data = [
-  {
-    src: budinlimon,
-    title: "Budin de limón",
-    txt: <p>$19.99</p>,
-  },
-  {
-    src: chipa,
-    title: "Chipá",
-    txt: <p>$25.99</p>,
-  },
-  {
-    src: pastafrola,
-    title: "Pastafrola de membrillo",
-    txt: <p>$30.99</p>,
-  },
-  {
-    src: tostado,
-    title: "Tostado jamón y queso",
-    txt: <p>$15.99</p>,
-  },
-
-];
-
 const Section = ({data, dispatch}) => {
   const { products, cart } = data
 
