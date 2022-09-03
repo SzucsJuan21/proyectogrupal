@@ -7,10 +7,10 @@ export const cartInitialState = {
 export function cartReducer(state, action) {
 
 
-
+    console.log(state)
     switch (action.type) {
 
-        case 'READ_STATE': {
+        case 'GET_STATE': {
             return {
                 ...state,
                 products: action.payload[0],
@@ -21,7 +21,6 @@ export function cartReducer(state, action) {
         case 'ADD_TO_CART': {
             let newItem = state.products.find(product => product.id === action.payload)
             let itemInCart = state.cart.find(item => item.id === newItem.id)
-
             return itemInCart
                 ? {
                     ...state,
@@ -61,6 +60,6 @@ export function cartReducer(state, action) {
 
         default: return state;
     }
-
+    
 
 }

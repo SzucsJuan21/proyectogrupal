@@ -3,7 +3,11 @@ import Header from "./Componentes/Header/Header";
 import Itemlista from "./Componentes/Footer/item";
 import Home from "./Rutas/Home";
 import RutaCarrito from "./Rutas/RutaCarrito";
-import BannerRS from './Componentes/Banner Redes Sociales/BannerRS'
+import BannerRS from './Componentes/Banner Redes Sociales/BannerRS';
+import axios from "axios";
+import { useReducer, useEffect } from "react";
+import { cartInitialState, cartReducer } from "./Componentes/Carrito/cartReducer";
+import { TYPES } from "./Componentes/Utilidades/actions";
 import {
   Route,
   Routes,
@@ -11,19 +15,34 @@ import {
 
 
 function App() {
+  // GET carrito
+  const [state, dispatch] = useReducer(cartReducer, cartInitialState);
+  const updateCart = async () => {
+    const resProducts = await axios.get('http://localhost:3001/products'),
+      resCart = await axios.get('http://localhost:3001/cart');
+    const productsList = await resProducts.data,
+      cartList = await resCart.data;
+      console.log(productsList)
+      console.log(cartList)
+    dispatch({ type: TYPES.GET_STATE, payload: [productsList, cartList] })
+  } 
+  useEffect(() => {
+    updateCart()
+  }, [])
+  // GET carrito
  
 
   return (
     <>
       <header style={s.header}>
-        <Header />
+        <Header data={state.cart} />
       </header>
 
       <main style={s.main}>
         <Routes>
 
-          <Route path='/' exact element={<Home />} />
-          <Route path='/carrito' element={<RutaCarrito />} />
+          <Route path='/' exact element={<Home data={state} dispatch={dispatch} />} />
+          <Route path='/carrito' element={<RutaCarrito data={state} dispatch={dispatch} />} />
 
         </Routes>
       </main>

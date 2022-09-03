@@ -1,9 +1,9 @@
 import Carrito from "../Componentes/Carrito/Carrito"
 
-const RutaCarrito = () => {
+const RutaCarrito = (props) => {
   return (
     <div>
-        <Carrito/>
+        <Carrito data={props.data} dispatch={props.dispatch}/>
     </div>
   )
 }

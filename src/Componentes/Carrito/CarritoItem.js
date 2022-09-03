@@ -3,12 +3,13 @@ import { TYPES } from '../Utilidades/actions'
 import React from 'react'
 
 const CarritoItem = ({ data, removeFromCart }) => {
+    console.log(data)
     return (
         <Container>
             <div style={{ display: 'flex', justifyContent: 'space-evenly' }}>
                 <p>x{data.count ? data.count : 1} </p>
-                <p>{data.name}</p>
-                <p>${data.count ? data.price * data.count : data.price}</p>
+                <p>{data.title}</p>
+                <p>${data.count ? (data.price * data.count).toFixed(2) : data.price.toFixed(2)}</p>
             </div>
             <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <button onClick={() => removeFromCart(TYPES.REMOVE_ONE_PRODUCT, data.id )} style={{height:'30px', margin:'auto 10px'}}>remover</button>

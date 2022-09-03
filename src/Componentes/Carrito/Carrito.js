@@ -6,57 +6,8 @@ import Producto from "./Producto"
 import CarritoItem from "./CarritoItem"
 import axios from 'axios'
 
-const Carrito = () => {
-
-  const [state, dispatch] = useReducer(cartReducer, cartInitialState);
-  const { products, cart } = state
-
-  const updateCart = async () => {
-    const resProducts = await axios.get('http://localhost:3001/products'),
-      resCart = await axios.get('http://localhost:3001/cart');
-
-    const productsList = await resProducts.data,
-      cartList = await resCart.data;
-
-    dispatch({ type: TYPES.READ_STATE, payload: [productsList, cartList] })
-  }
-
-  useEffect(() => {
-    updateCart()
-  }, [])
-
-
-
-  const addToCart = async (id) => {
-    dispatch({ type: TYPES.ADD_TO_CART, payload: id })
-    
-    const addedItem = products.find(item => item.id === id)
-    const itemIncart = cart.find(item => item.id === id)
-
-    if (itemIncart) {
-      
-      let options = {
-        method: 'PUT',
-        headers: { "content-type": "application/json" },
-        data: JSON.stringify({...itemIncart, count: itemIncart.count + 1})
-      }
-
-      let res = await axios(`http://localhost:3001/cart/${id}`, options)
-      //let item = await res.data
-
-    } else {
-
-      let options = {
-        method: 'POST',
-        headers: { "content-type": "application/json" },
-        data: JSON.stringify({...addedItem, count: 1})
-      }
-
-      let res = await axios('http://localhost:3001/cart', options)
-      //let item = await res.data
-
-    }
-  };
+const Carrito = ({data, dispatch}) => {
+  const { products, cart } = data
 
   const removeFromCart = (btnType, id) => dispatch({ type: btnType, payload: id });
 
@@ -77,13 +28,7 @@ const Carrito = () => {
       </div>
       <button onClick={() => clearCart()}>limpiar</button>
 
-      <h3>total: ${total}</h3>
-
-      <div style={{ display: 'flex', alignItems:'center', justifyContent:'center', flexWrap: 'wrap' }}>
-        {
-          products.map(product => <Producto key={product.id} data={product} addToCart={addToCart} />)
-        }
-      </div>
+      <h3>total: ${total.toFixed(2)}</h3>
     </MainContainer>
   )
 }
