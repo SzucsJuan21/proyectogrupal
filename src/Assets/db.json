@@ -2,84 +2,28 @@
   "products": [
     {
       "id": 1,
-      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/franco-cardoso/src/Componentes/Imagenes/budinlimon.jpg",
+      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/budinlimon.jpg",
       "title": "Budin de limón",
       "price": 19.99,
       "category": "panaderia"
     },
     {
       "id": 2,
-      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/franco-cardoso/src/Componentes/Imagenes/chipa.jpg",
+      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/chipa.jpgg",
       "title": "Chipá",
       "price": 25.99,
       "category": "panaderia"
     },
     {
       "id": 3,
-      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/franco-cardoso/src/Componentes/Imagenes/pastafrola.jpg",
+      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/pastafrola.jpg",
       "title": "Pastafrola de membrillo",
       "price": 30.99,
       "category": "panaderia"
     },
     {
       "id": 4,
-      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/franco-cardoso/src/Componentes/Imagenes/tostado.jpg",
-      "title": "Tostado jamón y queso",
-      "price": 15.99,
-      "category": "panaderia"
-    },
-    {
-      "id": 5,
-      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/franco-cardoso/src/Componentes/Imagenes/budinlimon.jpg",
-      "title": "Budin de limón",
-      "price": 19.99,
-      "category": "panaderia"
-    },
-    {
-      "id": 6,
-      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/franco-cardoso/src/Componentes/Imagenes/chipa.jpg",
-      "title": "Chipá",
-      "price": 25.99,
-      "category": "panaderia"
-    },
-    {
-      "id": 7,
-      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/franco-cardoso/src/Componentes/Imagenes/pastafrola.jpg",
-      "title": "Pastafrola de membrillo",
-      "price": 30.99,
-      "category": "panaderia"
-    },
-    {
-      "id": 8,
-      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/franco-cardoso/src/Componentes/Imagenes/tostado.jpg",
-      "title": "Tostado jamón y queso",
-      "price": 15.99,
-      "category": "panaderia"
-    },
-    {
-      "id": 9,
-      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/franco-cardoso/src/Componentes/Imagenes/budinlimon.jpg",
-      "title": "Budin de limón",
-      "price": 19.99,
-      "category": "panaderia"
-    },
-    {
-      "id": 10,
-      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/franco-cardoso/src/Componentes/Imagenes/chipa.jpg",
-      "title": "Chipá",
-      "price": 25.99,
-      "category": "panaderia"
-    },
-    {
-      "id": 11,
-      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/franco-cardoso/src/Componentes/Imagenes/pastafrola.jpg",
-      "title": "Pastafrola de membrillo",
-      "price": 30.99,
-      "category": "panaderia"
-    },
-    {
-      "id": 12,
-      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/franco-cardoso/src/Componentes/Imagenes/tostado.jpg",
+      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/tostado.jpg",
       "title": "Tostado jamón y queso",
       "price": 15.99,
       "category": "panaderia"
