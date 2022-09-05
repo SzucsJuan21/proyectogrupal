@@ -1,22 +1,29 @@
 import React from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 import "./Cards.css";
-import "./Section.css";
 
 const Cards = ({ data, addToCart }) => {
   return (
-    <figure className="figure-card">
-      <img className="img-bakery" src={data.img} alt={data.title} />
-      <figcaption className="card-fcaption">
-        <div style={{ marginTop: "15px" }}>
-          <h3 className="item-title">{data.title}</h3>
-          <p className="valores">${data.price}</p>
-        </div>
-        <div style={{ marginTop: "10px" }}>
-          <Btn onClick={() => addToCart(data.id)}>Añadir al carro</Btn>
-        </div>
-      </figcaption>
-    </figure>
+    <motion.div>
+      <motion.figure
+        className="figure-card"
+        initial={{ opacity: 0, bottom: "100px" }}
+        animate={{ opacity: 1, bottom: 0 }}
+        transition={{ delay: data.id*0.1, duration: 0.08 }}
+      >
+        <img className="img-bakery" src={data.img} alt={data.title} />
+        <figcaption className="card-fcaption">
+          <div style={{ marginTop: "15px" }}>
+            <h3 className="item-title">{data.title}</h3>
+            <p className="valores">${data.price}</p>
+          </div>
+          <div style={{ marginTop: "10px" }}>
+            <Btn onClick={() => addToCart(data.id)}>Añadir al carro</Btn>
+          </div>
+        </figcaption>
+      </motion.figure>
+    </motion.div>
   );
 };
 

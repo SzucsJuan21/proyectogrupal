@@ -5,9 +5,7 @@ export const cartInitialState = {
 
 
 export function cartReducer(state, action) {
-
-
-    console.log(state)
+    
     switch (action.type) {
 
         case 'GET_STATE': {
@@ -17,7 +15,7 @@ export function cartReducer(state, action) {
                 cart: action.payload[1]
             }
         }
-
+        
         case 'ADD_TO_CART': {
             let newItem = state.products.find(product => product.id === action.payload)
             let itemInCart = state.cart.find(item => item.id === newItem.id)

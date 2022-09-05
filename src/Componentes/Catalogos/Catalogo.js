@@ -48,6 +48,7 @@ const Catalogo = ({ category, data, dispatch }) => {
 };
 
 const MainContainer = styled.div`
+  min-height: 740px;
   display: flex;
   flex-direction: column;
   align-items: center;

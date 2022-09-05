@@ -1,12 +1,6 @@
 import React from "react";
 import './Section.css'
 import Cards from './Cards'
-import budinlimon from "../Imagenes/budinlimon.jpg";
-import chipa from "../Imagenes/chipa.jpg";
-import pastafrola from "../Imagenes/pastafrola.jpg";
-import tostado from "../Imagenes/tostado.jpg";
-import { useReducer } from "react";
-import { cartReducer, cartInitialState } from "../Carrito/cartReducer"
 import axios from "axios";
 import { TYPES } from "../Utilidades/actions"
 

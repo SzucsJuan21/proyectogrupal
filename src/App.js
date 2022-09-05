@@ -24,8 +24,6 @@ function App() {
       resCart = await axios.get('http://localhost:3001/cart');
     const productsList = await resProducts.data,
       cartList = await resCart.data;
-      console.log(productsList)
-      console.log(cartList)
     dispatch({ type: TYPES.GET_STATE, payload: [productsList, cartList] })
   } 
   useEffect(() => {
