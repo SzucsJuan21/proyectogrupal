@@ -15,7 +15,8 @@ const BannerInfo = (props) => {
           fontFamily: "Poppins, sans-serif",
         }}
       >
-        Our Charity Partner, City Bakery
+        {/* Our Charity Partner, City Bakery */}
+        En Premium Bakery amamos lo que hacemos
       </h1>
       <img
         style={{
@@ -33,6 +34,7 @@ const BannerInfo = (props) => {
 const Container = styled.div`
   width: 100%;
   height: 300px;
+  margin: 2rem 0;
   background-image: url(${background});
   align-items: center;
 `;
