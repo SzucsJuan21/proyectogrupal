@@ -1,17 +1,56 @@
-import { useReducer, useEffect } from "react"
 import { TYPES } from "../Utilidades/actions"
-import { cartInitialState, cartReducer } from "./cartReducer"
 import styled from "styled-components"
-import Producto from "./Producto"
 import CarritoItem from "./CarritoItem"
-import axios from 'axios'
+import { cartInitialState } from "./cartReducer"
+import axios from "axios"
 
 const Carrito = ({data, dispatch}) => {
   const { products, cart } = data
 
-  const removeFromCart = (btnType, id) => dispatch({ type: btnType, payload: id });
+  const removeFromCart = async (btnType, id) => {
+    const itemIncart = cart.find((item) => item.id === id);
+    const endpoint = `http://localhost:3001/cart/${id}`;
 
-  const clearCart = () => dispatch({ type: TYPES.CLEAR_CART });
+    if (btnType === "REMOVE_ALL_PRODUCTS" || (btnType === "REMOVE_ONE_PRODUCT" && itemIncart.count === 1)) {
+      
+      let options = {
+        method: "DELETE",
+        headers: { "content-type": "application/json" },
+      };
+      let res = await axios(endpoint, options);
+
+      if (res.status >= 200 && res.status < 300) {
+        dispatch({ type: btnType, payload: id });
+      }
+
+    } else if (btnType === "REMOVE_ONE_PRODUCT") {
+
+      let options = {
+        method: "PUT",
+        headers: { "content-type": "application/json" },
+        data: JSON.stringify({ ...itemIncart, count: itemIncart.count - 1 }),
+      };
+      let res = await axios(endpoint, options);
+
+      if (res.status >= 200 && res.status < 300) {
+        dispatch({ type: TYPES.REMOVE_ONE_PRODUCT, payload: id });
+      }
+    
+    } 
+  } 
+
+  const clearCart = () => {
+    let options = {
+      method: "DELETE",
+      headers: { "content-type": "application/json" },
+    }
+    cart.forEach(async item => {
+      const endpoint = `http://localhost:3001/cart/${item.id}`;
+      let res = await axios(endpoint,options)
+    });
+
+    dispatch({ type: TYPES.CLEAR_CART });
+  }
 
   let total = 0;
   cart.map(item => total += item.price * item.count);

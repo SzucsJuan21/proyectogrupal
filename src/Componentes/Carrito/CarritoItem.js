@@ -3,7 +3,6 @@ import { TYPES } from '../Utilidades/actions'
 import React from 'react'
 
 const CarritoItem = ({ data, removeFromCart }) => {
-    console.log(data)
     return (
         <Container>
             <div style={{ display: 'flex', justifyContent: 'space-evenly' }}>

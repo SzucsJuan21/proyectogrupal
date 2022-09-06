@@ -7,12 +7,11 @@ const Catalogo = ({ category, data, dispatch }) => {
   const { products, cart } = data;
 
   const addToCart = async (id) => {
-    dispatch({ type: TYPES.ADD_TO_CART, payload: id });
-
     const addedItem = products.find((item) => item.id === id);
     const itemIncart = cart.find((item) => item.id === id);
 
     if (itemIncart) {
+
       let options = {
         method: "PUT",
         headers: { "content-type": "application/json" },
@@ -20,8 +19,12 @@ const Catalogo = ({ category, data, dispatch }) => {
       };
 
       let res = await axios(`http://localhost:3001/cart/${id}`, options);
-      let item = await res.data;
+      if (res.status >= 200 && res.status < 300) {
+        dispatch({ type: TYPES.ADD_TO_CART, payload: id });
+      }
+
     } else {
+
       let options = {
         method: "POST",
         headers: { "content-type": "application/json" },
@@ -29,8 +32,12 @@ const Catalogo = ({ category, data, dispatch }) => {
       };
 
       let res = await axios("http://localhost:3001/cart", options);
-      let item = await res.data;
+      if (res.status >= 200 && res.status < 300) {
+        dispatch({ type: TYPES.ADD_TO_CART, payload: id });
+      }
+
     }
+    
   };
 
   return (
@@ -38,7 +45,7 @@ const Catalogo = ({ category, data, dispatch }) => {
       <CardContainer>
         {products.length === 0 && (
           <div style={{ height: '100%', display:'flex', alignItems:'center' }}>
-            <h1 style={{ color: "red", fontSize:'30px' }}>Error: Fallo al recibir datos</h1>
+            <h1 style={{ color: "red", fontSize:'30px' }}>Error: Fallo al recibir los datos</h1>
           </div>
         )}
         {products.map(
@@ -61,11 +68,11 @@ const MainContainer = styled.div`
 `;
 
 const CardContainer = styled.div`
-  margin: 0 80px;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: space-between;
+  width: fit-content;
 `;
 
 export default Catalogo;

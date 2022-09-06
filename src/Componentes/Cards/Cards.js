@@ -5,7 +5,6 @@ import "./Cards.css";
 
 const Cards = ({ data, addToCart }) => {
   return (
-    <motion.div>
       <motion.figure
         className="figure-card"
         initial={{ opacity: 0, bottom: "100px" }}
@@ -23,7 +22,6 @@ const Cards = ({ data, addToCart }) => {
           </div>
         </figcaption>
       </motion.figure>
-    </motion.div>
   );
 };
 
