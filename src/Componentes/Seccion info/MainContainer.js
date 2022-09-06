@@ -83,7 +83,6 @@ margin-bottom: 100px;
  margin: 20px;
 
 }
-
 @media (min-width: 1260px) {
   width: 80%;
   height: 600px;
