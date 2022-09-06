@@ -36,6 +36,11 @@ const Catalogo = ({ category, data, dispatch }) => {
   return (
     <MainContainer>
       <CardContainer>
+        {products.length === 0 && (
+          <div style={{ height: '100%', display:'flex', alignItems:'center' }}>
+            <h1 style={{ color: "red", fontSize:'30px' }}>Error: Fallo al recibir datos</h1>
+          </div>
+        )}
         {products.map(
           (product) =>
             product.category === category && (
@@ -52,7 +57,7 @@ const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 `;
 
 const CardContainer = styled.div`

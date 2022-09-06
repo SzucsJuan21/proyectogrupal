@@ -24,7 +24,6 @@ const NavDropdown = (props) => {
       </Btn>
       {isHover && (
         <DropdownMenu
-          btns={props.botones.length}
           onMouseEnter={() => setisHover(true)}
           onMouseLeave={() => setisHover(false)}
         >

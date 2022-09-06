@@ -42,8 +42,8 @@ function App() {
         <Routes>
 
           <Route path='/' exact element={<Home data={state} dispatch={dispatch} />} />
-          <Route path='/tienda/a' element={<CatalogoA data={state} dispatch={dispatch} />} />
-          <Route path='/tienda/b' element={<CatalogoB data={state} dispatch={dispatch} />} />
+          <Route path='/tienda/panaderia' element={<CatalogoA data={state} dispatch={dispatch} />} />
+          <Route path='/tienda/pasteleria' element={<CatalogoB data={state} dispatch={dispatch} />} />
           <Route path='/carrito' element={<RutaCarrito data={state} dispatch={dispatch} />} />
 
         </Routes>

@@ -14,8 +14,8 @@ const Navbar = () => {
           <NavDropdown
             texto="Productos"
             botones={[
-              { textoBtn: "Panadería", path: '/tienda/a' },
-              { textoBtn: "Pastelería", path: '/tienda/b' },
+              { textoBtn: "Panadería", path: '/tienda/panaderia' },
+              { textoBtn: "Pastelería", path: '/tienda/pasteleria' },
             ]}
           />
         </NavbarButtons>
