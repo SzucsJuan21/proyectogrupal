@@ -15,7 +15,8 @@ const BannerInfo = (props) => {
           fontFamily: "Poppins, sans-serif",
         }}
       >
-        Our Charity Partner, City Bakery
+        {/* Our Charity Partner, City Bakery */}
+        En Premium Bakery amamos lo que hacemos
       </h1>
       <img
         style={{
