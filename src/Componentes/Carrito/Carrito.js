@@ -1,11 +1,10 @@
 import { TYPES } from "../Utilidades/actions"
 import styled from "styled-components"
 import CarritoItem from "./CarritoItem"
-import { cartInitialState } from "./cartReducer"
 import axios from "axios"
 
 const Carrito = ({data, dispatch}) => {
-  const { products, cart } = data
+  const { cart } = data
 
   const removeFromCart = async (btnType, id) => {
     const itemIncart = cart.find((item) => item.id === id);
@@ -39,13 +38,15 @@ const Carrito = ({data, dispatch}) => {
     } 
   } 
 
-  const clearCart = () => {
+  const clearCart = async () => {
     let options = {
       method: "DELETE",
       headers: { "content-type": "application/json" },
     }
+
     cart.forEach(async item => {
       const endpoint = `http://localhost:3001/cart/${item.id}`;
+      // eslint-disable-next-line
       let res = await axios(endpoint,options)
     });
 

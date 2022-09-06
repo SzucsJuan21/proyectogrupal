@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const MenuBtn = (props) => {
+const MenuBtn = ({path, texto, closeMenu}) => {
   return (
     <div>
-      <Link to={props.path} style={{textDecoration:'none'}} >
-        <Btn>{props.texto}</Btn>
+      <Link to={path} style={{textDecoration:'none'}} onClick={closeMenu} >
+        <Btn>{texto}</Btn>
       </Link>
     </div>
   );

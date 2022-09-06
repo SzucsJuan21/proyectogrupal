@@ -35,7 +35,7 @@ const Header = (props) => {
             </IconsWrapper>
           </NavContainer>
         )}
-        {width < 1280 && <Menu></Menu>}
+        {width < 1280 && <Menu data={props.data}/>}
       </Container>
     </>
 

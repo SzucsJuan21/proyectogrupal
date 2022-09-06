@@ -6,24 +6,33 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { IoClose } from "react-icons/io5";
 import { motion, useCycle } from "framer-motion";
 import MenuDropdown from "./MenuDropdown";
+import HeaderIconos from "./HeaderIconos";
 
-const Burger = () => {
+const Menu = (props) => {
   const [showMenu, setShowMenu] = useState(false);
   const { width } = useWindowSize();
   const [x, cycleX] = useCycle(-500, -70);
   const [op, cycleOp] = useCycle(0, 1);
+  const closeMenu = () => {
+    cycleX();
+    cycleOp();
+    setTimeout(() => {
+      setShowMenu(false);
+    }, 400);
+  };
 
   return (
     <Wrapper>
+      <HeaderIconos data={props.data} />
       <button
-        style={{ all: "unset", cursor: "pointer" }}
+        style={{ all: "unset", cursor: "pointer", margin: "5px 0 0 15px" }}
         onClick={() => {
           setShowMenu(true);
           cycleX();
           cycleOp();
         }}
       >
-        <GiHamburgerMenu size="40" />
+        <GiHamburgerMenu size="50" />
       </button>
 
       {showMenu && (
@@ -50,13 +59,7 @@ const Burger = () => {
               }}
             >
               <button
-                onClick={() => {
-                  cycleX();
-                  cycleOp();
-                  setTimeout(() => {
-                    setShowMenu(false);
-                  }, 400);
-                }}
+                onClick={closeMenu}
                 style={{ all: "unset", pointer: "cursor" }}
               >
                 <IoClose size="30" />
@@ -68,9 +71,10 @@ const Burger = () => {
           </MenuTopCont>
 
           <MenuButtonsContainer>
-            <MenuBtn texto="Inicio" path='/' />
+            <MenuBtn texto="Inicio" path="/" closeMenu={closeMenu} />
             <MenuDropdown
               texto="Productos"
+              closeMenu={closeMenu}
               botones={[
                 { textoBtn: "Panadería", path: "/tienda/panaderia" },
                 { textoBtn: "Pastelería", path: "/tienda/pasteleria" },
@@ -78,12 +82,17 @@ const Burger = () => {
             />
             <MenuDropdown
               texto="Box de Regalo"
+              closeMenu={closeMenu}
               botones={[
                 { textoBtn: "Team Dulce", path: "/" },
                 { textoBtn: "Team Salado", path: "/" },
               ]}
             />
-            <MenuBtn texto="Sobre Nosotros" path='/' />
+            <MenuBtn
+              texto="Sobre Nosotros"
+              path="/"
+              closeMenu={closeMenu}
+            />
           </MenuButtonsContainer>
         </motion.div>
       )}
@@ -121,6 +130,6 @@ const MenuTopCont = styled.div`
 const MenuButtonsContainer = styled.div`
   display: flex;
   flex-direction: column;
-`
+`;
 
-export default Burger;
+export default Menu;

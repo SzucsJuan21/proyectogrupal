@@ -29,5 +29,14 @@
       "category": "panaderia"
     }
   ],
-  "cart": []
+  "cart": [
+    {
+      "id": 1,
+      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/budinlimon.jpg",
+      "title": "Budin de limón",
+      "price": 19.99,
+      "category": "panaderia",
+      "count": 3
+    }
+  ]
 }

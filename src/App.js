@@ -6,24 +6,23 @@ import RutaCarrito from "./Rutas/RutaCarrito";
 import CatalogoA from "./Rutas/CatalogoA";
 import CatalogoB from "./Rutas/CatalogoB"
 import BannerRS from './Componentes/Banner Redes Sociales/BannerRS';
-import axios, { AxiosError } from "axios";
+import axios from "axios";
 import { useReducer, useEffect } from "react";
 import { cartInitialState, cartReducer } from "./Componentes/Carrito/cartReducer";
 import { TYPES } from "./Componentes/Utilidades/actions";
 import {
   Route,
   Routes,
+  useLocation,
 } from "react-router-dom";
 
 
 function App() {
   // GET carrito
-  let status
   const [state, dispatch] = useReducer(cartReducer, cartInitialState);
   const updateCart = async () => {
     const resProducts = await axios.get('http://localhost:3001/products'),
       resCart = await axios.get('http://localhost:3001/cart');
-
     const productsList = await resProducts.data,
       cartList = await resCart.data;
     dispatch({ type: TYPES.GET_STATE, payload: [productsList, cartList] })
@@ -32,6 +31,13 @@ function App() {
     updateCart()
   }, [])
   // GET carrito
+  
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0,0);
+  }, [pathname])
+  
+ 
 
   return (
     <>

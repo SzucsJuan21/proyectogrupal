@@ -4,20 +4,20 @@ import MenuBtn from "./MenuBtn";
 import { motion } from 'framer-motion'
 
 
-const MenuDropdown = (props) => {
+const MenuDropdown = ({texto, botones, closeMenu}) => {
   const [isHover, setisHover] = useState(false);
   return (
     <DropdownContainer>
       <Btn
         onClick={() => setisHover(!isHover)}
       >
-        {props.texto} <Arrow></Arrow>
+        {texto} <Arrow></Arrow>
       </Btn>
       {isHover && (
         <motion.div style={{margin:'0 25px'}} initial={{opacity:0, height:0}} animate={{opacity:1, height:null}}  >
           <div>
-          {props.botones.map((el, index) => (
-            <MenuBtn path={el.path} texto={el.textoBtn} key={index} />
+          {botones.map((el, index) => (
+            <MenuBtn path={el.path} texto={el.textoBtn} key={index} closeMenu={closeMenu} />
           ))}
           </div>
         </motion.div>
