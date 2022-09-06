@@ -30,13 +30,5 @@
     }
   ],
   "cart": [
-    {
-      "id": 3,
-      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/pastafrola.jpg",
-      "title": "Pastafrola de membrillo",
-      "price": 30.99,
-      "category": "panaderia",
-      "count": 1
-    }
   ]
 }

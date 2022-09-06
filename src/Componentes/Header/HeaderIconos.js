@@ -39,12 +39,16 @@ const HeaderIconos = ({ data }) => {
             onMouseEnter={() => setIsHover3(true)}
             onMouseLeave={() => setIsHover3(false)}
           />
+          {count > 0 && (
+            <div
+              style={s.test}
+              onMouseEnter={() => setIsHover3(true)}
+              onMouseLeave={() => setIsHover3(false)}
+            >
+              <span style={{ lineHeight: "2px", color: "white" }}>{count}</span>
+            </div>
+          )}
         </Link>
-        {count > 0 && (
-          <div style={s.test}>
-            <span style={{ lineHeight: "2px", color: "white" }}>{count}</span>
-          </div>
-        )}
       </li>
     </div>
   );
