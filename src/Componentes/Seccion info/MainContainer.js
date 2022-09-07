@@ -1,6 +1,6 @@
 import React from "react";
 import SubSection from "./SubSection";
-import img1 from "../Seccion info/img/img1.jpg";
+import img1 from "../Seccion info/img/img1.png";
 import Boton from "../Utilidades/Boton";
 import styled from "styled-components";
 
@@ -11,7 +11,7 @@ const MainContainer = () => {
         <h1
           style={{
             color: "#FF8126",
-            margin: '0',
+            margin: "0",
           }}
         >
           Who Makes{" "}
@@ -29,9 +29,8 @@ const MainContainer = () => {
         </h3>
         <ul
           style={{
-            lineHeight: "220%",
-            
-            
+            lineHeight: 3,
+            fontSize: "18px",
           }}
         >
           <li>
@@ -49,50 +48,54 @@ const MainContainer = () => {
           <li>Because it supports local jobs</li>
           <li>Because it makes more sense for the environment</li>
         </ul>
-        <Boton color="#FF8126" colorHover="#D96817" texto="Discover our Producers" />
+
+        <div
+          style={{ width: "100%", display: "flex", justifyContent: "center" }}
+        >
+          <div style={{ width: "300px" }}>
+            <Boton
+              color="#FF8126"
+              colorHover="#D96817"
+              texto="Discover our Producers"
+            />
+          </div>
+        </div>
       </SubSection>
-      <SubSection>
-        <img
-          style={{
-            objectFit: "fill",
-          }}
-          src={img1}
-        ></img>
-        </SubSection>
-      
-      
+      <ImgWrapper>
+        <Img src={img1}></Img>
+      </ImgWrapper>
     </Container>
   );
 };
 
-const Container = styled.div `
-width: 90%;
-height: 110vh;
-margin: auto;
-display: grid;
-grid-template-rows: 90%, auto;
-border-radius: 5px; 
-margin-bottom: 100px;
-
-@media (min-width: 620px) {
-  height: 130vh;
- margin: 20px
-}
-@media (min-width: 900px) {
-  height: 150vh;
- margin: 20px;
-
-}
-@media (min-width: 1260px) {
-  width: 80%;
-  height: 600px;
-  display: grid;
-  grid-template-columns: auto auto;
-  border-radius: 5px;
-  align-items: center;
+const Container = styled.div`
+  overflow: hidden;
+  width: 100%;
   margin: auto;
-  padding-bottom: 25px
-};
-`
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+
+  @media (min-width: 1280px) {
+    display: grid;
+    grid-template-columns: 56% auto;
+  }
+`;
+
+const ImgWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  @media (max-width: 1280px) {
+    margin: 20px 0;
+  }
+`;
+
+const Img = styled.img`
+  height: 100%;
+  width: 100%;
+  @media (max-width: 1280px) {
+    width: 80%;
+  }
+`;
 
 export default MainContainer;

@@ -36,23 +36,26 @@ const Catalogo = ({ category, data, dispatch, status }) => {
   };
   return (
     <MainContainer>
+      {status === null && (
+        <div
+          style={{
+            height: "740px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            flexDirection: "column",
+          }}
+        >
+        </div>
+      )}
+      {status < 200 && status >= 300 && (
+        <div style={{ height: "100%", display: "flex", alignItems: "center" }}>
+          <h1 style={{ color: "red", fontSize: "30px" }}>
+            Error {status}: Fallo al recibir los datos
+          </h1>
+        </div>
+      )}
       <CardContainer>
-        {status === null && (
-          <div style={{ height: "100%", display: "flex", alignItems: "center" }}>
-            <h1 style={{ fontSize: "30px" }}>
-              Cargando...
-            </h1>
-          </div>
-        )}
-        {status < 200 && status >= 300 && (
-          <div
-            style={{ height: "100%", display: "flex", alignItems: "center" }}
-          >
-            <h1 style={{ color: "red", fontSize: "30px" }}>
-              Error {status}: Fallo al recibir los datos
-            </h1>
-          </div>
-        )}
         {products.map(
           (product) =>
             product.category === category && (
