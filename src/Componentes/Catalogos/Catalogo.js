@@ -73,11 +73,20 @@ const MainContainer = styled.div`
 `;
 
 const CardContainer = styled.div`
-  display: flex;
-  align-items: stretch;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  width: fit-content;
+  display: grid;
+  grid-template-columns: 1fr;
+  @media (min-width: 620px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (min-width: 920px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  @media (min-width: 1280px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  @media (min-width: 1600px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
 `;
 
 export default Catalogo;

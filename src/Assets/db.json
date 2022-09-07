@@ -114,13 +114,5 @@
     }
   ],
   "cart": [
-    {
-      "id": 5,
-      "img": " https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/Assents/img/relleno.png",
-      "title": "Pan Relleno c/u",
-      "price": 200,
-      "category": "panaderia",
-      "count": 1
-    }
   ]
 }
