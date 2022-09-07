@@ -7,7 +7,7 @@ import CatalogoA from "./Rutas/CatalogoA";
 import CatalogoB from "./Rutas/CatalogoB"
 import BannerRS from './Componentes/Banner Redes Sociales/BannerRS';
 import axios from "axios";
-import { useReducer, useEffect } from "react";
+import { useReducer, useEffect, useState } from "react";
 import { cartInitialState, cartReducer } from "./Componentes/Carrito/cartReducer";
 import { TYPES } from "./Componentes/Utilidades/actions";
 import {
@@ -18,19 +18,25 @@ import {
 
 
 function App() {
-  // GET carrito
+  // GET productos y carrito
   const [state, dispatch] = useReducer(cartReducer, cartInitialState);
+  const [isLoading, setIsLoading] = useState(true)
+  const [status, setStatus] = useState(null)
   const updateCart = async () => {
     const resProducts = await axios.get('http://localhost:3001/products'),
-      resCart = await axios.get('http://localhost:3001/cart');
+    resCart = await axios.get('http://localhost:3001/cart');
+    setStatus(resProducts.status)
+    
     const productsList = await resProducts.data,
       cartList = await resCart.data;
     dispatch({ type: TYPES.GET_STATE, payload: [productsList, cartList] })
   } 
   useEffect(() => {
+    setIsLoading(true)
     updateCart()
+    setIsLoading(false)
   }, [])
-  // GET carrito
+  // GET productos y carrito
   
   const { pathname } = useLocation();
   useEffect(() => {
@@ -48,9 +54,9 @@ function App() {
       <main style={s.main}>
         <Routes>
 
-          <Route path='/' exact element={<Home data={state} dispatch={dispatch} />} />
-          <Route path='/tienda/panaderia' element={<CatalogoA data={state} dispatch={dispatch} />} />
-          <Route path='/tienda/pasteleria' element={<CatalogoB data={state} dispatch={dispatch} />} />
+          <Route path='/' exact element={<Home data={state} status={status} dispatch={dispatch} />} />
+          <Route path='/tienda/panaderia' element={<CatalogoA data={state} status={status} isLoading={isLoading} dispatch={dispatch} />} />
+          <Route path='/tienda/pasteleria' element={<CatalogoB data={state} status={status} isLoading={isLoading} dispatch={dispatch} />} />
           <Route path='/carrito' element={<RutaCarrito data={state} dispatch={dispatch} />} />
 
         </Routes>
