@@ -92,9 +92,11 @@ const ImgWrapper = styled.div`
 
 const Img = styled.img`
   height: 100%;
-  width: 100%;
   @media (max-width: 1280px) {
-    width: 80%;
+    width: 70%;
+  }
+  @media (max-width: 720px) {
+    width: 90%;
   }
 `;
 
