@@ -1,6 +1,6 @@
 import React from "react";
 import SubSection from "./SubSection";
-import img1 from "../Seccion info/img/img1.jpg";
+import panaderia from "../Seccion info/img/panaderia.jpg";
 import Boton from "../Utilidades/Boton";
 import styled from "styled-components";
 
@@ -49,14 +49,14 @@ const MainContainer = () => {
           <li>Because it supports local jobs</li>
           <li>Because it makes more sense for the environment</li>
         </ul>
-        <Boton color="#FF8126" colorHover="#D96817" texto="Discover our Producers" />
+        <Boton color="#FF8126" colorHover="#D96817" texto="Descubre nuestros productos" />
       </SubSection>
       <SubSection>
         <img
           style={{
             objectFit: "fill",
           }}
-          src={img1}
+          src={panaderia}
         ></img>
         </SubSection>
       
