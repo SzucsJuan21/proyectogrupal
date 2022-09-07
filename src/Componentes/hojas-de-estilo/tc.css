@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Crete+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Crimson+Text&display=swap');
+
+.componentes-tc {
+  width: 100%;
+  height: 100%;
+  margin: 10px 10px 10px;
+  padding: 1px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fff;
+  justify-content: space-around;
+  /* box-shadow: 0 3px 13px 1px rgb(110, 108, 108); */
+
+
+
+
+
+}
+
+.imagen-tc {
+  width: 730px;
+  height: 100%;
+  justify-content: right;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+
+}
+
+.contenedor-tc {
+
+  width: 700px;
+  height: 100%;
+  font-family: 'Cormorant Garamond', serif;
+  letter-spacing: 0em;
+  text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+
+
+
+}
+
+.titulo-tc {
+  left: 656px;
+  top: 2850px;
+  margin-top: 30px;
+  height: 97px;
+  width: 569px;
+  left: 656px;
+  top: 2850px;
+  font-family: 'Crete Round', serif;
+  font-style: normal;
+  font-weight: 700px;
+  font-size: 2rem;
+  line-height: 60px;
+  letter-spacing: 2px;
+  color: #FF8126;
+
+
+
+}
+
+/* .subtitulo-tc {
+
+  width: 569px;
+  height: 97px;
+  left: 656px;
+  top: 2850px;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600px;
+  font-size: 2rem;
+  line-height: 60px;
+  color: #030303;
+
+
+} */
+
+.texto-tc {
+
+  width: 569px;
+  height: 134px;
+  left: 656px;
+  top: 2967px;
+
+  font-family: 'Crimson Text', serif;
+  font-style: unset;
+  font-weight: 500px;
+  font-size: 1.3rem;
+  line-height: 30px;
+  text-align: justify;
+  color: #1F1F1F;
+
+
+
+
+}
+
+@media (max-width:600px) {
+  .componentes-tc {
+    flex-direction: column;
+
+  }
+
+  .componentes-tc {
+    width: 100%;
+  }
+
+  .contenedor-tc {
+    flex-direction: column;
+  }
+
+  .contenedor-tc {
+    width: 100%;
+  }
+
+  .imagen-tc {
+    flex-direction: column;
+  }
+
+  .imagen-tc {
+    width: 100%;
+  }
+
+  .texto-tc {
+    flex-direction: column;
+  }
+
+  .texto-tc {
+    width: 100%;
+    font-size: 14px;
+    margin: 0%;
+    padding: 0%;
+
+
+  }
+
+  .titulo-tc {
+    flex-direction: column;
+
+
+  }
+
+  .titulo-tc {
+    width: 100%;
+    font-size: 14px;
+    margin: 0%;
+    padding: 0%;
+    ;
+  }
+
+  .subtitulo-tc {
+    flex-direction: column;
+
+  }
+
+  .subtitulo-tc {
+    width: 100%;
+    font-size: 14px;
+    margin: 0%;
+    padding: 0%;
+
+  }
+
+
+}

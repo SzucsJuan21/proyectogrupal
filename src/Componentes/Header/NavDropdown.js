@@ -27,9 +27,11 @@ const NavDropdown = (props) => {
           onMouseEnter={() => setisHover(true)}
           onMouseLeave={() => setisHover(false)}
         >
-          {props.botones.map((el) => (
-            <NavDropdownBtn boton={el.textoBtn} />
+          <div>
+          {props.botones.map((el, index) => (
+            <NavDropdownBtn path={el.path} textoBtn={el.textoBtn} key={index} />
           ))}
+          </div>
         </DropdownMenu>
       )}
     </DropdownContainer>
@@ -82,7 +84,7 @@ const DropdownMenu = styled.div`
   position: absolute;
   transition: 1s;
   box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.2);
-  bottom: -115px;
+  top: 40px;
   animation: ${anim} 400ms;
   display: flex;
   flex-direction: column;

@@ -1,26 +1,69 @@
-import './App.css'
-import BannerRS from "./Componentes/Banner Redes Sociales/BannerRS";
+import "./App.css";
 import Header from "./Componentes/Header/Header";
-import MainContainer from "./Componentes/Seccion info/MainContainer";
-import BannerInfo from "./Componentes/Banner Info/BannerInfo";
+import Itemlista from "./Componentes/Footer/item";
+import Home from "./Rutas/Home";
+import RutaCarrito from "./Rutas/RutaCarrito";
+import CatalogoA from "./Rutas/CatalogoA";
+import CatalogoB from "./Rutas/CatalogoB"
+import BannerRS from './Componentes/Banner Redes Sociales/BannerRS';
+import axios from "axios";
+import { useReducer, useEffect } from "react";
+import { cartInitialState, cartReducer } from "./Componentes/Carrito/cartReducer";
+import { TYPES } from "./Componentes/Utilidades/actions";
+import {
+  Route,
+  Routes,
+  useLocation,
+} from "react-router-dom";
+
 
 function App() {
+  // GET carrito
+  const [state, dispatch] = useReducer(cartReducer, cartInitialState);
+  const updateCart = async () => {
+    const resProducts = await axios.get('http://localhost:3001/products'),
+      resCart = await axios.get('http://localhost:3001/cart');
+    const productsList = await resProducts.data,
+      cartList = await resCart.data;
+    dispatch({ type: TYPES.GET_STATE, payload: [productsList, cartList] })
+  } 
+  useEffect(() => {
+    updateCart()
+  }, [])
+  // GET carrito
+  
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0,0);
+  }, [pathname])
+  
+ 
+
   return (
     <>
       <header style={s.header}>
-        <Header />
+        <Header data={state.cart} />
       </header>
 
       <main style={s.main}>
-        <MainContainer />
-        <BannerInfo />
-        <BannerRS />
+        <Routes>
+
+          <Route path='/' exact element={<Home data={state} dispatch={dispatch} />} />
+          <Route path='/tienda/panaderia' element={<CatalogoA data={state} dispatch={dispatch} />} />
+          <Route path='/tienda/pasteleria' element={<CatalogoB data={state} dispatch={dispatch} />} />
+          <Route path='/carrito' element={<RutaCarrito data={state} dispatch={dispatch} />} />
+
+        </Routes>
       </main>
+
+      <footer>
+        <BannerRS />
+        <Itemlista />
+      </footer>
     </>
+
   );
 }
-
-
 
 const s = {
   header: {
@@ -28,10 +71,10 @@ const s = {
     position: "fixed",
     top: "0",
     width: "100%",
+    zIndex: "2",
   },
-
   main: {
-    margin: "130px 0 0 0",
+    margin: '140px 0',
   },
 };
 

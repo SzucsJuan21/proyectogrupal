@@ -12,7 +12,7 @@ import styled, { createGlobalStyle } from "styled-components";
 const Boton = (props) => {
   return (
     <Btn color={props.color} colorHover={props.colorHover}>
-      <BotonTxt>{props.texto}</BotonTxt>
+      {props.texto}
     </Btn>
   );
 };
@@ -25,16 +25,12 @@ const Btn = styled.button`
   cursor: pointer;
   background-color: ${props => props.color};
   transition: 200ms;
+  font-size: 18px;
+ color: #fff;
+ font-weight: 500;
   &:hover {
     background-color: ${props => props.colorHover};;
   }
 `;
-const BotonTxt = styled.span`
- font-size: 18px;
- color: #fff;
- font-weight: 500;
- margin: 0 20px;
- transition: 200ms;
-`
 
 export default Boton;

@@ -6,7 +6,7 @@ const SubSection = (props) => {
 };
 
 const Container = styled.div`
-  width: 90%;
+  width: 80%;
   margin-bottom: 50px;
   font-family: Poppins, sans-serif;
   line-height: 1.6;
@@ -22,11 +22,10 @@ const Container = styled.div`
     display: flex;
     justify-content: space-around;
     margin: 10px;
-    
-    
   }
   @media (min-width: 620px) {
-    
+    width: 90%;
+    padding-left: 20px
   }
 `;
 export default SubSection;

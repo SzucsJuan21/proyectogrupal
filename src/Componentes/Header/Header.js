@@ -4,35 +4,41 @@ import HeaderIconos from "./HeaderIconos";
 import Navbar from "./Navbar";
 import styled from "styled-components";
 import Menu from "./Menu";
+import Notificacion from "./Notificacion";
+import { Link } from 'react-router-dom';
 
-const Header = () => {
+const Header = (props) => {
   const { width, height } = useWindowSize();
 
   return (
-    <Container>
-      <div>
-        <a href="">
-          <img
-            src="https://www.kadencewp.com/wp-content/uploads/2020/10/alogo-2.png"
-            width="153px"
-            height="120px"
-            alt=""
-          />
-        </a>
-      </div>
+    <>
+      <Notificacion></Notificacion>
+      <Container>
+        <div>
+          <Link to='/' >
+            <img
+              src="https://www.kadencewp.com/wp-content/uploads/2020/10/alogo-2.png"
+              width="115px"
+              height="90px"
+              alt=""
+            />
+          </Link>
+        </div>
 
-      {width > 1279 && (
-        <NavContainer>
-          <NavbarWrapper>
-            <Navbar />
-          </NavbarWrapper>
-          <IconsWrapper>
-            <HeaderIconos />
-          </IconsWrapper>
-        </NavContainer>
-      )}
-      {width < 1280 && <Menu></Menu>}
-    </Container>
+        {width > 1279 && (
+          <NavContainer>
+            <NavbarWrapper>
+              <Navbar />
+            </NavbarWrapper>
+            <IconsWrapper>
+              <HeaderIconos data={props.data} />
+            </IconsWrapper>
+          </NavContainer>
+        )}
+        {width < 1280 && <Menu data={props.data}/>}
+      </Container>
+    </>
+
   );
 };
 
@@ -41,7 +47,7 @@ const Container = styled.div`
   justify-content: space-between;
   width: 100%;
   margin: 0 40px 0 0;
-  box-shadow: 0px 0px 20px 0px rgb(0,0,0,0.2);
+  box-shadow: 0px 4px 20px 0px rgb(0,0,0,0.2);
   @media (min-width: 1280px) {
     display: grid;
     grid-template-columns: 160px 1fr;

@@ -1,11 +1,12 @@
 import BotonIcono from "../Utilidades/BotonIcono";
 import styled from "styled-components";
 
+
 const BannerRS = () => {
   return (
     <Container>
       <TitleContainer>
-        <Title>Tell a friend</Title>
+        <Title>Cuéntale a tus amigos</Title>
       </TitleContainer>
       <IconContainer>
         <Icon>
@@ -42,8 +43,8 @@ const TitleContainer = styled.div`
 `;
 
 const Title = styled.h1`
-  font-family: "Times New Roman", Times, serif;
-  font-size: 44px;
+  font-family: 'Crete Round', serif;
+  font-size: 42px;
 `;
 
 const IconContainer = styled.div`

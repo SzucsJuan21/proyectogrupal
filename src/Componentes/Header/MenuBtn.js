@@ -1,15 +1,19 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-const MenuBtn = (props) => {
+const MenuBtn = ({path, texto, closeMenu}) => {
   return (
     <div>
-      <Btn>{props.texto}</Btn>
+      <Link to={path} style={{textDecoration:'none'}} onClick={closeMenu} >
+        <Btn>{texto}</Btn>
+      </Link>
     </div>
   );
 };
 
 const Btn = styled.button`
   all: unset;
+  color: #000;
   text-align: start;
   margin: 0 0 10px 20px;
   border-radius: 10px;

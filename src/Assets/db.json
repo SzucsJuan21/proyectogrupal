@@ -1,0 +1,42 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/budinlimon.jpg",
+      "title": "Budin de limón",
+      "price": 19.99,
+      "category": "panaderia"
+    },
+    {
+      "id": 2,
+      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/chipa.jpg",
+      "title": "Chipá",
+      "price": 25.99,
+      "category": "panaderia"
+    },
+    {
+      "id": 3,
+      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/pastafrola.jpg",
+      "title": "Pastafrola de membrillo",
+      "price": 30.99,
+      "category": "panaderia"
+    },
+    {
+      "id": 4,
+      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/tostado.jpg",
+      "title": "Tostado jamón y queso",
+      "price": 15.99,
+      "category": "panaderia"
+    }
+  ],
+  "cart": [
+    {
+      "id": 1,
+      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/budinlimon.jpg",
+      "title": "Budin de limón",
+      "price": 19.99,
+      "category": "panaderia",
+      "count": 3
+    }
+  ]
+}

@@ -11,6 +11,7 @@ const MainContainer = () => {
         <h1
           style={{
             color: "#FF8126",
+            margin: '0',
           }}
         >
           Who Makes{" "}
@@ -38,7 +39,7 @@ const MainContainer = () => {
             live here.
           </li>
           <li>
-            Because it’s more meaningful to cook and eat something made by a
+            Because it's more meaningful to cook and eat something made by a
             person nearby than by some distant corporation
           </li>
           <li>
@@ -66,20 +67,25 @@ const MainContainer = () => {
 
 const Container = styled.div `
 width: 90%;
-height: 110vh;
+height: 120vh;
 margin: auto;
 display: grid;
-grid-template-rows: 90%, auto;
+grid-template-rows: auto, auto;
 border-radius: 5px; 
 margin-bottom: 100px;
 
+@media (min-width: 580px) {
+  height: 100vh;
+ grid-template-rows: 90%, auto;
+}
 @media (min-width: 620px) {
-  height: 130vh;
+  height: 120vh;
  margin: 20px
 }
 @media (min-width: 900px) {
-  height: 150vh;
+  height: 140vh;
  margin: 20px;
+ grid-template-rows: auto, 40%;
 
 }
 @media (min-width: 1260px) {
