@@ -1,6 +1,6 @@
 import React from "react";
 import SubSection from "./SubSection";
-import img1 from "../Seccion info/img/img1.png";
+import panaderia from "../Seccion info/img/panaderia.jpg";
 import Boton from "../Utilidades/Boton";
 import styled from "styled-components";
 
@@ -62,7 +62,7 @@ const MainContainer = () => {
         </div>
       </SubSection>
       <ImgWrapper>
-        <Img src={img1}></Img>
+        <Img src={panaderia}></Img>
       </ImgWrapper>
     </Container>
   );
