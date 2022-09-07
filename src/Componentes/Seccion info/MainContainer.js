@@ -56,7 +56,7 @@ const MainContainer = () => {
             <Boton
               color="#FF8126"
               colorHover="#D96817"
-              texto="Discover our Producers"
+              texto="Descubre nuestros productos"
             />
           </div>
         </div>
