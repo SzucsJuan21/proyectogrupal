@@ -14,16 +14,16 @@ const Header = (props) => {
     <>
       <Notificacion></Notificacion>
       <Container>
-        <div>
+        <Img>
           <Link to='/' >
             <img
               src="https://www.kadencewp.com/wp-content/uploads/2020/10/alogo-2.png"
-              width="115px"
-              height="90px"
+              width='100%'
+              height='100%'
               alt=""
             />
           </Link>
-        </div>
+        </Img>
 
         {width > 1279 && (
           <NavContainer>
@@ -41,6 +41,15 @@ const Header = (props) => {
 
   );
 };
+
+const Img = styled.div`
+  width: 80px;
+  height: 70px;
+  @media (min-width: 780px) {
+    width: 130px;
+    height: 100px;
+  }
+`
 
 const Container = styled.div`
   display: flex;
