@@ -1,27 +1,51 @@
 import { useState } from "react";
 import styled from "styled-components";
 import MenuBtn from "./MenuBtn";
-import { motion } from 'framer-motion'
+import { motion, useCycle, AnimatePresence } from "framer-motion";
 
+const MenuDropdown = ({ texto, botones, closeMenu }) => {
+  const [dropdown, setDropdown] = useState(false);
+  const [h, cycleH] = useCycle(0, null);
+  const [y, cycleY] = useCycle(50, 0);
+  const [op, cycleOp] = useCycle(0, 1);
 
-const MenuDropdown = ({texto, botones, closeMenu}) => {
-  const [isHover, setisHover] = useState(false);
   return (
     <DropdownContainer>
       <Btn
-        onClick={() => setisHover(!isHover)}
+        onClick={() => {
+          !dropdown && setDropdown(true);
+          cycleH();
+          cycleY();
+          cycleOp();
+          dropdown &&
+            setTimeout(() => {
+              setDropdown(false);
+            }, 100);
+        }}
       >
         {texto} <Arrow></Arrow>
       </Btn>
-      {isHover && (
-        <motion.div style={{margin:'0 25px'}} initial={{opacity:0, height:0}} animate={{opacity:1, height:null}}  >
-          <div>
-          {botones.map((el, index) => (
-            <MenuBtn path={el.path} texto={el.textoBtn} key={index} closeMenu={closeMenu} />
-          ))}
-          </div>
-        </motion.div>
-      )}
+      <AnimatePresence>
+        {dropdown && (
+          <motion.div
+            style={{ margin: "0 25px", position: "relative", overflow:'hidden', border:'none' }}
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: null }}
+            exit={{ opacity: 0, height: 0 }}
+          >
+            <div>
+              {botones.map((el, index) => (
+                <MenuBtn
+                  path={el.path}
+                  texto={el.textoBtn}
+                  key={index}
+                  closeMenu={closeMenu}
+                />
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </DropdownContainer>
   );
 };

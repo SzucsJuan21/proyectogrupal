@@ -1,6 +1,6 @@
 import React from "react";
 import SubSection from "./SubSection";
-import img1 from "../Seccion info/img/img1.jpg";
+import panaderia from "../Seccion info/img/panaderia.jpg";
 import Boton from "../Utilidades/Boton";
 import styled from "styled-components";
 
@@ -11,59 +11,67 @@ const MainContainer = () => {
         <h1
           style={{
             color: "#FF8126",
-            margin: '0',
+            margin: "0",
+            fontSize: "30px",
+            letterSpacing: "2px"
           }}
         >
-          Who Makes{" "}
-          <span
-            style={{
-              color: "black",
-            }}
-          >
-            Your Food
-          </span>
+          OBJETIVO
         </h1>
         <h3>
-          Our mission is to help grow the local food ecosystem in BC and across
-          Canada. Why?{" "}
+          Nuestro objetivo es lograr un vínculo de confianza con el cliente. Para eso, 
+          ponemos a su disposición nuestras elaboraciones realizadas con la mejor
+          materia prima del mercado. {" "} 
         </h3>
-        <ul
+        <h1
           style={{
-            lineHeight: "220%",
-            
-            
+            color: "#FF8126",
+            margin: "0",
+            fontSize: "30px",
+            letterSpacing: "2px"
           }}
         >
-          <li>
-            Because it connects us to the land we live on, and to the people who
-            live here.
-          </li>
-          <li>
-            Because it's more meaningful to cook and eat something made by a
-            person nearby than by some distant corporation
-          </li>
-          <li>
-            Because good local food makes our corner of the world a better place
-            to live
-          </li>
-          <li>Because it supports local jobs</li>
-          <li>Because it makes more sense for the environment</li>
-        </ul>
-        <Boton color="#FF8126" colorHover="#D96817" texto="Discover our Producers" />
-      </SubSection>
-      <SubSection>
-        <img
+          VISION
+        </h1>
+        <h3>
+          Lograr posicionar al negocio, dentro del rubro Panadería/Pastelería, como uno
+          de los 3 mejores del país, para los próximos años. {" "} 
+        </h3>
+        <h1
           style={{
-            objectFit: "fill",
+            color: "#FF8126",
+            margin: "0",
+            fontSize: "30px",
+            letterSpacing: "2px"
           }}
-          src={img1}
-        ></img>
-        </SubSection>
-      
-      
+        >
+          STAFF
+        </h1>
+        <h3>
+          Contamos con un equipo de maestros panaderos y pasteleros que impulsados por su
+          creatividad combinan técnicas tradicionales y modernas con el fin de obtener productos
+          únicos y originales. {" "} 
+        </h3>
+
+        <div
+          style={{ width: "100%", display: "flex", justifyContent: "center" }}
+        >
+          <div style={{ width: "300px" }}>
+            <Boton
+              color="#FF8126"
+              colorHover="#D96817"
+              texto="Descubre nuestros productos"
+            />
+          </div>
+        </div>
+      </SubSection>
+      <ImgWrapper>
+        <Img src={panaderia}></Img>
+      </ImgWrapper>
     </Container>
   );
 };
+
 
 const Container = styled.div `
 width: 90%;
@@ -99,5 +107,38 @@ margin-bottom: 100px;
   padding-bottom: 25px
 };
 `
+
+const Container = styled.div`
+  overflow: hidden;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+
+  @media (min-width: 1280px) {
+    display: grid;
+    grid-template-columns: 56% auto;
+  }
+`;
+
+const ImgWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  @media (max-width: 1280px) {
+    margin: 20px 0;
+  }
+`;
+
+const Img = styled.img`
+  height: 100%;
+  @media (max-width: 1280px) {
+    width: 70%;
+  }
+  @media (max-width: 720px) {
+    width: 90%;
+  }
+`;
+
 
 export default MainContainer;

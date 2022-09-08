@@ -32,7 +32,7 @@ const Menu = (props) => {
           cycleOp();
         }}
       >
-        <GiHamburgerMenu size="50" />
+        <GiHamburgerMenu size={width < 1280 ? 40 : 60} />
       </button>
 
       {showMenu && (

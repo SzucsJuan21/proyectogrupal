@@ -3,7 +3,7 @@ import Cards from "../Cards/Cards";
 import axios from "axios";
 import { TYPES } from "../Utilidades/actions";
 
-const Catalogo = ({ category, data, dispatch }) => {
+const Catalogo = ({ category, data, dispatch, status }) => {
   const { products, cart } = data;
 
   const addToCart = async (id) => {
@@ -11,7 +11,6 @@ const Catalogo = ({ category, data, dispatch }) => {
     const itemIncart = cart.find((item) => item.id === id);
 
     if (itemIncart) {
-
       let options = {
         method: "PUT",
         headers: { "content-type": "application/json" },
@@ -22,9 +21,7 @@ const Catalogo = ({ category, data, dispatch }) => {
       if (res.status >= 200 && res.status < 300) {
         dispatch({ type: TYPES.ADD_TO_CART, payload: id });
       }
-
     } else {
-
       let options = {
         method: "POST",
         headers: { "content-type": "application/json" },
@@ -35,19 +32,30 @@ const Catalogo = ({ category, data, dispatch }) => {
       if (res.status >= 200 && res.status < 300) {
         dispatch({ type: TYPES.ADD_TO_CART, payload: id });
       }
-
     }
-    
   };
-
   return (
     <MainContainer>
+      {status === null && (
+        <div
+          style={{
+            height: "740px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            flexDirection: "column",
+          }}
+        >
+        </div>
+      )}
+      {status < 200 && status >= 300 && (
+        <div style={{ height: "100%", display: "flex", alignItems: "center" }}>
+          <h1 style={{ color: "red", fontSize: "30px" }}>
+            Error {status}: Fallo al recibir los datos
+          </h1>
+        </div>
+      )}
       <CardContainer>
-        {products.length === 0 && (
-          <div style={{ height: '100%', display:'flex', alignItems:'center' }}>
-            <h1 style={{ color: "red", fontSize:'30px' }}>Error: Fallo al recibir los datos</h1>
-          </div>
-        )}
         {products.map(
           (product) =>
             product.category === category && (
@@ -68,11 +76,20 @@ const MainContainer = styled.div`
 `;
 
 const CardContainer = styled.div`
-  display: flex;
-  align-items: stretch;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  width: fit-content;
+  display: grid;
+  grid-template-columns: 1fr;
+  @media (min-width: 620px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (min-width: 920px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  @media (min-width: 1280px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  @media (min-width: 1600px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
 `;
 
 export default Catalogo;
