@@ -96,6 +96,7 @@ const ImgWrapper = styled.div`
 
 const Img = styled.img`
   height: 100%;
+  border-radius: 10px;
   @media (max-width: 1280px) {
     width: 70%;
   }

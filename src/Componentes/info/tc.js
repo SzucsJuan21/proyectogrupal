@@ -1,6 +1,5 @@
 
 
-import React from "react";
 import "../hojas-de-estilo/tc.css"
 
 

@@ -20,6 +20,7 @@ const Img = styled.img`
     border: 2px solid rgb(0,0,0,0.1);
     box-shadow: 1px 1px 10px rgb(0,0,0,0.4);
     pointer-events: none;
+    border-radius: 5px;
     @media (min-width: 780px) {
         width: 250px;
         height: 250px;

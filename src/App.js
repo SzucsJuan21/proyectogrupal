@@ -1,6 +1,6 @@
 import "./App.css";
 import Header from "./Componentes/Header/Header";
-import Itemlista from "./Componentes/Footer/item";
+import Footer from "./Componentes/Footer/Footer";
 import Home from "./Rutas/Home";
 import RutaCarrito from "./Rutas/RutaCarrito";
 import CatalogoA from "./Rutas/CatalogoA";
@@ -62,9 +62,9 @@ function App() {
         </Routes>
       </main>
 
-      <footer>
+      <footer style={s.footer}>
         <BannerRS />
-        <Itemlista />
+        <Footer />
       </footer>
     </>
 
