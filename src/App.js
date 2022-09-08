@@ -58,37 +58,10 @@ function App() {
 
       <main style={s.main}>
         <Routes>
-          <Route
-            path="/"
-            exact
-            element={<Home data={state} status={status} dispatch={dispatch} />}
-          />
-          <Route
-            path="/tienda/panaderia"
-            element={
-              <CatalogoA
-                data={state}
-                status={status}
-                isLoading={isLoading}
-                dispatch={dispatch}
-              />
-            }
-          />
-          <Route
-            path="/tienda/pasteleria"
-            element={
-              <CatalogoB
-                data={state}
-                status={status}
-                isLoading={isLoading}
-                dispatch={dispatch}
-              />
-            }
-          />
-          <Route
-            path="/carrito"
-            element={<RutaCarrito data={state} dispatch={dispatch} />}
-          />
+          <Route path='/' exact element={<Home data={state} status={status} dispatch={dispatch} />} />
+          <Route path='/tienda/panaderia' element={<CatalogoA data={state} status={status} isLoading={isLoading} dispatch={dispatch} />} />
+          <Route path='/tienda/pasteleria' element={<CatalogoB data={state} status={status} isLoading={isLoading} dispatch={dispatch} />} />
+          <Route path='/carrito' element={<RutaCarrito data={state} dispatch={dispatch} />} />
         </Routes>
       </main>
 
