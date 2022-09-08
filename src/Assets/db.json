@@ -30,7 +30,7 @@
     },
     {
       "id": 5,
-      "img": " https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/Assents/img/cremona.png",
+      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/cremona.png",
       "title": "Cremona c/u",
       "price": 20.12,
       "category": "panaderia"
@@ -44,7 +44,7 @@
     },
     {
       "id": 7,
-      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/miga_san.png",
+      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/miga%20san..png",
       "title": "Sandwich de Miga x 6 U.",
       "price": 66.99,
       "category": "panaderia"
