@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import NavDropdown from "./NavDropdown";
 import NavbarBtn from "./NavbarBtn";
-import useWindowSize from "../Utilidades/windowSize";
 
 const Navbar = () => {
   return (

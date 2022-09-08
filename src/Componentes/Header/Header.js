@@ -56,14 +56,15 @@ const Header = (props) => {
         {width > 1279 && (
           <NavContainer>
             <motion.div
-              style={{ display: "flex", alignItems: "center" }}
+              style={{ display: "flex", alignItems: "center", position: "relative", }}
               animate={{
-                opacity: isSearchBar ? [1, 0, 0] : 1,
+                opacity: isSearchBar ? [1, 0, 0, 0] : 1,
                 visibility: isSearchBar
-                  ? ["visible", "visible", "hidden"]
+                  ? ["visible", "visible", "visible", "hidden"]
                   : "visible",
+                left: isSearchBar ? 300 : null,
               }}
-              transition={{ duration: 0.8, times: [0, 0.2, 1] }}
+              transition={{ duration: 0.8, times: [0, 0.4, 0.9, 1] }}
             >
               <Navbar />
             </motion.div>
@@ -104,6 +105,7 @@ const s = {
     borderRadius: "15px",
     fontFamily: "Poppins",
     fontSize: "18px",
+    background: "transparent",
   },
 };
 
