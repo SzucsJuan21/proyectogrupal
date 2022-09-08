@@ -16,6 +16,7 @@ const Header = (props) => {
 
   return (
     <motion.header
+      initial={{ height: "150px" }}
       animate={{ height: showNotif ? "150px" : "100px" }}
       transition={{ duration: 0.4 }}
     >
