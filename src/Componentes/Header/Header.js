@@ -33,6 +33,7 @@ const Header = (props) => {
               <input
                 type="text"
                 placeholder="Buscar..."
+                autoFocus='autofocus'
                 style={{
                   ...s.input,
                   width: `${width * 0.4}px`,
