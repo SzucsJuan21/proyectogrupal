@@ -1,5 +1,4 @@
 import React from "react";
-import Boton from "../Utilidades/Boton";
 import logo from "../Banner Info/img/logo.png";
 import background from "../Banner Info/img/background.jpg";
 import styled from "styled-components";
@@ -26,6 +25,7 @@ const BannerInfo = (props) => {
           marginRight: "auto",
         }}
         src={logo}
+        alt={'logo'}
       ></img>
     </Container>
   );

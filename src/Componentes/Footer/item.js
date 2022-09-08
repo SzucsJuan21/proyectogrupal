@@ -1,7 +1,3 @@
-
-
-import { type } from "@testing-library/user-event/dist/type";
-import React from "react";
 import "../hojas-de-estilo/estilo.css"
 
 const ItemLista = () => {

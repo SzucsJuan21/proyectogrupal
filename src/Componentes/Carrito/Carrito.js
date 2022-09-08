@@ -6,6 +6,21 @@ import axios from "axios";
 const Carrito = ({ data, dispatch }) => {
   const { cart } = data;
 
+  const increaseAmount = async (id) => {
+    const itemIncart = cart.find((item) => item.id === id);
+
+    let options = {
+      method: "PUT",
+      headers: { "content-type": "application/json" },
+      data: JSON.stringify({ ...itemIncart, count: itemIncart.count + 1 }),
+    };
+
+    let res = await axios(`http://localhost:3001/cart/${id}`, options);
+    if (res.status >= 200 && res.status < 300) {
+      dispatch({ type: TYPES.ADD_TO_CART, payload: id });
+    }
+  };
+
   const removeFromCart = async (btnType, id) => {
     const itemIncart = cart.find((item) => item.id === id);
     const endpoint = `http://localhost:3001/cart/${id}`;
@@ -57,27 +72,33 @@ const Carrito = ({ data, dispatch }) => {
 
   return (
     <MainContainer>
-      <h1>CARRITO DE COMPRAS</h1>
+      <h1 style={{ fontFamily: "Poppins" }}>CARRITO DE COMPRAS</h1>
       <CartContainer>
         {cart.map((item) => (
           <CarritoItem
             key={item.id}
             data={item}
+            increaseAmount={increaseAmount}
             removeFromCart={removeFromCart}
+            dispatch={dispatch}
           />
         ))}
       </CartContainer>
       <Button onClick={() => clearCart()}>Limpiar</Button>
 
-      <h3 style={{
-      fontFamily: 'Poppins, sans-serif', 
-      fontSize: '30px', 
-      marginTop: '20px',
-      marginBottom: '0px',
-      padding:'7px',
-      border: '2px solid grey',
-      borderRadius: '5px'
-      }}>Total: ${total.toFixed(2)}</h3>
+      <h3
+        style={{
+          fontFamily: "Poppins, sans-serif",
+          fontSize: "30px",
+          marginTop: "20px",
+          marginBottom: "0px",
+          padding: "7px",
+          border: "2px solid grey",
+          borderRadius: "5px",
+        }}
+      >
+        Total: ${total.toFixed(2)}
+      </h3>
     </MainContainer>
   );
 };
@@ -87,7 +108,6 @@ const MainContainer = styled.main`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  
 `;
 
 const CartContainer = styled.div`

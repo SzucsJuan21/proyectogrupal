@@ -80,7 +80,7 @@ const s = {
     zIndex: "2",
   },
   main: {
-    margin: '140px auto',
+    margin: '180px auto',
   },
 };
 
