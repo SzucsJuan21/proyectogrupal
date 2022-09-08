@@ -26,7 +26,6 @@ const Banner = (props) => {
 export default Banner
 const s={
   container:{
-    marginTop:"50px",
     display:"grid",
     gridTemplateColumns:"50% 50%",
     backgroundColor:"#F4F4F4",

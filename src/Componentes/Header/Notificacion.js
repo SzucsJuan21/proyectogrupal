@@ -1,17 +1,14 @@
 import styled from "styled-components"
 import { IoClose } from "react-icons/io5";
-import { useState } from "react";
 
-const Notificacion = () => {
-    const [show, setShow] = useState(true)
-
+const Notificacion = ({showNotif,setShowNotif}) => {
     return (
-        <Container style={{top: show ? '0' : '-100px', height: show?'50px':'0px'}}>
+        <Container>
             <div></div>
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <Text>Free Delivery over $100. Gift with Purchase over $150</Text>
             </div>
-            <div style={{ display: 'flex', justifyContent: 'end' }}><Btn onClick={() => setShow(!show)}><IoClose size="40" /></Btn></div>
+            <div style={{ display: 'flex', justifyContent: 'end' }}><Btn onClick={() => setShowNotif(!showNotif)}><IoClose size="40" /></Btn></div>
         </Container>
     )
 }

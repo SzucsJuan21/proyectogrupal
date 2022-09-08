@@ -12,83 +12,101 @@ import { motion, AnimatePresence } from "framer-motion";
 const Header = (props) => {
   const { width } = useWindowSize();
   const [isSearchBar, setIsSearchBar] = useState(false);
+  const [showNotif, setShowNotif] = useState(true);
 
   return (
-    <>
-      <Notificacion></Notificacion>
-      <Container>
+    <motion.header
+      animate={{ height: showNotif ? "150px" : "100px" }}
+      transition={{ duration: 0.4 }}
+    >
+      <div style={s.header}>
+        
         <AnimatePresence>
-          {isSearchBar && (
-            <motion.div
-              style={{
-                ...s.inputWrapper,
-                width: `${width * 0.8}px`,
-                left: width < 660 ? "20px" : "150px",
-              }}
-              initial={{ width: 0 }}
-              animate={{ width: null }}
-              exit={{ width: 0 }}
-              transition={{ type: "tween", duration: 0.8 }}
-            >
-              <input
-                type="text"
-                placeholder="Buscar..."
-                autoFocus='autofocus'
-                style={{
-                  ...s.input,
-                  width: `${width * 0.4}px`,
-                }}
-              />
+          {showNotif && (
+            <motion.div style={{ overflow:'hidden' }} exit={{ height: 0 }} transition={{ duration: 0.4 }}>
+              <Notificacion showNotif={showNotif} setShowNotif={setShowNotif} />
             </motion.div>
           )}
         </AnimatePresence>
 
-        <Img isSearchBar={isSearchBar} screenWidth={width}>
-          <Link to="/">
-            <img
-              src="https://www.kadencewp.com/wp-content/uploads/2020/10/alogo-2.png"
-              width="100%"
-              height="100%"
-              alt=""
-            />
-          </Link>
-        </Img>
+        <Container>
+          <AnimatePresence>
+            {isSearchBar && (
+              <motion.div
+                style={{
+                  ...s.inputWrapper,
+                  width: `${width * 0.8}px`,
+                  left: width < 660 ? "20px" : "150px",
+                }}
+                initial={{ width: 0 }}
+                animate={{ width: null }}
+                exit={{ width: 0 }}
+                transition={{ type: "tween", duration: 0.8 }}
+              >
+                <input
+                  type="text"
+                  placeholder="Buscar..."
+                  autoFocus="autofocus"
+                  style={{
+                    ...s.input,
+                    width: `${width * 0.4}px`,
+                  }}
+                />
+              </motion.div>
+            )}
+          </AnimatePresence>
 
-        {width > 1279 && (
-          <NavContainer>
-            <motion.div
-              style={{ display: "flex", alignItems: "center", position: "relative", }}
-              animate={{
-                opacity: isSearchBar ? [1, 0, 0, 0] : 1,
-                visibility: isSearchBar
-                  ? ["visible", "visible", "visible", "hidden"]
-                  : "visible",
-                left: isSearchBar ? 300 : null,
-              }}
-              transition={{ duration: 0.8, times: [0, 0.4, 0.9, 1] }}
-            >
-              <Navbar />
-            </motion.div>
-
-            <IconsWrapper>
-              <HeaderIconos
-                data={props.data}
-                setIsSearchBar={setIsSearchBar}
-                isSearchBar={isSearchBar}
+          <Img isSearchBar={isSearchBar} screenWidth={width}>
+            <Link to="/">
+              <img
+                src="https://www.kadencewp.com/wp-content/uploads/2020/10/alogo-2.png"
+                width="100%"
+                height="100%"
+                alt=""
               />
-            </IconsWrapper>
-          </NavContainer>
-        )}
+            </Link>
+          </Img>
 
-        {width < 1280 && (
-          <Menu
-            data={props.data}
-            setIsSearchBar={setIsSearchBar}
-            isSearchBar={isSearchBar}
-          />
-        )}
-      </Container>
-    </>
+          {width > 1279 && (
+            <NavContainer>
+              <motion.div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  position: "relative",
+                }}
+                animate={{
+                  opacity: isSearchBar ? [1, 0, 0, 0] : 1,
+                  visibility: isSearchBar
+                    ? ["visible", "visible", "visible", "hidden"]
+                    : "visible",
+                  left: isSearchBar ? 300 : null,
+                }}
+                transition={{ duration: 0.8, times: [0, 0.4, 0.9, 1] }}
+              >
+                <Navbar />
+              </motion.div>
+
+              <IconsWrapper>
+                <HeaderIconos
+                  data={props.data}
+                  setIsSearchBar={setIsSearchBar}
+                  isSearchBar={isSearchBar}
+                />
+              </IconsWrapper>
+            </NavContainer>
+          )}
+
+          {width < 1280 && (
+            <Menu
+              data={props.data}
+              setIsSearchBar={setIsSearchBar}
+              isSearchBar={isSearchBar}
+            />
+          )}
+        </Container>
+      </div>
+    </motion.header>
   );
 };
 
@@ -107,6 +125,13 @@ const s = {
     fontFamily: "Poppins",
     fontSize: "18px",
     background: "transparent",
+  },
+  header: {
+    backgroundColor: "#fff",
+    position: "fixed",
+    top: "0",
+    width: "100%",
+    zIndex: "2",
   },
 };
 
@@ -139,11 +164,6 @@ const Container = styled.div`
 const NavContainer = styled.div`
   display: flex;
   justify-content: space-between;
-`;
-
-const NavbarWrapper = styled.div`
-  display: flex;
-  align-items: center;
 `;
 
 const IconsWrapper = styled.div`
