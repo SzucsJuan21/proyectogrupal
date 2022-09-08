@@ -20,9 +20,11 @@ function App() {
   const [state, dispatch] = useReducer(cartReducer, cartInitialState);
   const [isLoading, setIsLoading] = useState(true);
   const [status, setStatus] = useState(null);
+  
   const updateCart = async () => {
     let productsList;
     let cartList;
+    
     await axios
       .get("http://localhost:3001/products")
       .catch((err) => setStatus(err.response.status))
@@ -57,6 +59,7 @@ function App() {
       </header>
 
       <main style={s.main}>
+        {/* prettier-ignore */}
         <Routes>
           <Route path='/' exact element={<Home data={state} status={status} dispatch={dispatch} />} />
           <Route path='/tienda/panaderia' element={<CatalogoA data={state} status={status} isLoading={isLoading} dispatch={dispatch} />} />
