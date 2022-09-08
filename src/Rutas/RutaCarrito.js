@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const RutaCarrito = (props) => {
   return (
     <motion.div
-      style={{ position: "relative" }}
+      style={{ position: "relative", margin:'140px auto' }}
       initial={{ right: -1000, opacity: 0 }}
       animate={{ right: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
