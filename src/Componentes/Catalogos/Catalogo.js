@@ -34,24 +34,13 @@ const Catalogo = ({ category, data, dispatch, status }) => {
       }
     }
   };
+
   return (
     <MainContainer>
-      {status === null && (
-        <div
-          style={{
-            height: "740px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            flexDirection: "column",
-          }}
-        >
-          Cargando...
-        </div>
-      )}
-      {status < 200 && status >= 300 && (
+      {status === null && <Loading>Cargando...</Loading>}
+      {(status < 200 || status >= 300) && status !== null && (
         <div style={{ height: "100%", display: "flex", alignItems: "center" }}>
-          <h1 style={{ color: "red", fontSize: "30px" }}>
+          <h1 style={{ color: "#e40000", fontSize: "30px" }}>
             Error {status}: Fallo al recibir los datos
           </h1>
         </div>
@@ -67,6 +56,16 @@ const Catalogo = ({ category, data, dispatch, status }) => {
     </MainContainer>
   );
 };
+
+const Loading = styled.div`
+  height: 740px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-weight: bold;
+  font-size: 24px;
+`;
 
 const MainContainer = styled.div`
   min-height: 740px;
