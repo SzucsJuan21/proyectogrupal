@@ -23,7 +23,11 @@ const Menu = (props) => {
 
   return (
     <Wrapper>
-      <HeaderIconos data={props.data} />
+      <HeaderIconos
+        data={props.data}
+        setIsSearchBar={props.setIsSearchBar}
+        isSearchBar={props.isSearchBar}
+      />
       <button
         style={{ all: "unset", cursor: "pointer", margin: "5px 0 0 15px" }}
         onClick={() => {
@@ -88,11 +92,7 @@ const Menu = (props) => {
                 { textoBtn: "Team Salado", path: "/" },
               ]}
             />
-            <MenuBtn
-              texto="Sobre Nosotros"
-              path="/"
-              closeMenu={closeMenu}
-            />
+            <MenuBtn texto="Sobre Nosotros" path="/" closeMenu={closeMenu} />
           </MenuButtonsContainer>
         </motion.div>
       )}

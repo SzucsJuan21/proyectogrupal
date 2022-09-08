@@ -4,7 +4,7 @@ import { BiCart, BiUser, BiSearchAlt2 } from "react-icons/bi";
 import useWindowSize from "../Utilidades/windowSize";
 import styled from "styled-components";
 
-const HeaderIconos = ({ data }) => {
+const HeaderIconos = ({ data, setIsSearchBar, isSearchBar }) => {
   const [isHover1, setIsHover1] = useState(false);
   const [isHover2, setIsHover2] = useState(false);
   const [isHover3, setIsHover3] = useState(false);
@@ -15,14 +15,13 @@ const HeaderIconos = ({ data }) => {
   return (
     <div style={s.iconsContainer}>
       <IconItem>
-        <Link to="/">
           <BiSearchAlt2
             size={width < 780 ? 40 : 60}
             color={isHover1 ? "#445" : "#000"}
             onMouseEnter={() => setIsHover1(true)}
             onMouseLeave={() => setIsHover1(false)}
+            onClick={() => setIsSearchBar(!isSearchBar)}
           />
-        </Link>
       </IconItem>
       <IconItem>
         <Link to="/">

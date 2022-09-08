@@ -46,6 +46,7 @@ const Catalogo = ({ category, data, dispatch, status }) => {
             flexDirection: "column",
           }}
         >
+          Cargando...
         </div>
       )}
       {status < 200 && status >= 300 && (
