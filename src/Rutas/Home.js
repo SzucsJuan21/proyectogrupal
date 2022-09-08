@@ -1,10 +1,12 @@
 import MainContainer from "../Componentes/Seccion info/MainContainer";
 import BannerInfo from "../Componentes/Banner Info/BannerInfo";
+import Banner from "../Componentes/Banner Imagen/Banner";
 import Tc from "../Componentes/info/tc";
 import Slider from "../Componentes/Slider/Slider";
 import Section from "../Componentes/Cards/Section";
 import { motion } from "framer-motion";
 import styled from "styled-components";
+import ContainerCards from "../Componentes/CardsInfo/ContainerCards";
 
 const Home = (props) => {
   return (
@@ -14,8 +16,10 @@ const Home = (props) => {
       animate={{ left: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
+      <Banner />
       <Section1>
         <Section data={props.data} dispatch={props.dispatch} />
+        <ContainerCards />
         <MainContainer />
       </Section1>
 

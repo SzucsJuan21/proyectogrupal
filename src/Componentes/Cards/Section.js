@@ -60,7 +60,7 @@ const Section = ({ data, dispatch }) => {
           <div className="cards-container">
             {products.map(
               (product) =>
-                product.id < 5 && (
+                product.id <= 5 && (
                   <Cards
                     key={product.id}
                     data={product}

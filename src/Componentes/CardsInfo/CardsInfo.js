@@ -1,11 +1,9 @@
 const Cards = (props) => {
     return (
-      <div>
           <figure style={s.estilofig}>
               <div style={s.estiloicon}><ion-icon name="telescope-outline"></ion-icon></div>
               {props.children}
           </figure>
-      </div>
     )
   }
   
@@ -13,7 +11,7 @@ const Cards = (props) => {
   const s={
       estilofig:{
           heigth:"100px",
-          width:"100px",
+          width:"200px",
           marginTop:"50px",
       },
       estiloicon:{
