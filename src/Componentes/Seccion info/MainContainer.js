@@ -72,6 +72,42 @@ const MainContainer = () => {
   );
 };
 
+
+const Container = styled.div `
+width: 90%;
+height: 120vh;
+margin: auto;
+display: grid;
+grid-template-rows: auto, auto;
+border-radius: 5px; 
+margin-bottom: 100px;
+
+@media (min-width: 580px) {
+  height: 100vh;
+ grid-template-rows: 90%, auto;
+}
+@media (min-width: 620px) {
+  height: 120vh;
+ margin: 20px
+}
+@media (min-width: 900px) {
+  height: 140vh;
+ margin: 20px;
+ grid-template-rows: auto, 40%;
+
+}
+@media (min-width: 1260px) {
+  width: 80%;
+  height: 600px;
+  display: grid;
+  grid-template-columns: auto auto;
+  border-radius: 5px;
+  align-items: center;
+  margin: auto;
+  padding-bottom: 25px
+};
+`
+
 const Container = styled.div`
   overflow: hidden;
   width: 100%;
@@ -103,5 +139,6 @@ const Img = styled.img`
     width: 90%;
   }
 `;
+
 
 export default MainContainer;
