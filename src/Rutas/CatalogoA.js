@@ -2,7 +2,7 @@ import Catalogo from "../Componentes/Catalogos/Catalogo";
 
 const CatalogoA = (props) => {
   return (
-    <div style={{ width: "90%", margin: "140px auto" }}>
+    <div style={{ width: "90%", margin: "auto" }}>
       <Catalogo
         data={props.data}
         dispatch={props.dispatch}
