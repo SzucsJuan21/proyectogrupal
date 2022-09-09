@@ -21,10 +21,13 @@ const Header = (props) => {
       transition={{ duration: 0.4 }}
     >
       <div style={s.header}>
-        
         <AnimatePresence>
           {showNotif && (
-            <motion.div style={{ overflow:'hidden' }} exit={{ height: 0 }} transition={{ duration: 0.4 }}>
+            <motion.div
+              style={{ overflow: "hidden" }}
+              exit={{ height: 0 }}
+              transition={{ duration: 0.4 }}
+            >
               <Notificacion showNotif={showNotif} setShowNotif={setShowNotif} />
             </motion.div>
           )}
@@ -100,6 +103,7 @@ const Header = (props) => {
 
           {width < 1280 && (
             <Menu
+              showNotif={showNotif}
               data={props.data}
               setIsSearchBar={setIsSearchBar}
               isSearchBar={isSearchBar}
@@ -126,7 +130,7 @@ const s = {
     fontFamily: "Poppins",
     fontSize: "18px",
     background: "transparent",
-    padding:'1px 10px'
+    padding: "1px 10px",
   },
   header: {
     backgroundColor: "#fff",
