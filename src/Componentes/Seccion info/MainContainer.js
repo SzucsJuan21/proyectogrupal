@@ -67,7 +67,7 @@ const MainContainer = () => {
       </SubSection>
       <ImgWrapper>
         <Img src={panaderia} alt='panaderia'></Img>
-      </ImgWrapper>
+      </ImgWrapper> 
     </Container>
   );
 };

@@ -16,11 +16,13 @@ const Container = styled.div`
   // font-family: Poppins, sans-serif;
   font-family: 'Crete Round', serif;
   line-height: 1.7;
-  text-align: justify;
+  text-align: flex-start;
 
   display: flex;
   margin-top: 10px;
   flex-direction: column;
+  width: 90%;
+  padding-left: 10px;
 
 
   @media (min-width: 1260px) {
@@ -31,10 +33,6 @@ const Container = styled.div`
     display: flex;
     justify-content: space-around;
     margin: 10px;
-  }
-  @media (min-width: 620px) {
-    width: 90%;
-    padding-left: 20px
   }
 
 `;

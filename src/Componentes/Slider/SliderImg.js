@@ -3,7 +3,7 @@ import styled from "styled-components"
 const SliderImg = (props) => {
     return (
         <ImgWrapper>
-            <a href="#"><Img src={props.img} /></a>
+            <a href="/"><Img src={props.img} /></a>
         </ImgWrapper>
     )
 }
