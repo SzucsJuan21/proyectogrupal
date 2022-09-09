@@ -126,6 +126,7 @@ const s = {
     fontFamily: "Poppins",
     fontSize: "18px",
     background: "transparent",
+    padding:'1px 10px'
   },
   header: {
     backgroundColor: "#fff",
