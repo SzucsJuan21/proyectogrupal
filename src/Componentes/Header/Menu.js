@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import MenuBtn from "./MenuBtn";
 import useWindowSize from "../Utilidades/windowSize";
 import { GiHamburgerMenu } from "react-icons/gi";
