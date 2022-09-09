@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import "./Cards.css";
 
 const Cards = ({ data, addToCart }) => {
-  const anim = data.id - 10;
   return (
     <motion.figure
       className="figure-card"
