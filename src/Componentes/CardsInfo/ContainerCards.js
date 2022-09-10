@@ -7,7 +7,7 @@ const lista = [
   },
   {
     h4: "CREEMOS...",
-    p: "Que podemos brindarte sabores únicos para tu paladar ",
+    p: "Que podemos brindarle sabores únicos a tu paladar ",
   },
   {
     h4: "ELABORAMOS...",
