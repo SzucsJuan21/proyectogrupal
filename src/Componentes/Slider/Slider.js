@@ -118,7 +118,8 @@ const s = {
   },
 
   h1: {
-    fontFamily: 'Times New Roman, sans-serif',
+    fontFamily: 'Crete Round, serif',
+    letterSpacing: '1px',
     textAlign: 'center',
     marginTop: '0'
   },
