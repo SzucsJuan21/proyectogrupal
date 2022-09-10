@@ -5,7 +5,7 @@ const Banner = (props) => {
     <div style={s.container}>
         <div style={s.containertitle}>
           <h2 style={s.h1}>
-            ¡BIENVENIDOS A PREMIUM BAKERY!
+            ¡BIENVENIDOS A <span style={{ color: "#ff8126" }}>PREMIUM BAKERY!</span>
           </h2>
           {/* <p style={s.p}>
             Discover brands and theit stories
