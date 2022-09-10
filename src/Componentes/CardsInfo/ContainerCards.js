@@ -2,24 +2,20 @@ import Cards from "./CardsInfo";
 
 const lista = [
   {
-    h4: "Discover new flavours & people",
-    p: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    h4: "SOMOS...",
+    p: "Un equipo unido por años de amistad",
   },
   {
-    h4: "Discover new flavours & people",
-    p: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    h4: "CREEMOS...",
+    p: "Que podemos brindarte sabores únicos para tu paladar ",
   },
   {
-    h4: "Discover new flavours & people",
-    p: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    h4: "ELABORAMOS...",
+    p: "Los mejores productos con materia prima de calidad",
   },
   {
-    h4: "Discover new flavours & people",
-    p: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-  },
-  {
-    h4: "Discover new flavours & people",
-    p: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    h4: "QUEREMOS...",
+    p: "Ser parte de tu experiencia",
   },
 ];
 
@@ -27,8 +23,8 @@ const ContainerCards = (props) => {
   return (
     <div style={{width:'100%', margin:'20px 0'}}>
       <h1 style={s.estilotitulo}>
-        Why Choose<pre> </pre>{" "}
-        <span style={s.estilospan}>the premium Quality</span>
+        Por qué elegir<pre> </pre>{" "}
+        <span style={s.estilospan}>Premium Bakery</span>
       </h1>
       <div style={s.estilocontainer}>
         {lista.map((item) => (
