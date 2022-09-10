@@ -40,16 +40,11 @@ const s={
   },
 
   h1:{
-    fontSize:"40px",
-    fontFamily:"Times New Roman",
+    fontSize:"35px",
+    fontFamily:'Crete Round, serif',
+    letterSpacing: "2px",
     marginLeft:"75px",
     marginBotton:"0",
-  },
-  p:{
-    fontSize:"25px",
-    marginLeft:"75px",
-    marginTop:"0",
-
   },
   containerimg:{
     display:"flex",

@@ -43,6 +43,8 @@ const s = {
   estilotitulo: {
     display: "flex",
     justifyContent: "center",
+    fontFamily: "Crete Round, serif",
+    letterSpacing: "2px",
     margin: 0,
     alignItems:'center'
   },
@@ -53,5 +55,6 @@ const s = {
     display: "flex",
     justifyContent: "space-between",
     overFlow: "hidden",
+    fontFamily:"Crete Round, serif"
   },
 };
