@@ -23,8 +23,8 @@ const ContainerCards = (props) => {
   return (
     <div style={{width:'100%', margin:'20px 0'}}>
       <h1 style={s.estilotitulo}>
-        Por qué elegir<pre> </pre>{" "}
-        <span style={s.estilospan}>Premium Bakery</span>
+        POR QUÉ ELEGIRNOS...<pre> </pre>{" "}
+        {/* <span style={s.estilospan}>Premium Bakery</span> */}
       </h1>
       <div style={s.estilocontainer}>
         {lista.map((item) => (
