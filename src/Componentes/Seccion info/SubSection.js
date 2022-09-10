@@ -13,7 +13,7 @@ const Container = styled.div`
   line-height: 1.6;
   text-align: left;
 
-  // font-family: Poppins, sans-serif;
+  
   font-family: 'Crete Round', serif;
   line-height: 1.7;
   text-align: flex-start;
