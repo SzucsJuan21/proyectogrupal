@@ -26,7 +26,7 @@ const Footer = () => {
 
         <FooterColumn
           info={{
-            titulo: "Contactános",
+            titulo: "Contactanos",
             items: ["+54 3846-267412", "premiumquality@bakery.com", "Av. Santa Fe 3253, 1091 CABA"],
           }}
         />
