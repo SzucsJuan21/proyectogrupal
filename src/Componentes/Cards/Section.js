@@ -49,8 +49,9 @@ const Section = ({ data, dispatch }) => {
           <div>
             <h1
               style={{
-                fontSize: "24px",
-                fontFamily: "Poppins",
+                fontSize: "27px",
+                fontFamily: "Crete Round, serif",
+                letterSpacing: "1px",
                 marginBottom: 0,
               }}
             >
