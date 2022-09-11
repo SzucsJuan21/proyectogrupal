@@ -16,16 +16,11 @@ const BannerInfo = (props) => {
       >
         En Premium Bakery amamos lo que hacemos
       </h1>
-      <img
-        style={{
-          width: "100px",
-          display: "block",
-          marginLeft: "auto",
-          marginRight: "auto",
-        }}
+      <Img
+
         src={logo}
         alt={'logo'}
-      ></img>
+      ></Img>
     </Container>
   );
 };
@@ -37,5 +32,28 @@ const Container = styled.div`
   background-image: url(${background});
   align-items: center;
 `;
+const Img = styled.img`
+  width: 20%;
+  height: 30%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 
+  @media (min-width: 530px) {
+    width: 20%;
+    height: 40%
+  }
+  @media (min-width: 745px) {
+    width: 20%;
+    height: 60%
+  }
+  @media (min-width: 1100px) {
+    width: 10%;
+    height: 50%
+  }
+  @media (min-width: 1500px) {
+    width: 7%;
+    height: 50%
+  }
+`
 export default BannerInfo;

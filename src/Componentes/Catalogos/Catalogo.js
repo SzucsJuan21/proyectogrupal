@@ -39,7 +39,6 @@ const Catalogo = ({ category, data, dispatch, status }) => {
       }
     }
   };
-
   return (
     <MainContainer>
       {status === null && <Loading>Cargando...</Loading>}
