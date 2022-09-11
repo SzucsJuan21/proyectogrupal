@@ -142,13 +142,5 @@
     }
   ],
   "cart": [
-    {
-      "id": 2,
-      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/chipa.jpg",
-      "title": "Chipá 1/4",
-      "price": 25.99,
-      "category": "panaderia",
-      "count": 8
-    }
   ]
 }
