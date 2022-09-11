@@ -6,7 +6,7 @@ const CatalogoA = (props) => {
       <Catalogo
         data={props.data}
         dispatch={props.dispatch}
-        isLoading={props.isLoading}
+        status={props.status}
         category="pasteleria"
       />
     </div>

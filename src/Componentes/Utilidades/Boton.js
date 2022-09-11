@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from "styled-components";
+import styled from "styled-components";
 
 // El boton se implementa con dos props:
 // - color = [string con color]

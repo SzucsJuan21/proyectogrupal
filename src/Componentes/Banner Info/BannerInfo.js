@@ -1,5 +1,4 @@
 import React from "react";
-import Boton from "../Utilidades/Boton";
 import logo from "../Banner Info/img/logo.png";
 import background from "../Banner Info/img/background.jpg";
 import styled from "styled-components";
@@ -15,7 +14,6 @@ const BannerInfo = (props) => {
           fontFamily: "Poppins, sans-serif",
         }}
       >
-        {/* Our Charity Partner, City Bakery */}
         En Premium Bakery amamos lo que hacemos
       </h1>
       <img
@@ -26,6 +24,7 @@ const BannerInfo = (props) => {
           marginRight: "auto",
         }}
         src={logo}
+        alt={'logo'}
       ></img>
     </Container>
   );

@@ -17,23 +17,23 @@ export function cartReducer(state, action) {
         }
         
         case 'ADD_TO_CART': {
-            let newItem = state.products.find(product => product.id === action.payload)
+            let newItem = state.products.find(product => product.id === action.payload.id)
             let itemInCart = state.cart.find(item => item.id === newItem.id)
             return itemInCart
                 ? {
                     ...state,
                     cart: state.cart.map(item =>
-                        item.id === newItem.id ? { ...item, count: item.count + 1 } : item
+                        item.id === newItem.id ? { ...item, count: item.count + action.payload.amount } : item
                     )
                 }
                 : {
                     ...state,
-                    cart: [...state.cart, { ...newItem, count: 1 }]
+                    cart: [...state.cart, { ...newItem, count: action.payload.amount }]
                 }
         }
 
         case 'REMOVE_ONE_PRODUCT': {
-            let itemInCart = state.cart.find(item => item.id === action.payload)
+            let itemInCart = state.cart.find(item => item.id === action.payload.id)
             return itemInCart.count > 1
                 ? {
                     ...state,
@@ -43,14 +43,14 @@ export function cartReducer(state, action) {
                 }
                 : {
                     ...state,
-                    cart: state.cart.filter(item => item.id !== action.payload)
+                    cart: state.cart.filter(item => item.id !== action.payload.id)
                 }
         }
 
         case 'REMOVE_ALL_PRODUCTS': {
             return {
                 ...state,
-                cart: state.cart.filter(item => item.id !== action.payload)
+                cart: state.cart.filter(item => item.id !== action.payload.id)
             }
         }
 

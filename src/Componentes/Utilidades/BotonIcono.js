@@ -19,7 +19,7 @@ const BotonIcono = (props) => {
 
   return (
     <a
-      href="#"
+      href="/"
       style={{
         filter: isHover
           ? props.colorHover
@@ -30,6 +30,7 @@ const BotonIcono = (props) => {
       onMouseLeave={() => setisHover(false)}
     >
       <img
+        alt={props.icono}
         src={require(`./Iconos/${props.icono}`)}
         style={{ width: "100%", height: "100%" }}
       ></img>

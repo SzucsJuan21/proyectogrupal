@@ -1,26 +1,16 @@
 import { useState } from "react";
 import styled from "styled-components";
 import MenuBtn from "./MenuBtn";
-import { motion, useCycle, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const MenuDropdown = ({ texto, botones, closeMenu }) => {
   const [dropdown, setDropdown] = useState(false);
-  const [h, cycleH] = useCycle(0, null);
-  const [y, cycleY] = useCycle(50, 0);
-  const [op, cycleOp] = useCycle(0, 1);
 
   return (
     <DropdownContainer>
       <Btn
         onClick={() => {
-          !dropdown && setDropdown(true);
-          cycleH();
-          cycleY();
-          cycleOp();
-          dropdown &&
-            setTimeout(() => {
-              setDropdown(false);
-            }, 100);
+          setDropdown(!dropdown);
         }}
       >
         {texto} <Arrow></Arrow>
@@ -28,7 +18,12 @@ const MenuDropdown = ({ texto, botones, closeMenu }) => {
       <AnimatePresence>
         {dropdown && (
           <motion.div
-            style={{ margin: "0 25px", position: "relative", overflow:'hidden', border:'none' }}
+            style={{
+              margin: "0 25px",
+              position: "relative",
+              overflow: "hidden",
+              border: "none",
+            }}
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: null }}
             exit={{ opacity: 0, height: 0 }}

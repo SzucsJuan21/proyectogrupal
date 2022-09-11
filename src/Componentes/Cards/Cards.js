@@ -3,25 +3,35 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import "./Cards.css";
 
-const Cards = ({ data, addToCart }) => {
+const Cards = ({ data, setIsConfirmation, setSelectedProduct }) => {
   return (
-      <motion.figure
-        className="figure-card"
-        initial={{ opacity: 0, bottom: "100px" }}
-        animate={{ opacity: 1, bottom: 0 }}
-        transition={{ delay: data.id*0.1, duration: 0.08 }}
-      >
-        <img className="img-bakery" src={data.img} alt={data.title} />
-        <figcaption className="card-fcaption">
-          <div style={{ marginTop: "15px" }}>
-            <h3 className="item-title">{data.title}</h3>
-            <p className="valores">${data.price}</p>
-          </div>
-          <div style={{ marginTop: "10px" }}>
-            <Btn onClick={() => addToCart(data.id)}>Añadir al carro</Btn>
-          </div>
-        </figcaption>
-      </motion.figure>
+    <motion.figure
+      className="figure-card"
+      initial={{ opacity: 0, bottom: "100px" }}
+      animate={{ opacity: 1, bottom: 0 }}
+      transition={{
+        delay: data.id > 10 ? (data.id - 10) * 0.05 : data.id * 0.05,
+        duration: 0.08,
+      }}
+    >
+      <img className="img-bakery" src={data.img} alt={data.title} />
+      <figcaption className="card-fcaption">
+        <div style={{ marginTop: "15px" }}>
+          <h3 className="item-title">{data.title}</h3>
+          <p className="valores">${data.price}</p>
+        </div>
+        <div style={{ marginTop: "10px" }}>
+          <Btn
+            onClick={() => {
+              setIsConfirmation(true);
+              setSelectedProduct(data);
+            }}
+          >
+            Comprar
+          </Btn>
+        </div>
+      </figcaption>
+    </motion.figure>
   );
 };
 

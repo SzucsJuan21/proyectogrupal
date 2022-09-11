@@ -12,42 +12,46 @@ const MainContainer = () => {
           style={{
             color: "#FF8126",
             margin: "0",
+            fontSize: "30px",
+            letterSpacing: "2px"
           }}
         >
-          Who Makes{" "}
-          <span
-            style={{
-              color: "black",
-            }}
-          >
-            Your Food
-          </span>
+          OBJETIVO
         </h1>
         <h3>
-          Our mission is to help grow the local food ecosystem in BC and across
-          Canada. Why?{" "}
+          Nuestro objetivo es lograr un vínculo de confianza con el cliente. Para eso, 
+          ponemos a su disposición nuestras elaboraciones realizadas con la mejor
+          materia prima del mercado. {" "} 
         </h3>
-        <ul
+        <h1
           style={{
-            lineHeight: 3,
-            fontSize: "18px",
+            color: "#FF8126",
+            margin: "0",
+            fontSize: "30px",
+            letterSpacing: "2px"
           }}
         >
-          <li>
-            Because it connects us to the land we live on, and to the people who
-            live here.
-          </li>
-          <li>
-            Because it's more meaningful to cook and eat something made by a
-            person nearby than by some distant corporation
-          </li>
-          <li>
-            Because good local food makes our corner of the world a better place
-            to live
-          </li>
-          <li>Because it supports local jobs</li>
-          <li>Because it makes more sense for the environment</li>
-        </ul>
+          VISION
+        </h1>
+        <h3>
+          Lograr posicionar al negocio, dentro del rubro Panadería/Pastelería, como uno
+          de los 3 mejores del país, para los próximos años. {" "} 
+        </h3>
+        <h1
+          style={{
+            color: "#FF8126",
+            margin: "0",
+            fontSize: "30px",
+            letterSpacing: "2px"
+          }}
+        >
+          STAFF
+        </h1>
+        <h3>
+          Contamos con un equipo de maestros panaderos y pasteleros que impulsados por su
+          creatividad combinan técnicas tradicionales y modernas con el fin de obtener productos
+          únicos y originales. {" "} 
+        </h3>
 
         <div
           style={{ width: "100%", display: "flex", justifyContent: "center" }}
@@ -62,42 +66,15 @@ const MainContainer = () => {
         </div>
       </SubSection>
       <ImgWrapper>
-        <Img src={panaderia}></Img>
-      </ImgWrapper>
+        <Img src={panaderia} alt='panaderia'></Img>
+      </ImgWrapper> 
     </Container>
   );
 };
 
-const Container = styled.div `
-width: 90%;
-height: 120vh;
-margin: auto;
-display: grid;
-grid-template-rows: auto, auto;
-border-radius: 5px; 
-margin-bottom: 100px;
-
-@media (min-width: 580px) {
-  height: 100vh;
- grid-template-rows: 90%, auto;
-}
-@media (min-width: 620px) {
-  height: 120vh;
- margin: 20px
-}
-@media (min-width: 900px) {
-  height: 140vh;
- margin: 20px;
- grid-template-rows: auto, 40%;
-
-}
-@media (min-width: 1260px) {
-  width: 80%;
-  height: 600px;
-  display: grid;
-  grid-template-columns: auto auto;
-  border-radius: 5px;
-  align-items: center;
+const Container = styled.div`
+  overflow: hidden;
+  width: 100%;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -119,6 +96,7 @@ const ImgWrapper = styled.div`
 
 const Img = styled.img`
   height: 100%;
+  border-radius: 10px;
   @media (max-width: 1280px) {
     width: 70%;
   }

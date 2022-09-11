@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import MenuBtn from "./MenuBtn";
 import useWindowSize from "../Utilidades/windowSize";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -23,7 +23,11 @@ const Menu = (props) => {
 
   return (
     <Wrapper>
-      <HeaderIconos data={props.data} />
+      <HeaderIconos
+        data={props.data}
+        setIsSearchBar={props.setIsSearchBar}
+        isSearchBar={props.isSearchBar}
+      />
       <button
         style={{ all: "unset", cursor: "pointer", margin: "5px 0 0 15px" }}
         onClick={() => {
@@ -39,6 +43,7 @@ const Menu = (props) => {
         <motion.div
           style={{
             ...s.menuCont,
+            top: props.showNotif ? -50 : 0,
             width: width <= 480 ? "90%" : width <= 720 ? "50%" : "40%",
           }}
           initial={{ right: -500, opacity: 0 }}
@@ -88,11 +93,7 @@ const Menu = (props) => {
                 { textoBtn: "Team Salado", path: "/" },
               ]}
             />
-            <MenuBtn
-              texto="Sobre Nosotros"
-              path="/"
-              closeMenu={closeMenu}
-            />
+            <MenuBtn texto="Sobre Nosotros" path="/" closeMenu={closeMenu} />
           </MenuButtonsContainer>
         </motion.div>
       )}
@@ -113,7 +114,6 @@ const s = {
     display: "grid",
     overflowX: "hidden",
     gridTemplateRows: "84px 1fr",
-    top: 0,
     height: "100vh",
     backgroundColor: "rgb(240, 240, 240, 0.90)",
     boxShadow: "-1px -1px 10px",

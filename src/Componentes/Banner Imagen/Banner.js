@@ -5,17 +5,17 @@ const Banner = (props) => {
     <div style={s.container}>
         <div style={s.containertitle}>
           <h2 style={s.h1}>
-            Support Your Local Artisans
+            ¡BIENVENIDOS A <span style={{ color: "#ff8126" }}>PREMIUM BAKERY!</span>
           </h2>
-          <p style={s.p}>
+          {/* <p style={s.p}>
             Discover brands and theit stories
-          </p>
-          <Boton style={s.btn}/>
+          </p> */}
+          {/* <Boton style={s.btn}/> */}
         </div>
-         <div style={s.containerimg}>
-             <img style={s.img} src="https://www.anchoasdeluxe.com/upload/stblog/1/665/1069/6651069large.jpg" alt="frutas"/>
-         
-         </div>
+        <div style={s.containerimg}>
+            <img style={s.img} src="https://www.anchoasdeluxe.com/upload/stblog/1/665/1069/6651069large.jpg" alt="frutas"/>
+        
+        </div>
     </div>     
         
         
@@ -26,31 +26,25 @@ const Banner = (props) => {
 export default Banner
 const s={
   container:{
-    marginTop:"50px",
     display:"grid",
     gridTemplateColumns:"50% 50%",
     backgroundColor:"#F4F4F4",
     width:"100%",
     height:"300px",
-   
+
   },
   containertitle:{
     display:"flex",
     flexDirection:"column",
-     marginTop:"2.5rem",
+    marginTop:"2.5rem",
   },
 
   h1:{
-    fontSize:"40px",
-    fontFamily:"Times New Roman",
+    fontSize:"35px",
+    fontFamily:'Crete Round, serif',
+    letterSpacing: "2px",
     marginLeft:"75px",
     marginBotton:"0",
-  },
-  p:{
-    fontSize:"25px",
-    marginLeft:"75px",
-    marginTop:"0",
-
   },
   containerimg:{
     display:"flex",
@@ -65,7 +59,7 @@ const s={
     }
   }
 
- 
+
 
 
   
