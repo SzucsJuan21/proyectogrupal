@@ -137,7 +137,7 @@ const s = {
     position: "fixed",
     top: "0",
     width: "100%",
-    zIndex: "2",
+    zIndex: "3",
   },
 };
 

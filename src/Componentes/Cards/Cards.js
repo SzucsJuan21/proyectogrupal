@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import "./Cards.css";
 
-const Cards = ({ data, addToCart }) => {
+const Cards = ({ data, setIsConfirmation, setSelectedProduct }) => {
   return (
     <motion.figure
       className="figure-card"
@@ -21,7 +21,14 @@ const Cards = ({ data, addToCart }) => {
           <p className="valores">${data.price}</p>
         </div>
         <div style={{ marginTop: "10px" }}>
-          <Btn onClick={() => addToCart(data.id)}>Añadir al carro</Btn>
+          <Btn
+            onClick={() => {
+              setIsConfirmation(true);
+              setSelectedProduct(data);
+            }}
+          >
+            Comprar
+          </Btn>
         </div>
       </figcaption>
     </motion.figure>
