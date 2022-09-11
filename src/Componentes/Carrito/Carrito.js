@@ -17,7 +17,7 @@ const Carrito = ({ data, dispatch }) => {
 
     let res = await axios(`http://localhost:3001/cart/${id}`, options);
     if (res.status >= 200 && res.status < 300) {
-      dispatch({ type: TYPES.ADD_TO_CART, payload: id });
+      dispatch({ type: TYPES.ADD_TO_CART, payload: {id:id,amount:1} });
     }
   };
 

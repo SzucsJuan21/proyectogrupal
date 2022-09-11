@@ -51,3 +51,7 @@
 .valores p {
     margin: 0;
 }
+
+.amountButton:active {
+    fill: #ff8126;
+}

@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import Cards from "./CardsInfo";
 
 const lista = [
@@ -23,17 +24,17 @@ const ContainerCards = (props) => {
   return (
     <div style={s.mainContainer}>
       <h1 style={s.estilotitulo}>
-        POR QUÉ ELEGIRNOS...<pre> </pre>{" "}
+        POR QUÉ ELEGIRNOS...
         {/* <span style={s.estilospan}>Premium Bakery</span> */}
       </h1>
-      <div style={s.estilocontainer}>
+      <CardsContainer>
         {lista.map((item) => (
           <Cards>
             <h4 style={{ fontSize: "22px", margin: 0 }}>{item.h4}</h4>
-            <p style={{ fontSize: "16px" }}>{item.p}</p>
+            <p style={{ fontSize: "18px", fontFamily: 'Poppins' }}>{item.p}</p>
           </Cards>
         ))}
-      </div>
+      </CardsContainer>
     </div>
   );
 };
@@ -52,17 +53,34 @@ const s = {
     justifyContent: "center",
     fontFamily: "Crete Round, serif",
     letterSpacing: "2px",
-    margin: 0,
+    margin: '0 0 20px',
     alignItems: "center",
+    textAlign:'center'
   },
   estilospan: {
     color: "#FF8126",
   },
   estilocontainer: {
-    display: "flex",
+    display: "grid",
+
     justifyContent: "space-evenly",
     width: "80%",
     overFlow: "hidden",
     fontFamily: "Crete Round, serif",
   },
 };
+
+const CardsContainer = styled.div`
+  display: grid;
+  grid-template-columns: auto;
+  
+  @media (min-width: 480px) {
+    grid-template-columns: 1fr 1fr;
+    
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    
+  }
+`

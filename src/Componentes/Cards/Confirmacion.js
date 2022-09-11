@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { BiUpArrow, BiDownArrow } from "react-icons/bi";
+import { GoTriangleUp, GoTriangleDown } from "react-icons/go";
+import './Cards.css'
 
 const Confirmacion = ({ addToCart, selectedProduct, setIsConfirmation }) => {
   const [amount, setAmount] = useState(1);
@@ -22,13 +23,13 @@ const Confirmacion = ({ addToCart, selectedProduct, setIsConfirmation }) => {
 
             <div style={s.amountCont}>
               <AmountBtn onClick={() => setAmount(amount + 1)}>
-                <BiUpArrow />
+                <GoTriangleUp className="amountButton" />
               </AmountBtn>
               <p style={s.amount}>x{amount}</p>
               <AmountBtn
                 onClick={() => setAmount(amount > 1 ? amount - 1 : amount)}
               >
-                <BiDownArrow />
+                <GoTriangleDown className="amountButton" />
               </AmountBtn>
             </div>
 
@@ -64,6 +65,7 @@ const s = {
   modalContentCont: {
     display: "grid",
     gridTemplateColumns: "1fr 1fr 1fr",
+    margin: '20px auto',
   },
   amount: {
     margin: 0,
@@ -77,7 +79,7 @@ const s = {
     flexDirection: "column",
   },
   actionsContainer: {
-    marginTop: "20px",
+    marginTop: "30px",
     display: "flex",
     alignItems: "center",
     justifyContent: "space-evenly",
@@ -87,8 +89,9 @@ const s = {
 const Container = styled(motion.div)`
   position: fixed;
   z-index: 2;
+  top: -150px;
   width: 100%;
-  height: 100%;
+  height: 150%;
   background-color: rgb(30, 30, 30, 0.3);
   display: flex;
   justify-content: center;
@@ -109,11 +112,6 @@ const AmountBtn = styled.button`
   padding: 2px;
   display: flex;
   align-items: center;
-  transition: 100ms;
-  &:active {
-    box-shadow: 0px 0px 5px 2px #ff8126;
-    background-color: #ff8126;
-  }
 `;
 
 const Btn = styled.button`

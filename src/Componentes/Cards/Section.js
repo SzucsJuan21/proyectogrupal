@@ -1,15 +1,17 @@
-import React from "react";
+import { useState } from "react";
+import { AnimatePresence } from "framer-motion";
 import "./Section.css";
 import Cards from "./Cards";
 import axios from "axios";
 import { TYPES } from "../Utilidades/actions";
+import Confirmacion from "./Confirmacion";
 
 const Section = ({ data, dispatch }) => {
   const { products, cart } = data;
+  const [isConfirmation, setIsConfirmation] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
-  const addToCart = async (id) => {
-    
-
+  const addToCart = async (id, amount) => {
     const addedItem = products.find((item) => item.id === id);
     const itemIncart = cart.find((item) => item.id === id);
 
@@ -17,20 +19,33 @@ const Section = ({ data, dispatch }) => {
       let options = {
         method: "PUT",
         headers: { "content-type": "application/json" },
-        data: JSON.stringify({ ...itemIncart, count: itemIncart.count + 1 }),
+        data: JSON.stringify({
+          ...itemIncart,
+          count: itemIncart.count + amount,
+        }),
       };
 
       let res = await axios(`http://localhost:3001/cart/${id}`, options);
-      if (res.status >= 200 && res.status < 300) dispatch({ type: TYPES.ADD_TO_CART, payload: id });
+      if (res.status >= 200 && res.status < 300) {
+        dispatch({
+          type: TYPES.ADD_TO_CART,
+          payload: { id: id, amount: amount },
+        });
+      }
     } else {
       let options = {
         method: "POST",
         headers: { "content-type": "application/json" },
-        data: JSON.stringify({ ...addedItem, count: 1 }),
+        data: JSON.stringify({ ...addedItem, count: amount }),
       };
 
       let res = await axios("http://localhost:3001/cart", options);
-      if (res.status >= 200 && res.status < 300) dispatch({ type: TYPES.ADD_TO_CART, payload: id });
+      if (res.status >= 200 && res.status < 300) {
+        dispatch({
+          type: TYPES.ADD_TO_CART,
+          payload: { id: id, amount: amount },
+        });
+      }
     }
   };
 
@@ -43,9 +58,18 @@ const Section = ({ data, dispatch }) => {
             justifyContent: "center",
             flexDirection: "column",
             alignItems: "center",
-            margin: '20px 0',
+            margin: "20px 0",
           }}
         >
+          <AnimatePresence>
+            {isConfirmation && (
+              <Confirmacion
+                addToCart={addToCart}
+                selectedProduct={selectedProduct}
+                setIsConfirmation={setIsConfirmation}
+              />
+            )}
+          </AnimatePresence>
           <div>
             <h1
               style={{
@@ -65,7 +89,8 @@ const Section = ({ data, dispatch }) => {
                   <Cards
                     key={product.id}
                     data={product}
-                    addToCart={addToCart}
+                    setIsConfirmation={setIsConfirmation}
+                    setSelectedProduct={setSelectedProduct}
                   />
                 )
             )}

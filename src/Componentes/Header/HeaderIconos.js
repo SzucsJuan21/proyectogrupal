@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BiCart, BiUser, BiSearchAlt2 } from "react-icons/bi";
+import { motion, AnimatePresence, useCycle } from "framer-motion";
 import useWindowSize from "../Utilidades/windowSize";
 import styled from "styled-components";
 
@@ -12,16 +13,17 @@ const HeaderIconos = ({ data, setIsSearchBar, isSearchBar }) => {
   data.map((item) => (count += item.count));
   const { width } = useWindowSize();
 
+
   return (
     <div style={s.iconsContainer}>
       <IconItem>
-          <BiSearchAlt2
-            size={width < 780 ? 40 : 60}
-            color={isHover1 ? "#445" : "#000"}
-            onMouseEnter={() => setIsHover1(true)}
-            onMouseLeave={() => setIsHover1(false)}
-            onClick={() => setIsSearchBar(!isSearchBar)}
-          />
+        <BiSearchAlt2
+          size={width < 780 ? 40 : 60}
+          color={isHover1 ? "#445" : "#000"}
+          onMouseEnter={() => setIsHover1(true)}
+          onMouseLeave={() => setIsHover1(false)}
+          onClick={() => setIsSearchBar(!isSearchBar)}
+        />
       </IconItem>
       <IconItem>
         <Link to="/">
@@ -41,14 +43,22 @@ const HeaderIconos = ({ data, setIsSearchBar, isSearchBar }) => {
             onMouseEnter={() => setIsHover3(true)}
             onMouseLeave={() => setIsHover3(false)}
           />
-          {count > 0 && (
-            <CartCount
-              onMouseEnter={() => setIsHover3(true)}
-              onMouseLeave={() => setIsHover3(false)}
-            >
-              <span style={{ lineHeight: "2px", color: "white" }}>{count}</span>
-            </CartCount>
-          )}
+          <AnimatePresence>
+            {count > 0 && (
+              <CartCount
+                onMouseEnter={() => setIsHover3(true)}
+                onMouseLeave={() => setIsHover3(false)}
+                initial= {{transform:'scale(0)'}}
+                animate = {{transform: `scale(1)`}}
+                exit= {{transform:'scale(0)'}}
+                transition= {{ type:'spring',stiffness:'200' }}
+              >
+                <span style={{ lineHeight: "2px", color: "white" }}>
+                  {count}
+                </span>
+              </CartCount>
+            )}
+          </AnimatePresence>
         </Link>
       </IconItem>
     </div>
@@ -83,7 +93,7 @@ const IconItem = styled.li`
   }
 `;
 
-const CartCount = styled.div`
+const CartCount = styled(motion.div)`
   position: absolute;
   bottom: -10px;
   right: -5px;
