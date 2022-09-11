@@ -1,6 +1,6 @@
 import React from "react";
 import SubSection from "./SubSection";
-import img1 from "../Seccion info/img/img1.jpg";
+import panaderia from "../Seccion info/img/panaderia.jpg";
 import Boton from "../Utilidades/Boton";
 import styled from "styled-components";
 
@@ -11,7 +11,7 @@ const MainContainer = () => {
         <h1
           style={{
             color: "#FF8126",
-            margin: '0',
+            margin: "0",
           }}
         >
           Who Makes{" "}
@@ -29,9 +29,8 @@ const MainContainer = () => {
         </h3>
         <ul
           style={{
-            lineHeight: "220%",
-            
-            
+            lineHeight: 3,
+            fontSize: "18px",
           }}
         >
           <li>
@@ -49,18 +48,22 @@ const MainContainer = () => {
           <li>Because it supports local jobs</li>
           <li>Because it makes more sense for the environment</li>
         </ul>
-        <Boton color="#FF8126" colorHover="#D96817" texto="Discover our Producers" />
+
+        <div
+          style={{ width: "100%", display: "flex", justifyContent: "center" }}
+        >
+          <div style={{ width: "300px" }}>
+            <Boton
+              color="#FF8126"
+              colorHover="#D96817"
+              texto="Descubre nuestros productos"
+            />
+          </div>
+        </div>
       </SubSection>
-      <SubSection>
-        <img
-          style={{
-            objectFit: "fill",
-          }}
-          src={img1}
-        ></img>
-        </SubSection>
-      
-      
+      <ImgWrapper>
+        <Img src={panaderia}></Img>
+      </ImgWrapper>
     </Container>
   );
 };
@@ -96,8 +99,32 @@ margin-bottom: 100px;
   border-radius: 5px;
   align-items: center;
   margin: auto;
-  padding-bottom: 25px
-};
-`
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+
+  @media (min-width: 1280px) {
+    display: grid;
+    grid-template-columns: 56% auto;
+  }
+`;
+
+const ImgWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  @media (max-width: 1280px) {
+    margin: 20px 0;
+  }
+`;
+
+const Img = styled.img`
+  height: 100%;
+  @media (max-width: 1280px) {
+    width: 70%;
+  }
+  @media (max-width: 720px) {
+    width: 90%;
+  }
+`;
 
 export default MainContainer;

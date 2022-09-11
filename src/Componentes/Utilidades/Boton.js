@@ -20,6 +20,7 @@ const Boton = (props) => {
 const Btn = styled.button`
   border: 0;
   height: 2rem;
+  width: 100%;
   border-radius: 5px;
   min-width: 150px;
   cursor: pointer;
