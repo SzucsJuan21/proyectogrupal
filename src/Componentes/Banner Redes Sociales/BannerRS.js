@@ -45,6 +45,7 @@ const TitleContainer = styled.div`
 const Title = styled.h1`
   font-family: 'Crete Round', serif;
   font-size: 42px;
+  text-align: center;
 `;
 
 const IconContainer = styled.div`

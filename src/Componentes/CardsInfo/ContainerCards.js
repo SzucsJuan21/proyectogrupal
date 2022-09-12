@@ -60,14 +60,6 @@ const s = {
   estilospan: {
     color: "#FF8126",
   },
-  estilocontainer: {
-    display: "grid",
-
-    justifyContent: "space-evenly",
-    width: "80%",
-    overFlow: "hidden",
-    fontFamily: "Crete Round, serif",
-  },
 };
 
 const CardsContainer = styled.div`
@@ -81,6 +73,11 @@ const CardsContainer = styled.div`
 
   @media (min-width: 1024px) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    
+  }
+
+  @media (min-width: 1750px) {
+    width: 70%;
+    justify-content: center;
+    margin: 0 auto;
   }
 `
