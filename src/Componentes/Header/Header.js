@@ -17,7 +17,7 @@ const Header = (props) => {
   return (
     <motion.header
       initial={{ height: "150px" }}
-      animate={{ height: showNotif ? "150px" : "100px" }}
+      animate={{ height: width > 779 ? (showNotif ? "150px" : "100px") : (showNotif ? "135px" : "85px")   }}
       transition={{ duration: 0.4 }}
     >
       <div style={s.header}>
@@ -63,7 +63,7 @@ const Header = (props) => {
           <Img isSearchBar={isSearchBar} screenWidth={width}>
             <Link to="/">
               <img
-                src="https://www.kadencewp.com/wp-content/uploads/2020/10/alogo-2.png"
+                src="https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/logo.png"
                 width="100%"
                 height="100%"
                 alt=""
@@ -142,14 +142,16 @@ const s = {
 };
 
 const Img = styled.div`
-  width: 80px;
-  height: 70px;
+  width: 75px;
+  height: 75px;
+  padding: 10px;
+  margin: 0 20px;
   visibility: ${(props) =>
     props.screenWidth > 660 || (!props.isSearchBar && props.screenWidth < 659)
       ? "visible"
       : "hidden"};
   @media (min-width: 780px) {
-    width: 130px;
+    width: 100px;
     height: 100px;
   }
 `;

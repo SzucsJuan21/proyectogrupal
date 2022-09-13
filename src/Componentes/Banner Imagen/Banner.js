@@ -1,65 +1,77 @@
-import Boton from "../Utilidades/Boton"
+import styled from "styled-components";
 
 const Banner = (props) => {
   return (
     <div style={s.container}>
-        <div style={s.containertitle}>
-          <h2 style={s.h1}>
-            ¡BIENVENIDOS A <span style={{ color: "#ff8126" }}>PREMIUM BAKERY!</span>
-          </h2>
-          {/* <p style={s.p}>
+      <Title>
+        <span>
+          ¡BIENVENIDOS A{" "}
+          <span style={{ color: "#ff8126" }}>PREMIUM BAKERY!</span>
+        </span>
+      </Title>
+      {/*
+           <p style={s.p}>
             Discover brands and theit stories
           </p> */}
-          {/* <Boton style={s.btn}/> */}
-        </div>
-        <div style={s.containerimg}>
-            <img style={s.img} src="https://www.anchoasdeluxe.com/upload/stblog/1/665/1069/6651069large.jpg" alt="frutas"/>
-        
-        </div>
-    </div>     
-        
-        
-        
-  )
-}
+      {/* <Boton style={s.btn}/> */}
 
-export default Banner
-const s={
-  container:{
-    display:"grid",
-    gridTemplateColumns:"50% 50%",
-    backgroundColor:"#F4F4F4",
-    width:"100%",
-    height:"300px",
+      <div style={s.containerimg}>
+        <img
+          style={s.img}
+          src="https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Componentes/Banner%20Imagen/BannerImg.png"
+          alt="frutas"
+        />
+      </div>
+    </div>
+  );
+};
 
-  },
-  containertitle:{
-    display:"flex",
-    flexDirection:"column",
-    marginTop:"2.5rem",
+export default Banner;
+const s = {
+  container: {
+    display: "flex",
+    justifyContent: "flex-start",
+    alignItems: "center",
+    backgroundColor: "#F4F4F4",
+    width: "100%",
   },
 
-  h1:{
-    fontSize:"35px",
-    fontFamily:'Crete Round, serif',
-    letterSpacing: "2px",
-    marginLeft:"75px",
-    marginBotton:"0",
+  containerimg: {
+    width: "100%",
+    display: "flex",
+    justifyContent: "flex-end",
+    alignItems: "center",
+    overflow: "hidden",
+    height: "230px",
+    position: "absolute",
   },
-  containerimg:{
-    display:"flex",
-    justifyContent:"flex-end",
+  img: {
+    position: "absolute",
+    right: "-100px",
+    width: "400px",
+    height: "600px",
   },
-    img:{
-    width:"575px",
+  btn: {
+    marginLeft: "75px",
   },
-  btn:{
-    marginLeft:"75px",
+};
 
-    }
+const Title = styled.h2`
+  position: relative;
+  font-size: 35px;
+  font-family: "Crete Round", serif;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  width: 400px;
+  height: 230px;
+  margin: 0px auto;
+  text-align: center;
+  z-index: 1;
+  text-shadow: -1px -1px 0 #F4F4F4, 1px -1px 0 #F4F4F4, -1px 1px 0 #F4F4F4, 1px 1px 0 #F4F4F4;
+  @media (min-width: 780px) {
+    text-align: start;
+    align-items: center;
+    margin: 0 100px;
   }
-
-
-
-
-  
+`;
