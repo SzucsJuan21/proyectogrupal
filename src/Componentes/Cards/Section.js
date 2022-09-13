@@ -1,12 +1,15 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import "./Section.css";
 import Cards from "./Cards";
 import axios from "axios";
 import { TYPES } from "../Utilidades/actions";
 import Confirmacion from "./Confirmacion";
+import { dbContext } from "../../App";
 
-const Section = ({ data, dispatch }) => {
+
+const Section = () => {
+  const { data, dispatch } = useContext(dbContext)
   const { products, cart } = data;
   const [isConfirmation, setIsConfirmation] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);

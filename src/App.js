@@ -7,13 +7,15 @@ import CatalogoA from "./Rutas/CatalogoA";
 import CatalogoB from "./Rutas/CatalogoB";
 import BannerRS from "./Componentes/Banner Redes Sociales/BannerRS";
 import axios from "axios";
-import { useReducer, useEffect, useState } from "react";
+import { useReducer, useEffect, useState, createContext } from "react";
 import {
   cartInitialState,
   cartReducer,
 } from "./Componentes/Carrito/cartReducer";
 import { TYPES } from "./Componentes/Utilidades/actions";
 import { Route, Routes, useLocation } from "react-router-dom";
+
+export const dbContext = createContext();
 
 function App() {
   // GET productos y carrito
@@ -52,13 +54,14 @@ function App() {
       <Header data={state.cart} />
 
       <main style={s.main}>
-        {/* prettier-ignore */}
-        <Routes>
-          <Route path='/' exact element={<Home data={state} status={status} dispatch={dispatch} />} />
-          <Route path='/tienda/panaderia' element={<CatalogoA data={state} status={status} dispatch={dispatch} />} />
-          <Route path='/tienda/pasteleria' element={<CatalogoB data={state} status={status} dispatch={dispatch} />} />
-          <Route path='/carrito' element={<RutaCarrito data={state} dispatch={dispatch} />} />
-        </Routes>
+        <dbContext.Provider  value={{ data: state, status: status, dispatch: dispatch, }}>
+          <Routes>
+            <Route path="/" exact element={<Home />} />
+            <Route path="/tienda/panaderia" element={<CatalogoA />} />
+            <Route path="/tienda/pasteleria" element={<CatalogoB />} />
+            <Route path="/carrito" element={<RutaCarrito />} />
+          </Routes>
+        </dbContext.Provider>
       </main>
 
       <footer style={s.footer}>

@@ -2,8 +2,11 @@ import { TYPES } from "../Utilidades/actions";
 import styled from "styled-components";
 import CarritoItem from "./CarritoItem";
 import axios from "axios";
+import { useContext } from "react";
+import { dbContext } from "../../App";
 
-const Carrito = ({ data, dispatch }) => {
+const Carrito = () => {
+  const { data, dispatch } = useContext(dbContext)
   const { cart } = data;
 
   const increaseAmount = async (id) => {

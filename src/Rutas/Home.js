@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 import ContainerCards from "../Componentes/CardsInfo/ContainerCards";
 
-const Home = (props) => {
+const Home = () => {
   return (
     <motion.div
       style={s.mainContainer}
@@ -18,7 +18,7 @@ const Home = (props) => {
     >
       <Banner />
       <Section1>
-        <Section data={props.data} dispatch={props.dispatch} />
+        <Section/>
         <ContainerCards />
         <MainContainer />
       </Section1>

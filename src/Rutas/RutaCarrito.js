@@ -1,7 +1,7 @@
 import Carrito from "../Componentes/Carrito/Carrito";
 import { motion } from "framer-motion";
 
-const RutaCarrito = (props) => {
+const RutaCarrito = () => {
   return (
     <motion.div
       style={{ position: "relative", margin:'0 0 50px 0' }}
@@ -9,7 +9,7 @@ const RutaCarrito = (props) => {
       animate={{ right: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <Carrito data={props.data} dispatch={props.dispatch} />
+      <Carrito />
     </motion.div>
   );
 };

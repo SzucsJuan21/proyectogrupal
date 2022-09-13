@@ -3,10 +3,12 @@ import Cards from "../Cards/Cards";
 import axios from "axios";
 import { TYPES } from "../Utilidades/actions";
 import Confirmacion from "../Cards/Confirmacion";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { AnimatePresence } from "framer-motion";
+import { dbContext } from "../../App";
 
-const Catalogo = ({ category, data, dispatch, status }) => {
+const Catalogo = ({ category }) => {
+  const { data, status, dispatch } = useContext(dbContext)
   const { products, cart } = data;
   const [isConfirmation, setIsConfirmation] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null)
