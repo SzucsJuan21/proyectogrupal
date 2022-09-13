@@ -11,9 +11,7 @@ const CarritoItem = ({ data, removeFromCart, increaseAmount }) => {
           <p style={{margin:0}}>x{data.count ? data.count : 1} </p>
           <QuantityBtns onClick={() => increaseAmount(data.id)}>+</QuantityBtns>
         </div>
-
         <p style={{ textAlign: "center" }}>{data.title}</p>
-
         <p>
           $
           {data.count
