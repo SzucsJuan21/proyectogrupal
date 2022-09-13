@@ -108,6 +108,7 @@ const MainContainer = styled.main`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin: 40px 0;
 `;
 
 const CartContainer = styled.div`
