@@ -83,6 +83,7 @@ const Loading = styled.div`
 
 const MainContainer = styled.div`
   min-height: 740px;
+  margin: 40px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
