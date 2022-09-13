@@ -7,10 +7,6 @@
 
 .contenedor-de-lista {
   margin:0 5%;
-  /*display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  flex-direction: row;*/
   display: grid;
   grid-template-columns: auto auto;
   font-family: 'Poppins', sans-serif;

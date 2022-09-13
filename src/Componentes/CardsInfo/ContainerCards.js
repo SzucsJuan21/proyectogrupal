@@ -25,7 +25,6 @@ const ContainerCards = (props) => {
     <div style={s.mainContainer}>
       <h1 style={s.estilotitulo}>
         POR QUÉ ELEGIRNOS...
-        {/* <span style={s.estilospan}>Premium Bakery</span> */}
       </h1>
       <CardsContainer>
         {lista.map((item) => (

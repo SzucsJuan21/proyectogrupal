@@ -9,11 +9,6 @@ const Banner = (props) => {
           <span style={{ color: "#ff8126" }}>PREMIUM BAKERY!</span>
         </span>
       </Title>
-      {/*
-           <p style={s.p}>
-            Discover brands and theit stories
-          </p> */}
-      {/* <Boton style={s.btn}/> */}
 
       <div style={s.containerimg}>
         <img

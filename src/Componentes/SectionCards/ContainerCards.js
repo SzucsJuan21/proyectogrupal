@@ -6,7 +6,7 @@ const ContainerCard = (props) => {
     <div>
       <h1 style={estilos.estilostitulo}>Why Choose<pre> </pre> <span style={estilos.estilospan}>  the Premium Bakery Quality</span></h1> 
       <div style={estilos.estilocontainer}>
-       {props.children}
+      {props.children}
       </div>
     </div>
   )

@@ -1,14 +1,14 @@
 
 
 const Cards = (props) => {
-  return (
+return (
     <div>
         <figure style={estilos.estilofig}>
             <div style={estilos.estiloicon}><ion-icon name="telescope-outline"></ion-icon></div>
             {props.children}
         </figure>
     </div>
-  )
+)
 }
 
 export default Cards

@@ -8,7 +8,7 @@
   grid-template-columns: auto;
   justify-content: center;
   background-color: #fff;
-  /* box-shadow: 0 3px 13px 1px rgb(110, 108, 108); */
+
 
 
 
@@ -55,20 +55,7 @@
 
 }
 
-/* .subtitulo-tc {
 
-  width: 569px;
-  height: 97px;
-  left: 656px;
-  top: 2850px;
-  font-family: "Cormorant Garamond", serif;
-  font-weight: 600px;
-  font-size: 2rem;
-  line-height: 60px;
-  color: #030303;
-
-
-} */
 
 .texto-tc {
   font-family: 'Crimson Text', serif;
