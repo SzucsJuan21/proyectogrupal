@@ -7,7 +7,7 @@ const Navbar = () => {
     <div>
       <NavbarButtonsContainer>
         <NavbarButtons>
-          <NavbarBtn texto='Inicio' path='/' />
+          <NavbarBtn texto='Inicio' path='/home' />
         </NavbarButtons>
         <NavbarButtons>
           <NavDropdown
@@ -22,13 +22,13 @@ const Navbar = () => {
           <NavDropdown
             texto="Box de Regalo"
             botones={[
-              { textoBtn: "Team Dulce", path: '/' },
-              { textoBtn: "Team Salado", path: '/' },
+              { textoBtn: "Team Dulce", path: '/home' },
+              { textoBtn: "Team Salado", path: '/home' },
             ]}
           />
         </NavbarButtons>
         <NavbarButtons>
-          <NavbarBtn texto="Sobre Nosotros" path='/' />
+          <NavbarBtn texto="Sobre Nosotros" path='/home' />
         </NavbarButtons>
       </NavbarButtonsContainer>
     </div>

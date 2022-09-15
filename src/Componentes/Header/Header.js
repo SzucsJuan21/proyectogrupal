@@ -61,7 +61,7 @@ const Header = (props) => {
           </AnimatePresence>
 
           <Img isSearchBar={isSearchBar} screenWidth={width}>
-            <Link to="/">
+            <Link to="/home">
               <img
                 src="https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/logo.png"
                 width="100%"

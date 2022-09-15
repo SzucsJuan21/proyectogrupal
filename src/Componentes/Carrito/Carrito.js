@@ -11,6 +11,7 @@ const Carrito = () => {
 
   const increaseAmount = async (id) => {
     const itemIncart = cart.find((item) => item.id === id);
+    console.log(itemIncart.count)
 
     let options = {
       method: "PUT",
@@ -18,7 +19,7 @@ const Carrito = () => {
       data: JSON.stringify({ ...itemIncart, count: itemIncart.count + 1 }),
     };
 
-    let res = await axios(`http://localhost:3001/cart/${id}`, options);
+    let res = await axios(`http://181.98.82.214:3002/cart/${id}`, options);
     if (res.status >= 200 && res.status < 300) {
       dispatch({ type: TYPES.ADD_TO_CART, payload: {id:id,amount:1} });
     }
@@ -26,7 +27,7 @@ const Carrito = () => {
 
   const removeFromCart = async (btnType, id) => {
     const itemIncart = cart.find((item) => item.id === id);
-    const endpoint = `http://localhost:3001/cart/${id}`;
+    const endpoint = `http://181.98.82.214:3002/cart/${id}`;
 
     if (
       btnType === "REMOVE_ALL_PRODUCTS" ||

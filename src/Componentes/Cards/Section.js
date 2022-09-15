@@ -28,7 +28,7 @@ const Section = () => {
         }),
       };
 
-      let res = await axios(`http://localhost:3001/cart/${id}`, options);
+      let res = await axios(`http://181.98.82.214:3002/cart/${id}`, options);
       if (res.status >= 200 && res.status < 300) {
         dispatch({
           type: TYPES.ADD_TO_CART,
@@ -42,7 +42,7 @@ const Section = () => {
         data: JSON.stringify({ ...addedItem, count: amount }),
       };
 
-      let res = await axios("http://localhost:3001/cart", options);
+      let res = await axios("http://181.98.82.214:3002/cart", options);
       if (res.status >= 200 && res.status < 300) {
         dispatch({
           type: TYPES.ADD_TO_CART,

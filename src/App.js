@@ -27,13 +27,13 @@ function App() {
     let cartList;
 
     await axios
-      .get("http://localhost:3001/products")
+      .get("http://181.98.82.214:3002/products")
       .catch((err) => setStatus(err.response.status))
       .then((res) => {
         setStatus(res.status);
         productsList = res.data;
       });
-    await axios.get("http://localhost:3001/cart").then((res) => {
+    await axios.get("http://181.98.82.214:3002/cart").then((res) => {
       cartList = res.data;
     });
 
@@ -56,7 +56,7 @@ function App() {
       <main style={s.main}>
         <dbContext.Provider  value={{ data: state, status: status, dispatch: dispatch, }}>
           <Routes>
-            <Route path="/" exact element={<Home />} />
+            <Route path="/home" exact element={<Home />} />
             <Route path="/tienda/panaderia" element={<CatalogoA />} />
             <Route path="/tienda/pasteleria" element={<CatalogoB />} />
             <Route path="/carrito" element={<RutaCarrito />} />
