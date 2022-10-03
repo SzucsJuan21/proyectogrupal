@@ -1,8 +1,8 @@
 {
   "name": "proyecto-numen",
   "version": "0.1.0",
-  "homepage": "https://franco-cardoso/React-group-project/home",
-  "private": true,
+  "homepage": "https://franco-cardoso.github.io/react-group-project/",
+  "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",

@@ -56,6 +56,7 @@ function App() {
     window.scrollTo(0, 0);
   }, [pathname]);
 
+  
   return (
     <>
       <Header data={state.cart} />
