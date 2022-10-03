@@ -63,7 +63,7 @@ const Header = (props) => {
           <Img isSearchBar={isSearchBar} screenWidth={width}>
             <Link to="/home">
               <img
-                src="https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/logo.png"
+                src="https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/logo.webp"
                 width="100%"
                 height="100%"
                 alt=""

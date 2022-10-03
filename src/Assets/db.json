@@ -2,140 +2,140 @@
   "products": [
     {
       "id": 1,
-      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/pandcam.png",
+      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/pandcam.webp",
       "title": "Pan de Campo c/u",
       "price": 33.99,
       "category": "panaderia"
     },
     {
       "id": 2,
-      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/chipa.jpg",
+      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/chipa.webp",
       "title": "Chipá 1/4",
       "price": 25.99,
       "category": "panaderia"
     },
     {
       "id": 3,
-      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/pansalv.png",
+      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/pansalv.webp",
       "title": " Miga de Salvado x 6 u.",
       "price": 56.99,
       "category": "panaderia"
     },
     {
       "id": 4,
-      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/tostado.jpg",
+      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/tostado.webp",
       "title": "Tostado Jamón y Queso",
       "price": 15.99,
       "category": "panaderia"
     },
     {
       "id": 5,
-      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/cremona.png",
+      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/cremona.webp",
       "title": "Cremona c/u",
       "price": 20.12,
       "category": "panaderia"
     },
     {
       "id": 6,
-      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/chips.png",
+      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/chips.webp",
       "title": "Chip de Jamon y Queso 1/4 ",
       "price": 22.99,
       "category": "panaderia"
     },
     {
       "id": 7,
-      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/miga.png",
+      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/miga.webp",
       "title": "Sandwich de Miga x 6 u.",
       "price": 66.99,
       "category": "panaderia"
     },
     {
       "id": 8,
-      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/flauta.png",
+      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/flauta.webp",
       "title": "Flauta 1/4",
       "price": 23.99,
       "category": "panaderia"
     },
     {
       "id": 9,
-      "img": " https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/pansaborizado.png",
+      "img": " https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/pansaborizado.webp",
       "title": "Pan Saborizado 1/4",
       "price": 41.05,
       "category": "panaderia"
     },
     {
       "id": 10,
-      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/panrelleno.png",
+      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/panrelleno.webp",
       "title": "Pan Relleno",
       "price": 27.5,
       "category": "panaderia"
     },
     {
       "id": 11,
-      "img": " https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/masafina.png",
+      "img": " https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/masafina.webp",
       "title": "Masas Finas 1/4",
       "price": 52.99,
       "category": "pasteleria"
     },
     {
       "id": 12,
-      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/budinlimon.jpg",
+      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/budinlimon.webp",
       "title": "Budin de Limon c/u",
       "price": 45.99,
       "category": "pasteleria"
     },
     {
       "id": 13,
-      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/croissant.png ",
+      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/croissant.webp ",
       "title": "Croissant c/u",
       "price": 5.99,
       "category": "pasteleria"
     },
     {
       "id": 14,
-      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/pandulce1.png",
+      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/pandulce1.webp",
       "title": "Pan Dulce c/u",
       "price": 41.99,
       "category": "pasteleria"
     },
     {
       "id": 15,
-      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/pastafrola.jpg ",
+      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/pastafrola.webp ",
       "title": "Pastafrola c/u",
       "price": 52.99,
       "category": "pasteleria"
     },
     {
       "id": 16,
-      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/picosdedulce.png",
+      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/picosdedulce.webp",
       "title": "Torta-Conitos de dulce c/u",
       "price": 33.99,
       "category": "pasteleria"
     },
     {
       "id": 17,
-      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/torfrut.png ",
+      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/torfrut.webp ",
       "title": "Torta de Frutilla",
       "price": 71.99,
       "category": "pasteleria"
     },
     {
       "id": 18,
-      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/choco.png",
+      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/choco.webp",
       "title": "Torta de Chocolate",
       "price": 75.99,
       "category": "pasteleria"
     },
     {
       "id": 19,
-      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/tortaoreo.png ",
+      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/tortaoreo.webp ",
       "title": "Torta Oreo",
       "price": 74.99,
       "category": "pasteleria"
     },
     {
       "id": 20,
-      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/rosca.png",
+      "img": "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/rosca.webp",
       "title": "Rosquitas c/u",
       "price": 7.99,
       "category": "pasteleria"
