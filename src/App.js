@@ -14,6 +14,7 @@ import {
 } from "./Componentes/Carrito/cartReducer";
 import { TYPES } from "./Componentes/Utilidades/actions";
 import { Route, Routes, useLocation } from "react-router-dom";
+import useCookies from "react-cookie/cjs/useCookies";
 
 export const dbContext = createContext();
 
@@ -21,27 +22,33 @@ function App() {
   // GET productos y carrito
   const [state, dispatch] = useReducer(cartReducer, cartInitialState);
   const [status, setStatus] = useState(null);
+  const [cookies, setCookie] = useCookies();
 
   const updateCart = async () => {
     let productsList;
-    let cartList;
 
     await axios
-      .get("http://181.98.82.214:3002/products")
+      .get(
+        "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/db.json"
+      )
       .catch((err) => setStatus(err.response.status))
       .then((res) => {
         setStatus(res.status);
-        productsList = res.data;
+        productsList = res.data.products;
+        dispatch({
+          type: TYPES.GET_STATE,
+          payload: [productsList, cookies.cartCookie],
+        });
       });
-    await axios.get("http://181.98.82.214:3002/cart").then((res) => {
-      cartList = res.data;
-    });
-
-    dispatch({ type: TYPES.GET_STATE, payload: [productsList, cartList] });
   };
   useEffect(() => {
     updateCart();
+    // eslint-disable-next-line
   }, []);
+  useEffect(() => {
+    setCookie("cartCookie", state.cart);
+    // eslint-disable-next-line
+  }, [state.cart]);
   // GET productos y carrito
 
   const { pathname } = useLocation();
@@ -54,7 +61,9 @@ function App() {
       <Header data={state.cart} />
 
       <main style={s.main}>
-        <dbContext.Provider  value={{ data: state, status: status, dispatch: dispatch, }}>
+        <dbContext.Provider
+          value={{ data: state, status: status, dispatch: dispatch }}
+        >
           <Routes>
             <Route path="/home" exact element={<Home />} />
             <Route path="/tienda/panaderia" element={<CatalogoA />} />

@@ -27,8 +27,8 @@ const ContainerCards = (props) => {
         POR QUÉ ELEGIRNOS...
       </h1>
       <CardsContainer>
-        {lista.map((item) => (
-          <Cards>
+        {lista.map((item,index) => (
+          <Cards key={index}>
             <h4 style={{ fontSize: "22px", margin: 0 }}>{item.h4}</h4>
             <p style={{ fontSize: "18px", fontFamily: 'Poppins' }}>{item.p}</p>
           </Cards>

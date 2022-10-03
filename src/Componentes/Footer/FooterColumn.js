@@ -4,8 +4,8 @@ const FooterColumn = ({ info }) => {
       <div>
         <h1 className="titulo-lista">{info.titulo}</h1>
         <ul className="item">
-          {info.items.map((item) => (
-            <li>{item}</li>
+          {info.items.map((item,index) => (
+            <li key={index}>{item}</li>
           ))}
         </ul>
       </div>

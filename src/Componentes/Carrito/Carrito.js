@@ -1,16 +1,16 @@
 import { TYPES } from "../Utilidades/actions";
 import styled from "styled-components";
 import CarritoItem from "./CarritoItem";
-import axios from "axios";
 import { useContext } from "react";
 import { dbContext } from "../../App";
 
 const Carrito = () => {
   const { data, dispatch } = useContext(dbContext)
   const { cart } = data;
-
+  
   const increaseAmount = async (id) => {
-    const itemIncart = cart.find((item) => item.id === id);
+    dispatch({ type: TYPES.ADD_TO_CART, payload: {id:id,amount:1} });
+    /* const itemIncart = cart.find((item) => item.id === id);
     console.log(itemIncart.count)
 
     let options = {
@@ -21,29 +21,29 @@ const Carrito = () => {
 
     let res = await axios(`http://181.98.82.214:3002/cart/${id}`, options);
     if (res.status >= 200 && res.status < 300) {
-      dispatch({ type: TYPES.ADD_TO_CART, payload: {id:id,amount:1} });
-    }
+    } */
   };
 
   const removeFromCart = async (btnType, id) => {
     const itemIncart = cart.find((item) => item.id === id);
-    const endpoint = `http://181.98.82.214:3002/cart/${id}`;
+    // const endpoint = `http://181.98.82.214:3002/cart/${id}`;
 
     if (
       btnType === "REMOVE_ALL_PRODUCTS" ||
       (btnType === "REMOVE_ONE_PRODUCT" && itemIncart.count === 1)
     ) {
-      let options = {
+      dispatch({ type: btnType, payload: id });
+      /* let options = {
         method: "DELETE",
         headers: { "content-type": "application/json" },
       };
       let res = await axios(endpoint, options);
 
       if (res.status >= 200 && res.status < 300) {
-        dispatch({ type: btnType, payload: id });
-      }
+      } */
     } else if (btnType === "REMOVE_ONE_PRODUCT") {
-      let options = {
+      dispatch({ type: TYPES.REMOVE_ONE_PRODUCT, payload: id });
+      /* let options = {
         method: "PUT",
         headers: { "content-type": "application/json" },
         data: JSON.stringify({ ...itemIncart, count: itemIncart.count - 1 }),
@@ -51,13 +51,13 @@ const Carrito = () => {
       let res = await axios(endpoint, options);
 
       if (res.status >= 200 && res.status < 300) {
-        dispatch({ type: TYPES.REMOVE_ONE_PRODUCT, payload: id });
-      }
+      } */
     }
   };
 
   const clearCart = async () => {
-    let options = {
+    dispatch({ type: TYPES.CLEAR_CART });
+    /* let options = {
       method: "DELETE",
       headers: { "content-type": "application/json" },
     };
@@ -67,8 +67,7 @@ const Carrito = () => {
       // eslint-disable-next-line
       let res = await axios(endpoint, options);
     });
-
-    dispatch({ type: TYPES.CLEAR_CART });
+ */
   };
 
   let total = 0;
