@@ -10,19 +10,19 @@ const BannerRS = () => {
       </TitleContainer>
       <IconContainer>
         <Icon>
-          <BotonIcono icono="facebook.png" colorHover="invert(20%)" />
+          <BotonIcono icono="facebook.webp" colorHover="invert(20%)" />
         </Icon>
         <Icon>
-          <BotonIcono icono="instagram.png" colorHover="invert(20%)" />
+          <BotonIcono icono="instagram.webp" colorHover="invert(20%)" />
         </Icon>
         <Icon>
-          <BotonIcono icono="twitter.png" colorHover="invert(20%)" />
+          <BotonIcono icono="twitter.webp" colorHover="invert(20%)" />
         </Icon>
         <Icon>
-          <BotonIcono icono="messenger.png" colorHover="invert(20%)" />
+          <BotonIcono icono="messenger.webp" colorHover="invert(20%)" />
         </Icon>
         <Icon>
-          <BotonIcono icono="telegram.png" colorHover="invert(20%)" />
+          <BotonIcono icono="telegram.webp" colorHover="invert(20%)" />
         </Icon>
       </IconContainer>
     </Container>
