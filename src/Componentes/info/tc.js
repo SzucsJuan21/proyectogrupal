@@ -6,7 +6,7 @@ function Tc() {
       <div className="imagen-tc">
         <img
           className="imagen-tc"
-          src={require("./box-salada.jpg")}
+          src={require("./box-salada.webp")}
           alt="imagen-tc"
         />
       </div>

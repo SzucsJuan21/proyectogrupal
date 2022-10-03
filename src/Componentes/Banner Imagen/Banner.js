@@ -13,7 +13,7 @@ const Banner = (props) => {
       <div style={s.containerimg}>
         <img
           style={s.img}
-          src="https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Componentes/Banner%20Imagen/BannerImg.png"
+          src="https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Componentes/Banner%20Imagen/BannerImg.webp"
           alt="frutas"
         />
       </div>
