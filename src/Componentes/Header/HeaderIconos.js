@@ -25,7 +25,7 @@ const HeaderIconos = ({ data, setIsSearchBar, isSearchBar }) => {
         />
       </IconItem>
       <IconItem>
-        <Link to="/home">
+        <Link to="/">
           <BiUser
             size={width < 780 ? 40 : 60}
             color={isHover2 ? "#445" : "#000"}

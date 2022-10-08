@@ -66,7 +66,7 @@ function App() {
           value={{ data: state, status: status, dispatch: dispatch }}
         >
           <Routes>
-            <Route path="/home" exact element={<Home />} />
+            <Route path="/" exact element={<Home />} />
             <Route path="/tienda/panaderia" element={<CatalogoA />} />
             <Route path="/tienda/pasteleria" element={<CatalogoB />} />
             <Route path="/carrito" element={<RutaCarrito />} />

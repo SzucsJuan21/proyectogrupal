@@ -76,7 +76,7 @@ const Menu = (props) => {
           </MenuTopCont>
 
           <MenuButtonsContainer>
-            <MenuBtn texto="Inicio" path="/home" closeMenu={closeMenu} />
+            <MenuBtn texto="Inicio" path="/" closeMenu={closeMenu} />
             <MenuDropdown
               texto="Productos"
               closeMenu={closeMenu}
@@ -89,11 +89,11 @@ const Menu = (props) => {
               texto="Box de Regalo"
               closeMenu={closeMenu}
               botones={[
-                { textoBtn: "Team Dulce", path: "/home" },
-                { textoBtn: "Team Salado", path: "/home" },
+                { textoBtn: "Team Dulce", path: "/" },
+                { textoBtn: "Team Salado", path: "/" },
               ]}
             />
-            <MenuBtn texto="Sobre Nosotros" path="/home" closeMenu={closeMenu} />
+            <MenuBtn texto="Sobre Nosotros" path="/" closeMenu={closeMenu} />
           </MenuButtonsContainer>
         </motion.div>
       )}
