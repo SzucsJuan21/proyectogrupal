@@ -79,7 +79,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   border-radius: 5px;
-
   @media (min-width: 1280px) {
     display: grid;
     grid-template-columns: 56% auto;

@@ -1,5 +1,6 @@
-import BotonIcono from "../Utilidades/BotonIcono";
 import styled from "styled-components";
+import { IoLogoFacebook, IoLogoWhatsapp } from "react-icons/io5";
+import { RiMessengerFill, RiWhatsappFill, RiInstagramFill, RiTwitterFill } from 'react-icons/ri'
 
 
 const BannerRS = () => {
@@ -10,19 +11,19 @@ const BannerRS = () => {
       </TitleContainer>
       <IconContainer>
         <Icon>
-          <BotonIcono icono="facebook.webp" colorHover="invert(20%)" />
+          <RiWhatsappFill size={'100%'}/>
         </Icon>
         <Icon>
-          <BotonIcono icono="instagram.webp" colorHover="invert(20%)" />
+          <RiMessengerFill size={'100%'}/>
         </Icon>
         <Icon>
-          <BotonIcono icono="twitter.webp" colorHover="invert(20%)" />
+          <IoLogoFacebook size={'100%'}/>
         </Icon>
         <Icon>
-          <BotonIcono icono="messenger.webp" colorHover="invert(20%)" />
+          <RiInstagramFill size={'100%'}/>
         </Icon>
         <Icon>
-          <BotonIcono icono="telegram.webp" colorHover="invert(20%)" />
+        <RiTwitterFill size={'100%'}/>
         </Icon>
       </IconContainer>
     </Container>
