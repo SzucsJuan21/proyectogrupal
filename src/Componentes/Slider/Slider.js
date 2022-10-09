@@ -37,7 +37,7 @@ const Slider = () => {
             transition={{ duration: 0.5 }}
           >
 
-            {img.map(image => (
+            {img && img.map(image => (
               <SliderImg img={image} key={image} />
             ))}
 

@@ -85,7 +85,7 @@ const Section = () => {
             </h1>
           </div>
           <div className="cards-container">
-            {products.map(
+            {products && products.map(
               (product) =>
                 product.id <= 5 && (
                   <Cards

@@ -1,7 +1,7 @@
 {
   "name": "proyecto-numen",
   "version": "0.1.0",
-  "homepage": "premiumbakery-n0azqdejw-franco-cardoso.vercel.app",
+  "homepage": "/",
   "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
