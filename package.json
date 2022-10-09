@@ -1,7 +1,7 @@
 {
   "name": "proyecto-numen",
   "version": "0.1.0",
-  "homepage": "https://franco-cardoso.github.io/react-group-project/",
+  "homepage": "https://react-group-project.vercel.app/",
   "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
