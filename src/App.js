@@ -37,7 +37,7 @@ function App() {
         productsList = res.data.products;
         dispatch({
           type: TYPES.GET_STATE,
-          payload: [productsList, cookies.cartCookie],
+          payload: [productsList, cookies.CART_STATE],
         });
       });
   };
@@ -46,7 +46,7 @@ function App() {
     // eslint-disable-next-line
   }, []);
   useEffect(() => {
-    setCookie("cartCookie", state.cart);
+    setCookie("CART_STATE", state.cart);
     // eslint-disable-next-line
   }, [state.cart]);
   // GET productos y carrito

@@ -8,21 +8,25 @@ import Notificacion from "./Notificacion";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import useCookies from "react-cookie/cjs/useCookies";
+import { useEffect } from "react";
 
 const Header = (props) => {
   const { width } = useWindowSize();
   const [isSearchBar, setIsSearchBar] = useState(false);
   const [showNotif, setShowNotif] = useState(true);
+  const [cookies, setCookie] = useCookies()
+  
 
   return (
     <motion.header
       initial={{ height: "150px" }}
-      animate={{ height: width > 779 ? (showNotif ? "150px" : "100px") : (showNotif ? "135px" : "85px")   }}
+      animate={{ height: width > 779 ? (showNotif && !cookies.NOTIF_STATE ? "150px" : "100px") : (showNotif && !cookies.NOTIF_STATE ? "135px" : "85px")   }}
       transition={{ duration: 0.4 }}
     >
       <div style={s.header}>
         <AnimatePresence>
-          {showNotif && (
+          {showNotif && !cookies.NOTIF_STATE &&(
             <motion.div
               style={{ overflow: "hidden" }}
               exit={{ height: 0 }}
