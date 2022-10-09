@@ -9,7 +9,7 @@ const HeaderIconos = ({ data, setIsSearchBar, isSearchBar }) => {
   const [isHover1, setIsHover1] = useState(false);
   const [isHover2, setIsHover2] = useState(false);
   const [isHover3, setIsHover3] = useState(false);
-  let count = data.map((item) => (item.count)).reduce((a,b) => a+b,0);
+  let count = data ? data.map((item) => (item.count)).reduce((a,b) => a+b,0) : 0;
   const { width } = useWindowSize();
 
 
