@@ -37,7 +37,7 @@ function App() {
         productsList = res.data.products;
         dispatch({
           type: TYPES.GET_STATE,
-          payload: [productsList, cookies.CART_STATE],
+          payload: [productsList, cookies.CART_STATE ? cookies.CART_STATE : []],
         });
       });
   };
