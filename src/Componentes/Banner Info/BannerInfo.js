@@ -1,6 +1,6 @@
 import React from "react";
-import logo from "../Banner Info/img/logo.png";
-import background from "../Banner Info/img/background.jpg";
+import logo from "../Banner Info/img/logo.webp";
+import background from "../Banner Info/img/background.webp";
 import styled from "styled-components";
 
 const BannerInfo = (props) => {
