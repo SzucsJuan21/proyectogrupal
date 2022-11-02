@@ -1,7 +1,7 @@
 import React from "react";
 import useWindowSize from "../Utilidades/windowSize";
 import HeaderIconos from "./HeaderIconos";
-import Navbar from "./Navbar";
+import Navbar from "./Navbar/Navbar";
 import styled from "styled-components";
 import Menu from "./Menu";
 import Notificacion from "./Notificacion";
@@ -9,7 +9,6 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import useCookies from "react-cookie/cjs/useCookies";
-import { useEffect } from "react";
 
 const Header = (props) => {
   const { width } = useWindowSize();

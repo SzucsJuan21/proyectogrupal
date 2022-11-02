@@ -18,12 +18,7 @@ const MenuDropdown = ({ texto, botones, closeMenu }) => {
       <AnimatePresence>
         {dropdown && (
           <motion.div
-            style={{
-              margin: "0 25px",
-              position: "relative",
-              overflow: "hidden",
-              border: "none",
-            }}
+            style={s.drpdwn}
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: null }}
             exit={{ opacity: 0, height: 0 }}
@@ -44,6 +39,15 @@ const MenuDropdown = ({ texto, botones, closeMenu }) => {
     </DropdownContainer>
   );
 };
+
+const s = {
+    drpdwn: {
+        margin: "0 25px",
+        position: "relative",
+        overflow: "hidden",
+        border: "none",
+      }
+}
 
 const DropdownContainer = styled.div`
   position: relative;

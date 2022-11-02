@@ -4,11 +4,11 @@ import { BiCart, BiUser, BiSearchAlt2 } from "react-icons/bi";
 import { motion, AnimatePresence } from "framer-motion";
 import useWindowSize from "../Utilidades/windowSize";
 import styled from "styled-components";
+import LoginIcon from "./Login/LoginIcon";
 
 const HeaderIconos = ({ data, setIsSearchBar, isSearchBar }) => {
   const [isHover1, setIsHover1] = useState(false);
   const [isHover2, setIsHover2] = useState(false);
-  const [isHover3, setIsHover3] = useState(false);
   let count = data.length > 0 ? data.reduce((a,b) => a + b.count, 0) : 0;
   const { width } = useWindowSize();
 
@@ -25,28 +25,21 @@ const HeaderIconos = ({ data, setIsSearchBar, isSearchBar }) => {
         />
       </IconItem>
       <IconItem>
-        <Link to="/">
-          <BiUser
-            size={width < 780 ? 40 : 60}
-            color={isHover2 ? "#445" : "#000"}
-            onMouseEnter={() => setIsHover2(true)}
-            onMouseLeave={() => setIsHover2(false)}
-          />
-        </Link>
+          <LoginIcon/>
       </IconItem>
       <IconItem>
         <Link to="/carrito">
           <BiCart
             size={width < 780 ? 40 : 60}
-            color={isHover3 ? "#445" : "#000"}
-            onMouseEnter={() => setIsHover3(true)}
-            onMouseLeave={() => setIsHover3(false)}
+            color={isHover2 ? "#445" : "#000"}
+            onMouseEnter={() => setIsHover2(true)}
+            onMouseLeave={() => setIsHover2(false)}
           />
           <AnimatePresence>
             {count > 0 && (
               <CartCount
-                onMouseEnter={() => setIsHover3(true)}
-                onMouseLeave={() => setIsHover3(false)}
+                onMouseEnter={() => setIsHover2(true)}
+                onMouseLeave={() => setIsHover2(false)}
                 initial= {{transform:'scale(0)'}}
                 animate = {{transform: `scale(1)`}}
                 exit= {{transform:'scale(0)'}}

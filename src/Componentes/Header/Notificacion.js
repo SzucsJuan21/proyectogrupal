@@ -9,11 +9,7 @@ const Notificacion = ({ showNotif, setShowNotif }) => {
     <Container>
       <div></div>
       <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
+        style={s.notifDiv}
       >
         <Text>Free Delivery over $100. Gift with Purchase over $150</Text>
       </div>
@@ -30,6 +26,14 @@ const Notificacion = ({ showNotif, setShowNotif }) => {
     </Container>
   );
 };
+
+const s = {
+    notifDiv: {
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }
+}
 
 const Container = styled.div`
   width: 100%;

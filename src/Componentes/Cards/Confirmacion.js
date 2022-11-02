@@ -114,7 +114,7 @@ const AmountBtn = styled.button`
   align-items: center;
 `;
 
-const Btn = styled.button`
+export const Btn = styled.button`
   border: 0;
   height: 2rem;
   border-radius: 5px;
