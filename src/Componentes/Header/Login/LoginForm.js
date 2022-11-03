@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { Btn } from "../../Cards/Confirmacion";
 import LoginInput from "./LoginInput";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const LoginForm = () => {
     const [userInfo, setUserInfo] = useState({
@@ -48,7 +49,6 @@ const LoginForm = () => {
     };
 
 
-
     return (
         <FormContainer
             initial={{ height: 0, opacity: 0 }}
@@ -56,7 +56,7 @@ const LoginForm = () => {
             exit={{ height: 0, opacity: 0 }}
             transition={anim.formContAnim}
         >
-            <form style={s.form}>
+            <motion.form style={s.form} exit={{opacity:0}} transition={{duration:0.1}} > 
                 <div style={s.formInputs}>
                     <LoginInput
                         type="email"
@@ -79,9 +79,11 @@ const LoginForm = () => {
                     <Btn action="confirm" type="submit" onClick={submitForm}>
                         Iniciar Sesión
                     </Btn>
-                    <Btn>Registrarse</Btn>
+                    <Link to="/registrarse">
+                        <Btn>Registrarse</Btn>
+                    </Link>
                 </div>
-            </form>
+            </motion.form>
         </FormContainer>
     );
 };
@@ -97,6 +99,7 @@ const anim = {
 
 const s = {
     form: {
+        position: "relative",
         margin: "auto",
         width: "75%",
         display: "flex",
