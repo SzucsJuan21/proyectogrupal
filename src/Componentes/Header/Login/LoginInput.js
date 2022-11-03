@@ -3,10 +3,9 @@ import styled from "styled-components";
 import IconError from "../../Utilidades/IconError";
 
 const LoginInput = ({ placeholder, error, type, value, name, onChange }) => {
-    const [showError, setShowError] = useState(false)
-    
+
     return (
-        <div style={{ margin: "auto" }}>
+        <div style={s.container}>
             <Input
                 type={type}
                 value={value}
@@ -15,18 +14,26 @@ const LoginInput = ({ placeholder, error, type, value, name, onChange }) => {
                 name={name}
                 error={error}
             />
-            {/* <div>
-                <IconError />   TODO
-            </div> */}
+            {error && (
+                <div style={s.errorWrapper}>
+                    <IconError message={error} />
+                </div>
+            )}
         </div>
     );
 };
 
 const s = {
+    container: {
+        margin: "auto",
+        display: "flex",
+        justifyContent: "flex-end",
+    },
     errorWrapper: {
-        position:"absolute",
-    }
-}
+        position: "absolute",
+        padding: "5px",
+    },
+};
 
 const Input = styled.input`
     height: 35px;

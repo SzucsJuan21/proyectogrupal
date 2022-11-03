@@ -13,36 +13,41 @@ const LoginForm = () => {
     });
     const [emailError, setEmailError] = useState(null);
     const [passwordError, setPasswordError] = useState(null);
+    const [isFirstInput, setIsFirstInput] = useState(true);
 
     useEffect(() => {
+        if (isFirstInput) return;
+        if(!userInfo.email) {
+            if (!userInfo.email) setEmailError("Debes ingresar un correo");
+        }
         if (!/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/.test(userInfo.email)) {
             setTimeout(() => {
                 setEmailError("Este email es inválido");
             }, 2000);
         }
-        if (
-            !/"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"/.test(
-                userInfo.password
-            )
-        ) {
-            setPasswordError(
-                "Tu contraseña debe contener al menos 8 caracteres, una letra mayúscula, una letra minúscula, y un número"
-            );
-        }
         setEmailError(null);
         setPasswordError(null);
-    }, [userInfo])
+    }, [userInfo]);
 
     const handleChange = (e) => {
         setUserInfo({
             ...userInfo,
             [e.target.name]: e.target.value,
         });
+        setIsFirstInput(false);
     };
 
     const submitForm = async (e) => {
         e.preventDefault();
+        const { email, password } = userInfo;
+        if (!(email && password)) {
+            if (!email) setEmailError("Debes ingresar un correo");
+            if (!password) setPasswordError("Debes ingresar una contraseña");
+            return;
+        }
     };
+
+
 
     return (
         <FormContainer
