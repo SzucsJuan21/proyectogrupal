@@ -5,7 +5,7 @@ import Home from "./Rutas/Home";
 import RutaCarrito from "./Rutas/RutaCarrito";
 import CatalogoA from "./Rutas/CatalogoA";
 import CatalogoB from "./Rutas/CatalogoB";
-import BannerRS from "./Componentes/Banner Redes Sociales/BannerRS";
+import BannerRS from "./Componentes/Footer/Banner Redes Sociales/BannerRS";
 import axios from "axios";
 import { useReducer, useEffect, useState, createContext } from "react";
 import {

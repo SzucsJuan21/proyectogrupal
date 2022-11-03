@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 import axios from "axios";
 import styled from "styled-components";
-import { Btn } from "../../Cards/Confirmacion";
 import LoginInput from "./LoginInput";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Btn } from "../../Catalogos/Cards/Confirmacion";
 
 const LoginForm = () => {
     const [userInfo, setUserInfo] = useState({

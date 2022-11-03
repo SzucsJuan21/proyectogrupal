@@ -1,4 +1,4 @@
-import "../hojas-de-estilo/estilo.css";
+import "./estilo.css";
 import FooterColumn from "./FooterColumn";
 import FooterIconColumn from "./FooterIconColumn";
 

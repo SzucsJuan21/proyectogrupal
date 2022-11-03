@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import Cards from "../Cards/Cards";
-import { TYPES } from "../Utilidades/actions";
-import Confirmacion from "../Cards/Confirmacion";
+import Cards from "./Cards/Cards";
+import Confirmacion from "./Cards/Confirmacion";
 import { useContext, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { dbContext } from "../../App";
+import { TYPES } from "../Utilidades/actions";
 
 const Catalogo = ({ category }) => {
   const { data, status, dispatch } = useContext(dbContext);

@@ -1,4 +1,4 @@
-import "../hojas-de-estilo/tc.css";
+import "./tc.css";
 
 function Tc() {
   return (

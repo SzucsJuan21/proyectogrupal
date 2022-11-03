@@ -2,9 +2,9 @@ import { useContext, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import "./Section.css";
 import Cards from "./Cards";
-import { TYPES } from "../Utilidades/actions";
 import Confirmacion from "./Confirmacion";
-import { dbContext } from "../../App";
+import { TYPES } from "../../Utilidades/actions";
+import { dbContext } from "../../../App";
 
 const Section = () => {
   const { data, dispatch } = useContext(dbContext);

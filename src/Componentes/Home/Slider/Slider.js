@@ -4,7 +4,8 @@ import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
 import styled from 'styled-components'
 import img from './Img/export'
 import SliderImg from './SliderImg';
-import useWindowSize from '../Utilidades/windowSize';
+import useWindowSize from '../../Utilidades/windowSize';
+
 
 const Slider = () => {
   const [sliderWidth, setSliderWidth] = useState(0)

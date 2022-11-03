@@ -1,7 +1,7 @@
 import React from "react";
 import SubSection from "./SubSection";
 import panaderia from "../Seccion info/img/panaderia.webp";
-import Boton from "../Utilidades/Boton";
+import Boton from "../../Utilidades/Boton";
 import styled from "styled-components";
 
 const MainContainer = () => {
