@@ -3,6 +3,7 @@ import React from "react";
 import { useRef } from "react";
 import { useState } from "react";
 import { BiUser } from "react-icons/bi";
+import useOnClickOutside from "../../Utilidades/useOnClickOutside";
 import useWindowSize from "../../Utilidades/windowSize";
 import LoginForm from "./LoginForm";
 
@@ -12,8 +13,10 @@ const LoginIcon = () => {
     const { width } = useWindowSize();
     const loginRef = useRef();
 
+    useOnClickOutside(loginRef, () => setShowForm(false));
+
     return (
-        <>
+        <div ref={loginRef}>
             <button
                 style={{ all: "unset" }}
                 onClick={() => setShowForm(!showForm)}
@@ -25,10 +28,10 @@ const LoginIcon = () => {
                     onMouseLeave={() => setIsHover(false)}
                 />
             </button>
-            <div style={loginContainer} ref={loginRef}>
-                <AnimatePresence>{showForm && <LoginForm />}</AnimatePresence>
+            <div style={s.loginContainer}>
+                <AnimatePresence>{showForm && <LoginForm/>}</AnimatePresence>
             </div>
-        </>
+        </div>
     );
 };
 

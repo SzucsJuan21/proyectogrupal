@@ -14,7 +14,7 @@ const Header = (props) => {
   const { width } = useWindowSize();
   const [isSearchBar, setIsSearchBar] = useState(false);
   const [showNotif, setShowNotif] = useState(true);
-  const [cookies, setCookie] = useCookies()
+  const [cookies] = useCookies()
   
 
   return (

@@ -14,28 +14,12 @@ const LoginForm = () => {
     });
     const [emailError, setEmailError] = useState(null);
     const [passwordError, setPasswordError] = useState(null);
-    const [isFirstInput, setIsFirstInput] = useState(true);
-
-    useEffect(() => {
-        if (isFirstInput) return;
-        if(!userInfo.email) {
-            if (!userInfo.email) setEmailError("Debes ingresar un correo");
-        }
-        if (!/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/.test(userInfo.email)) {
-            setTimeout(() => {
-                setEmailError("Este email es inválido");
-            }, 2000);
-        }
-        setEmailError(null);
-        setPasswordError(null);
-    }, [userInfo]);
 
     const handleChange = (e) => {
         setUserInfo({
             ...userInfo,
             [e.target.name]: e.target.value,
         });
-        setIsFirstInput(false);
     };
 
     const submitForm = async (e) => {
@@ -46,33 +30,30 @@ const LoginForm = () => {
             if (!password) setPasswordError("Debes ingresar una contraseña");
             return;
         }
+        if (!/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/.test(userInfo.email)) {
+            return setEmailError("Este email es inválido");
+        }
     };
 
-
+    // prettier-ignore
     return (
         <FormContainer
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: null, opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
+            initial={{ height: 0, opacity: 0 }} animate={{ height: null, opacity: 1 }} exit={{ height: 0, opacity: 0 }}
             transition={anim.formContAnim}
         >
             <motion.form style={s.form} exit={{opacity:0}} transition={{duration:0.1}} > 
                 <div style={s.formInputs}>
                     <LoginInput
-                        type="email"
-                        name="email"
-                        placeholder="Email"
+                        type="email" name="email" placeholder="Email"
                         value={userInfo.email}
                         onChange={handleChange}
                         error={emailError}
                     />
-                    <LoginInput
-                        type="password"
-                        name="password"
-                        placeholder="Contraseña"
-                        value={userInfo.password}
-                        onChange={handleChange}
-                        error={passwordError}
+                    <LoginInput 
+                    type="password" name="password" placeholder="Contraseña" 
+                    value={userInfo.password}
+                    onChange={handleChange} 
+                    error={passwordError}
                     />
                 </div>
                 <div style={s.formBtns}>
