@@ -39,17 +39,17 @@ const RegisterForm = () => {
             const emailCheck = /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/.test(email);
             const passwordCheck = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d\w\W]{8,}$/.test(password);
 
-            if (!emailCheck && !passwordCheck) {
+            if (email && password && (!emailCheck && !passwordCheck)) {
                 setPasswordError("Tu contraseña debe contener al menos 8 caracteres, una letra mayúscula, una minúscula, y un número");
                 setEmailError("Este correo es inválido");
                 return;
             }
-            if (!emailCheck) {
+            if (email && !emailCheck) {
                 setPasswordError(null);
                 setEmailError("Este correo es inválido");
                 return;
             }
-            if (!passwordCheck) {
+            if (password && !passwordCheck) {
                 setEmailError(null);
                 setPasswordError("Tu contraseña debe contener al menos 8 caracteres, una letra mayúscula, una minúscula, y un número");
                 return;
