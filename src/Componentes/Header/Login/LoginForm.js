@@ -42,8 +42,9 @@ const LoginForm = () => {
             data: JSON.stringify(userInfo),
         };
         await axios("http://127.0.0.1:3000/api/users/login/", options).then((res) => {
-            console.log(res.data)
+            console.log(res.data);
             setCookie("LOGIN_TOKEN", res.data.token);
+            document.location.pathname = "/";
         });
     };
 
@@ -120,7 +121,7 @@ const s = {
     },
 };
 
-const FormContainer = styled(motion.div)`
+export const FormContainer = styled(motion.div)`
     position: absolute;
     display: flex;
     flex-direction: column;

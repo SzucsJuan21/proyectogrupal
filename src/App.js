@@ -8,10 +8,7 @@ import CatalogoB from "./Rutas/CatalogoB";
 import BannerRS from "./Componentes/Footer/Banner Redes Sociales/BannerRS";
 import axios from "axios";
 import { useReducer, useEffect, useState, createContext } from "react";
-import {
-    cartInitialState,
-    cartReducer,
-} from "./Componentes/Carrito/cartReducer";
+import { cartInitialState, cartReducer } from "./Componentes/Carrito/cartReducer";
 import { TYPES } from "./Componentes/Utilidades/actions";
 import { Route, Routes, useLocation } from "react-router-dom";
 import useCookies from "react-cookie/cjs/useCookies";
@@ -30,19 +27,14 @@ function App() {
         let productsList;
 
         await axios
-            .get(
-                "https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/db.json"
-            )
+            .get("https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/db.json")
             .catch((err) => setStatus(err.response.status))
             .then((res) => {
                 setStatus(res.status);
                 productsList = res.data.products;
                 dispatch({
                     type: TYPES.GET_STATE,
-                    payload: [
-                        productsList,
-                        cookies.CART_STATE ? cookies.CART_STATE : [],
-                    ],
+                    payload: [productsList, cookies.CART_STATE ? cookies.CART_STATE : []],
                 });
             });
     };
@@ -63,27 +55,27 @@ function App() {
 
     return (
         <>
-            <Header data={state.cart} />
+            <loginContext.Provider value="sex">
+                <Header data={state.cart} />
 
-            <main style={s.main}>
-                <dbContext.Provider
-                    value={{ data: state, status: status, dispatch: dispatch }}
-                >
-                    {/* prettier-ignore */}
-                    <Routes>
+                <main style={s.main}>
+                    <dbContext.Provider value={{ data: state, status: status, dispatch: dispatch }}>
+                        {/* prettier-ignore */}
+                        <Routes>
                         <Route path="/" exact element={<Home />} />
                         <Route path="/tienda/panaderia" element={<CatalogoA />} />
                         <Route path="/tienda/pasteleria" element={<CatalogoB />} />
                         <Route path="/carrito" element={<RutaCarrito />} />
                         <Route path="/registrarse" element={<Registracion />}/>
                     </Routes>
-                </dbContext.Provider>
-            </main>
+                    </dbContext.Provider>
+                </main>
 
-            <footer style={s.footer}>
-                <BannerRS />
-                <Footer />
-            </footer>
+                <footer style={s.footer}>
+                    <BannerRS />
+                    <Footer />
+                </footer>
+            </loginContext.Provider>
         </>
     );
 }

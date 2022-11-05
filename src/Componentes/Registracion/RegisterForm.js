@@ -36,20 +36,20 @@ const RegisterForm = () => {
 
         async function fieldValidation() {
             await sleep(1000);
-            const emailCheck = /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/.test(email);
-            const passwordCheck = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d\w\W]{8,}$/.test(password);
+            const isValidEmail = /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/.test(email);
+            const isValidPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d\w\W]{8,}$/.test(password);
 
-            if (email && password && (!emailCheck && !passwordCheck)) {
+            if (email && password && (!isValidEmail && !isValidPassword)) {
                 setPasswordError("Tu contraseña debe contener al menos 8 caracteres, una letra mayúscula, una minúscula, y un número");
                 setEmailError("Este correo es inválido");
                 return;
             }
-            if (email && !emailCheck) {
+            if (email && !isValidEmail) {
                 setPasswordError(null);
                 setEmailError("Este correo es inválido");
                 return;
             }
-            if (password && !passwordCheck) {
+            if (password && !isValidPassword) {
                 setEmailError(null);
                 setPasswordError("Tu contraseña debe contener al menos 8 caracteres, una letra mayúscula, una minúscula, y un número");
                 return;
