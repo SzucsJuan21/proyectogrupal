@@ -1,13 +1,15 @@
 import { motion } from "framer-motion";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import styled from "styled-components";
 import LoginInput from "./LoginInput";
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Btn } from "../../Catalogos/Cards/Confirmacion";
+import { useCookies } from "react-cookie";
 
 const LoginForm = () => {
+    // eslint-disable-next-line
+    const [cookies, setCookie] = useCookies();
     const [userInfo, setUserInfo] = useState({
         email: "",
         password: "",
@@ -33,6 +35,16 @@ const LoginForm = () => {
         if (!/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/.test(userInfo.email)) {
             return setEmailError("Este email es inválido");
         }
+
+        const options = {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            data: JSON.stringify(userInfo),
+        };
+        await axios("http://127.0.0.1:3000/api/users/login/", options).then((res) => {
+            console.log(res.data)
+            setCookie("LOGIN_TOKEN", res.data.token);
+        });
     };
 
     // prettier-ignore

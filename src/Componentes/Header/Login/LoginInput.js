@@ -25,6 +25,7 @@ const LoginInput = ({ placeholder, error, type, value, name, onChange }) => {
 
 const s = {
     container: {
+        width:"100%",
         margin: "auto",
         display: "flex",
         justifyContent: "flex-end",
@@ -36,6 +37,7 @@ const s = {
 };
 
 const Input = styled.input`
+    width: 100%;    
     height: 35px;
     border-radius: 15px;
     font-family: Poppins;

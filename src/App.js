@@ -17,6 +17,7 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import useCookies from "react-cookie/cjs/useCookies";
 import Registracion from "./Rutas/Registracion";
 
+export const loginContext = createContext();
 export const dbContext = createContext();
 
 function App() {

@@ -1,3 +1,4 @@
+import axios from "axios";
 import { AnimatePresence } from "framer-motion";
 import React from "react";
 import { useRef } from "react";
@@ -19,7 +20,7 @@ const LoginIcon = () => {
         <div ref={loginRef}>
             <button
                 style={{ all: "unset" }}
-                onClick={() => setShowForm(!showForm)}
+                onClick={async () => setShowForm(!showForm)}
             >
                 <BiUser
                     size={width < 780 ? 40 : 60}
@@ -29,7 +30,7 @@ const LoginIcon = () => {
                 />
             </button>
             <div style={s.loginContainer}>
-                <AnimatePresence>{showForm && <LoginForm/>}</AnimatePresence>
+                <AnimatePresence>{showForm && <LoginForm />}</AnimatePresence>
             </div>
         </div>
     );
