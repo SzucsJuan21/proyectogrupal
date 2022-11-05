@@ -12,6 +12,11 @@ const RegisterForm = () => {
     const [cookies, setCookie] = useCookies();
     const [emailError, setEmailError] = useState(null);
     const [passwordError, setPasswordError] = useState(null);
+    const [isFirstInput, setIsFirstInput] = useState(true);
+
+    const sleep = (ms) => {
+        return new Promise((resolve) => setTimeout(resolve, ms));
+    };
 
     const [formData, setFormData] = useState({
         name: "",
@@ -25,23 +30,36 @@ const RegisterForm = () => {
             ...formData,
             [e.target.name]: e.target.value,
         });
+        setIsFirstInput(false);
     };
 
     useEffect(() => {
         const { email, password } = formData;
-        if (email && !/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/.test(email)) {
-            return setEmailError("Este email es inválido");
+
+        async function fieldValidation() {
+            await sleep(1000);
+            if (email && !/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/.test(email)) {
+                return setEmailError("Este email es inválido");
+            }
+            if (!email) {
+                setEmailError("Debes ingresar un correo");
+                return;
+            }
+            setEmailError(null);
+            if (!password) {
+                if (!password) setPasswordError("Debes ingresar una contraseña");
+                return;
+            }
+            if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d\w\W]{8,}$/.test(password)) {
+                return setPasswordError(
+                    "Tu contraseña debe contener al menos 8 caracteres, una letra mayúscula, una minúscula, y un número"
+                );
+            }
+            setPasswordError(null);
         }
-        if (!(email && password)) {
-            if (!email) setEmailError("Debes ingresar un correo");
-            if (!password) setPasswordError("Debes ingresar una contraseña");
-            return;
+        if (!isFirstInput) {
+            fieldValidation();
         }
-        if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d\w\W]{8,}$/.test(password)) {
-            return setPasswordError("Tu contraseña debe contener al menos 8 caracteres, una letra mayúscula, una minúscula, y un número");
-        }
-        setEmailError(null);
-        setPasswordError(null);
     }, [formData]);
 
     const handleSubmit = async (e) => {
@@ -56,6 +74,7 @@ const RegisterForm = () => {
             .catch((err) => console.log(err))
             .then((res) => {
                 setCookie("LOGIN_TOKEN", res.data.token);
+                document.location.pathname = "/";
             });
     };
 
