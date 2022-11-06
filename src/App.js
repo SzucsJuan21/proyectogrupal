@@ -22,6 +22,18 @@ function App() {
     const [state, dispatch] = useReducer(cartReducer, cartInitialState);
     const [status, setStatus] = useState(null);
     const [cookies, setCookie] = useCookies();
+    const [currentUser, setCurrentUser] = useState(null);
+
+    const attemptLogin = async () => {
+        if (!cookies.LOGIN_TOKEN) return;
+
+        await axios("http://127.0.0.1:3000/api/users/login-token/", {
+            method: "POST",
+            headers: { Authorization: `Bearer ${cookies.LOGIN_TOKEN}` },
+        })
+            .then((res) => setCurrentUser(res.data))
+            .catch((err) => alert("Ocurrio un error al iniciar sesión"));
+    };
 
     const updateCart = async () => {
         let productsList;
@@ -39,6 +51,7 @@ function App() {
             });
     };
     useEffect(() => {
+        attemptLogin();
         updateCart();
         // eslint-disable-next-line
     }, []);
@@ -55,7 +68,7 @@ function App() {
 
     return (
         <>
-            <loginContext.Provider value="sex">
+            <loginContext.Provider value={currentUser}>
                 <Header data={state.cart} />
 
                 <main style={s.main}>

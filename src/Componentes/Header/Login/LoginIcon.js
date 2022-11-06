@@ -1,10 +1,9 @@
-import axios from "axios";
 import { AnimatePresence } from "framer-motion";
-import React, { useEffect } from "react";
+import React, { useContext } from "react";
 import { useRef } from "react";
 import { useState } from "react";
-import { useCookies } from "react-cookie";
 import { BiUser } from "react-icons/bi";
+import { loginContext } from "../../../App";
 import useOnClickOutside from "../../Utilidades/useOnClickOutside";
 import useWindowSize from "../../Utilidades/windowSize";
 import LoginForm from "./LoginForm";
@@ -13,24 +12,9 @@ import UserOptions from "./UserOptions";
 const LoginIcon = () => {
     const [isHover, setIsHover] = useState(false);
     const [showForm, setShowForm] = useState(false);
-    const [currentUser, setCurrentUser] = useState(null);
     const { width } = useWindowSize();
     const loginRef = useRef();
-    const [cookies, setCookie] = useCookies();
-
-    const attemptLogin = async () => {
-        if (!cookies.LOGIN_TOKEN) return;
-
-        await axios("http://127.0.0.1:3000/api/users/login-token/", {
-            method: "POST",
-            headers: { Authorization: `Bearer ${cookies.LOGIN_TOKEN}` },
-        })
-            .then((res) => setCurrentUser(res.data))
-            .catch((err) => alert("Ocurrio un error al iniciar sesión"));
-    };
-    useEffect(() => {
-        attemptLogin();
-    }, []);
+    const currentUser = useContext(loginContext);
 
     useOnClickOutside(loginRef, () => setShowForm(false));
 
