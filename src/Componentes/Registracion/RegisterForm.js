@@ -73,7 +73,7 @@ const RegisterForm = () => {
 
         const options = {
             method: "POST",
-            headers: { "content-type": "application/json", Origin: "https://premiumbakery.vercel.app/" },
+            headers: { "content-type": "application/json" },
             data: JSON.stringify(formData),
         };
         await axios("https://react-group-project-backend.vercel.app/api/users/register", options)

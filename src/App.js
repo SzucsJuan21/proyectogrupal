@@ -29,7 +29,7 @@ function App() {
 
         await axios("https://react-group-project-backend.vercel.app/api/users/login-token/", {
             method: "POST",
-            headers: { Authorization: `Bearer ${cookies.LOGIN_TOKEN}`, Origin: "https://premiumbakery.vercel.app" },
+            headers: { Authorization: `Bearer ${cookies.LOGIN_TOKEN}` },
         })
             .then((res) => setCurrentUser(res.data.user))
             .catch((err) => alert("Ocurrio un error al iniciar sesión"));
