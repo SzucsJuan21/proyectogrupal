@@ -39,7 +39,7 @@ const RegisterForm = () => {
             const isValidEmail = /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/.test(email);
             const isValidPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d\w\W]{8,}$/.test(password);
 
-            if (email && password && (!isValidEmail && !isValidPassword)) {
+            if (email && password && !isValidEmail && !isValidPassword) {
                 setPasswordError("Tu contraseña debe contener al menos 8 caracteres, una letra mayúscula, una minúscula, y un número");
                 setEmailError("Este correo es inválido");
                 return;
@@ -73,10 +73,10 @@ const RegisterForm = () => {
 
         const options = {
             method: "POST",
-            headers: { "content-type": "application/json" },
+            headers: { "content-type": "application/json", Origin: "https://premiumbakery.vercel.app/" },
             data: JSON.stringify(formData),
         };
-        await axios("http://127.0.0.1:3000/api/users/register", options)
+        await axios("https://react-group-project-backend.vercel.app/api/users/register", options)
             .catch((err) => console.log(err))
             .then((res) => {
                 setCookie("LOGIN_TOKEN", res.data.token);
