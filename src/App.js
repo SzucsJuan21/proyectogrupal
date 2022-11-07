@@ -38,10 +38,8 @@ function App() {
     const updateCart = async () => {
         let productsList;
 
-        axios("https://react-group-project-backend.vercel.app/api/products", {
-            method: "GET",
-            headers: { Origin: "https://premiumbakery.vercel.app" },
-        })
+        axios
+            .get("https://react-group-project-backend.vercel.app/api/products")
             .catch((err) => setStatus(err.response.status))
             .then((res) => {
                 setStatus(res.status);
