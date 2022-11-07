@@ -124,7 +124,7 @@ const Wrapper = styled.div`
     justify-content: center;
     align-items: center;
     margin-right: 30px;
-    overflow-x: hidden;
+    //overflow-x: hidden;
 `;
 const s = {
     menuCont: {
