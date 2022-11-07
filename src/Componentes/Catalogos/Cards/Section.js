@@ -53,7 +53,7 @@ const Section = () => {
 
   return (
     <>
-      {products.length > 0 && (
+      {products && products.length > 0 && (
         <div
           style={{
             display: "flex",
