@@ -27,9 +27,9 @@ function App() {
     const attemptLogin = async () => {
         if (!cookies.LOGIN_TOKEN) return;
 
-        await axios("http://127.0.0.1:3000/api/users/login-token/", {
+        await axios("https://react-group-project-backend.vercel.app/api/users/login-token/", {
             method: "POST",
-            headers: { Authorization: `Bearer ${cookies.LOGIN_TOKEN}` },
+            headers: { Authorization: `Bearer ${cookies.LOGIN_TOKEN}`, Origin: "https://premiumbakery.vercel.app" },
         })
             .then((res) => setCurrentUser(res.data.user))
             .catch((err) => alert("Ocurrio un error al iniciar sesión"));
@@ -38,8 +38,10 @@ function App() {
     const updateCart = async () => {
         let productsList;
 
-        await axios
-            .get("https://react-group-project-backend.vercel.app/api/products")
+        axios("https://react-group-project-backend.vercel.app/api/products", {
+            method: "GET",
+            headers: { Origin: "https://premiumbakery.vercel.app" },
+        })
             .catch((err) => setStatus(err.response.status))
             .then((res) => {
                 setStatus(res.status);

@@ -38,11 +38,10 @@ const LoginForm = () => {
 
         const options = {
             method: "POST",
-            headers: { "content-type": "application/json" },
+            headers: { "content-type": "application/json", Origin: "https://premiumbakery.vercel.app" },
             data: JSON.stringify(userInfo),
         };
-        await axios("http://127.0.0.1:3000/api/users/login/", options).then((res) => {
-            console.log(res.data);
+        await axios("https://react-group-project-backend.vercel.app/api/users/login", options).then((res) => {
             setCookie("LOGIN_TOKEN", res.data.token);
             document.location.pathname = "/";
         });
