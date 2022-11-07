@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { BiCart, BiUser, BiSearchAlt2 } from "react-icons/bi";
+import { BiCart, BiSearchAlt2 } from "react-icons/bi";
 import { motion, AnimatePresence } from "framer-motion";
 import useWindowSize from "../Utilidades/windowSize";
 import styled from "styled-components";

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { IoLogoFacebook, IoLogoWhatsapp } from "react-icons/io5";
+import { IoLogoFacebook } from "react-icons/io5";
 import { RiMessengerFill, RiWhatsappFill, RiInstagramFill, RiTwitterFill } from 'react-icons/ri'
 
 
