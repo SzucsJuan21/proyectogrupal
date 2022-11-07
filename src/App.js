@@ -27,7 +27,7 @@ function App() {
     const attemptLogin = async () => {
         if (!cookies.LOGIN_TOKEN) return;
 
-        await axios("https://react-group-project-backend.vercel.app/api/users/login-token/", {
+        await axios(process.env.REACT_APP_API + "/users/login-token/", {
             method: "POST",
             headers: { Authorization: `Bearer ${cookies.LOGIN_TOKEN}` },
         })
@@ -39,7 +39,7 @@ function App() {
         let productsList;
 
         axios
-            .get("https://react-group-project-backend.vercel.app/api/products")
+            .get(process.env.REACT_APP_API + "/products")
             .catch((err) => setStatus(err.response.status))
             .then((res) => {
                 setStatus(res.status);

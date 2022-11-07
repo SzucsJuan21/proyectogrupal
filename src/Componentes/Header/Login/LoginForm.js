@@ -41,7 +41,7 @@ const LoginForm = () => {
             headers: { "content-type": "application/json" },
             data: JSON.stringify(userInfo),
         };
-        await axios("https://react-group-project-backend.vercel.app/api/users/login", options).then((res) => {
+        await axios(process.env.REACT_APP_API + "/users/login", options).then((res) => {
             setCookie("LOGIN_TOKEN", res.data.token);
             document.location.pathname = "/";
         });

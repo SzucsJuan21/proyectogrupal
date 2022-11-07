@@ -76,7 +76,7 @@ const RegisterForm = () => {
             headers: { "content-type": "application/json" },
             data: JSON.stringify(formData),
         };
-        await axios("https://react-group-project-backend.vercel.app/api/users/register", options)
+        await axios(process.env.REACT_APP_API + "/users/register", options)
             .catch((err) => console.log(err))
             .then((res) => {
                 setCookie("LOGIN_TOKEN", res.data.token);
