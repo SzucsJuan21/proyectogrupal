@@ -39,7 +39,7 @@ function App() {
         let productsList;
 
         await axios
-            .get("https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/db.json")
+            .get("https://react-group-project-backend.vercel.app/api/products")
             .catch((err) => setStatus(err.response.status))
             .then((res) => {
                 setStatus(res.status);
