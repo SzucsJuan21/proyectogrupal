@@ -85,9 +85,7 @@ const LoginForm = () => {
 const anim = {
     formContAnim: {
         duration: 0.5,
-        ease: "easeOut",
         type: "spring",
-        stiffness: 100,
     },
 };
 

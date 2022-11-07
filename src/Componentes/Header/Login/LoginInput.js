@@ -44,7 +44,7 @@ const Input = styled.input`
     font-size: 18px;
     background: transparent;
     padding: 1px 10px;
-    border: ${(props) => (props.error ? "solid #ee0000" : "solid black")};
+    border: ${(props) => (props.error ? "solid #ee0000" : "solid black 3px")};
     &:focus {
         outline: none;
     }

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import React from "react";
 import { FormContainer } from "./LoginForm";
 
-const UserOptions = ({user}) => {
+const UserOptions = ({ user }) => {
     return (
         <FormContainer
             initial={{ height: 0, opacity: 0 }}
@@ -18,9 +18,6 @@ const UserOptions = ({user}) => {
 const anim = {
     formContAnim: {
         duration: 0.5,
-        ease: "easeOut",
-        type: "spring",
-        stiffness: 100,
     },
 };
 

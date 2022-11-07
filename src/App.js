@@ -31,7 +31,7 @@ function App() {
             method: "POST",
             headers: { Authorization: `Bearer ${cookies.LOGIN_TOKEN}` },
         })
-            .then((res) => setCurrentUser(res.data))
+            .then((res) => setCurrentUser(res.data.user))
             .catch((err) => alert("Ocurrio un error al iniciar sesión"));
     };
 
