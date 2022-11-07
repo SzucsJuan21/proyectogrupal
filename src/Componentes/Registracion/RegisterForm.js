@@ -117,7 +117,8 @@ const RegisterForm = () => {
 
 const s = {
     form: {
-        width: "450px",
+        width: "100%",
+        maxWidth: "450px",
         display: "flex",
         flexDirection: "column",
         gap: "15px",
