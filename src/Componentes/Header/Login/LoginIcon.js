@@ -32,7 +32,7 @@ const LoginIcon = () => {
                 />
             </button>
             <div style={s.loginContainer}>
-                <AnimatePresence>{showForm && (currentUser ? <UserOptions user={currentUser} /> : <LoginForm />)}</AnimatePresence>
+                <AnimatePresence>{showForm && (currentUser ? <UserOptions user={currentUser} /> : <LoginForm setShowForm={setShowForm}/>)}</AnimatePresence>
             </div>
         </div>
     );

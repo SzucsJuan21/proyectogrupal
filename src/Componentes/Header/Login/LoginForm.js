@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { Btn } from "../../Catalogos/Cards/Confirmacion";
 import { useCookies } from "react-cookie";
 
-const LoginForm = () => {
+const LoginForm = ({setShowForm}) => {
     // eslint-disable-next-line
     const [cookies, setCookie] = useCookies();
     const [userInfo, setUserInfo] = useState({
@@ -72,7 +72,7 @@ const LoginForm = () => {
                     <Btn action="confirm" type="submit" onClick={submitForm}>
                         Iniciar Sesión
                     </Btn>
-                    <Link to="/registrarse">
+                    <Link to="/registrarse" onClick={() => setShowForm(false)}>
                         <Btn>Registrarse</Btn>
                     </Link>
                 </div>
