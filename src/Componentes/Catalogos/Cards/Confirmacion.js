@@ -8,7 +8,10 @@ const Confirmacion = ({ addToCart, selectedProduct, setIsConfirmation }) => {
   const [amount, setAmount] = useState(1);
 
   return (
-    <Container initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{opacity:0 }}>
+    <Container initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{opacity:0 }} 
+        onClick={(e) => {
+            if (e.target === e.currentTarget) setIsConfirmation(false);
+        }}>
       <Modal>
         <div style={{ margin: "30px" }}>
           <h1 style={s.title}>Añadir al carro?</h1>

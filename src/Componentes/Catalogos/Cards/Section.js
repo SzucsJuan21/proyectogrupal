@@ -13,7 +13,6 @@ const Section = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
 
   const addToCart = async (id, amount) => {
-    // const addedItem = products.find((item) => item.id === id);
     const itemIncart = cart.find((item) => item.id === id);
     
     if (itemIncart) {
@@ -21,32 +20,11 @@ const Section = () => {
         type: TYPES.ADD_TO_CART,
         payload: { id: id, amount: amount },
       });
-      /*       let options = {
-        method: "PUT",
-        headers: { "content-type": "application/json" },
-        data: JSON.stringify({
-          ...itemIncart,
-          count: itemIncart.count + amount,
-        }),
-      }; */
-
-      /*       let res = await axios(`http://181.98.82.214:3002/cart/${id}`, options);
-      if (res.status >= 200 && res.status < 300) { */
-      /*       } */
     } else {
       dispatch({
         type: TYPES.ADD_TO_CART,
         payload: { id: id, amount: amount },
       });
-      /*  let options = {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        data: JSON.stringify({ ...addedItem, count: amount }),
-      };
-
-      let res = await axios("http://181.98.82.214:3002/cart", options); */
-      /* if (res.status >= 200 && res.status < 300) { */
-      /* } */
     }
   };
 
