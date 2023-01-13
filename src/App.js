@@ -32,7 +32,10 @@ function App() {
             headers: { Authorization: `Bearer ${cookies.LOGIN_TOKEN}` },
         })
             .then((res) => setCurrentUser(res.data.user))
-            .catch((err) => alert("Ocurrio un error al iniciar sesión"));
+            .catch((err) => {
+                console.log(err);
+                alert("Ocurrio un error al iniciar sesión");
+            });
     };
 
     const updateCart = async () => {
