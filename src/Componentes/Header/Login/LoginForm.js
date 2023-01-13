@@ -7,9 +7,8 @@ import { Link } from "react-router-dom";
 import { Btn } from "../../Catalogos/Cards/Confirmacion";
 import { useCookies } from "react-cookie";
 
-const LoginForm = ({setShowForm}) => {
-    // eslint-disable-next-line
-    const [cookies, setCookie] = useCookies();
+const LoginForm = ({ setShowForm }) => {
+    const [, setCookie] = useCookies();
     const [userInfo, setUserInfo] = useState({
         email: "",
         password: "",
