@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import useCookies from "react-cookie/cjs/useCookies";
+import Busqueda from "./Busqueda";
 
 const Header = (props) => {
   const { width } = useWindowSize();
@@ -39,27 +40,7 @@ const Header = (props) => {
         <Container>
           <AnimatePresence>
             {isSearchBar && (
-              <motion.div
-                style={{
-                  ...s.inputWrapper,
-                  width: `${width * 0.8}px`,
-                  left: width < 660 ? "20px" : "150px",
-                }}
-                initial={{ width: 0 }}
-                animate={{ width: null }}
-                exit={{ width: 0 }}
-                transition={{ type: "tween", duration: 0.8 }}
-              >
-                <input
-                  type="text"
-                  placeholder="Buscar..."
-                  autoFocus="autofocus"
-                  style={{
-                    ...s.input,
-                    width: `${width * 0.4}px`,
-                  }}
-                />
-              </motion.div>
+              <Busqueda width={width} />
             )}
           </AnimatePresence>
 
