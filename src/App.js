@@ -78,12 +78,12 @@ function App() {
                     <dbContext.Provider value={{ data: state, status: status, dispatch: dispatch }}>
                         {/* prettier-ignore */}
                         <Routes>
-                        <Route path="/" exact element={<Home />} />
-                        <Route path="/tienda/panaderia" element={<CatalogoA />} />
-                        <Route path="/tienda/pasteleria" element={<CatalogoB />} />
-                        <Route path="/carrito" element={<RutaCarrito />} />
-                        <Route path="/registrarse" element={<Registracion />}/>
-                    </Routes>
+                            <Route path="/" exact element={<Home />} />
+                            <Route path="/tienda/panaderia" element={<CatalogoA />} />
+                            <Route path="/tienda/pasteleria" element={<CatalogoB />} />
+                            <Route path="/carrito" element={<RutaCarrito />} />
+                            <Route path="/registrarse" element={<Registracion />}/>
+                        </Routes>
                     </dbContext.Provider>
                 </main>
 
