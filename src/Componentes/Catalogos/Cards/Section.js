@@ -31,7 +31,7 @@ const Section = () => {
 
   return (
     <>
-      {products && products.length > 0 && (
+      {products.data && products.data.length > 0 && (
         <div
           style={{
             display: "flex",
@@ -63,7 +63,7 @@ const Section = () => {
             </h1>
           </div>
           <div className="cards-container">
-            {products && products.map(
+            {products.data && products.data.map(
               (product) =>
                 product.id <= 5 && (
                   <Cards

@@ -11,6 +11,7 @@ const Catalogo = ({ category }) => {
     const { products, cart } = data;
     const [isConfirmation, setIsConfirmation] = useState(false);
     const [selectedProduct, setSelectedProduct] = useState(null);
+    const filteredProducts = products.data && products.data.filter((item) => item.category === category);
 
     const addToCart = async (id, amount) => {
         const itemIncart = cart.find((item) => item.id === id);
@@ -27,6 +28,7 @@ const Catalogo = ({ category }) => {
             });
         }
     };
+
     return (
         <MainContainer>
             {status === null && <Loading>Cargando...</Loading>}
@@ -47,17 +49,15 @@ const Catalogo = ({ category }) => {
             </AnimatePresence>
 
             <CardContainer>
-                {products.map(
-                    (product) =>
-                        product.category === category && (
-                            <Cards
-                                key={product.id}
-                                data={product}
-                                setIsConfirmation={setIsConfirmation}
-                                setSelectedProduct={setSelectedProduct}
-                            />
-                        )
-                )}
+                {products.data && filteredProducts.map((product,i) => (
+                    <Cards
+                        key={product.id}
+                        index={i}
+                        data={product}
+                        setIsConfirmation={setIsConfirmation}
+                        setSelectedProduct={setSelectedProduct}
+                    />
+                ))}
             </CardContainer>
         </MainContainer>
     );
