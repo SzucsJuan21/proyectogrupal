@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const Busqueda = ({ width }) => {
+    const [search, setSearch] = useState("");
+
     return (
         <motion.form
             style={{
@@ -14,13 +17,15 @@ const Busqueda = ({ width }) => {
             transition={{ type: "tween", duration: 0.8 }}
             onSubmit={(e) => {
                 e.preventDefault();
-                document.location = `/tienda?search=chip`;
+                document.location = `/tienda?search=${search}`;
             }}
         >
             <input
                 type="text"
                 placeholder="Buscar..."
                 autoFocus="autofocus"
+                onChange={(e) => setSearch(e.target.value)}
+                value={search}
                 style={{
                     ...s.input,
                     width: `${width * 0.4}px`,
