@@ -12,7 +12,10 @@ const Busqueda = ({ width }) => {
             animate={{ width: null }}
             exit={{ width: 0 }}
             transition={{ type: "tween", duration: 0.8 }}
-            onSubmit={() => {alert("test")}}
+            onSubmit={(e) => {
+                e.preventDefault();
+                document.location = `/tienda?search=chip`;
+            }}
         >
             <input
                 type="text"

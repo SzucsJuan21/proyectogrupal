@@ -13,6 +13,7 @@ import { TYPES } from "./Componentes/Utilidades/actions";
 import { Route, Routes, useLocation } from "react-router-dom";
 import useCookies from "react-cookie/cjs/useCookies";
 import Registracion from "./Rutas/Registracion";
+import CatalogoBusqueda from "./Rutas/CatalogoBusqueda";
 
 export const loginContext = createContext();
 export const dbContext = createContext();
@@ -81,6 +82,7 @@ function App() {
                             <Route path="/" exact element={<Home />} />
                             <Route path="/tienda/panaderia" element={<CatalogoA />} />
                             <Route path="/tienda/pasteleria" element={<CatalogoB />} />
+                            <Route path="/tienda/" element={<CatalogoBusqueda />} />
                             <Route path="/carrito" element={<RutaCarrito />} />
                             <Route path="/registrarse" element={<Registracion />}/>
                         </Routes>

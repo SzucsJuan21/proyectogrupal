@@ -6,12 +6,18 @@ import { AnimatePresence } from "framer-motion";
 import { dbContext } from "../../App";
 import { TYPES } from "../Utilidades/actions";
 
-const Catalogo = ({ category }) => {
+const Catalogo = ({ category, query }) => {
     const { data, status, dispatch } = useContext(dbContext);
     const { products, cart } = data;
     const [isConfirmation, setIsConfirmation] = useState(false);
     const [selectedProduct, setSelectedProduct] = useState(null);
-    const filteredProducts = products.data && products.data.filter((item) => item.category === category);
+    const filteredProducts =
+        products.data &&
+        (category
+            ? products.data.filter((item) => item.category === category)
+            : query
+            ? products.data.filter((item) => item.title.match(new RegExp(query.get("search"), "i")))
+            : null);
 
     const addToCart = async (id, amount) => {
         const itemIncart = cart.find((item) => item.id === id);
@@ -49,15 +55,16 @@ const Catalogo = ({ category }) => {
             </AnimatePresence>
 
             <CardContainer>
-                {products.data && filteredProducts.map((product,i) => (
-                    <Cards
-                        key={product.id}
-                        index={i}
-                        data={product}
-                        setIsConfirmation={setIsConfirmation}
-                        setSelectedProduct={setSelectedProduct}
-                    />
-                ))}
+                {products.data &&
+                    filteredProducts.map((product, i) => (
+                        <Cards
+                            key={product.id}
+                            index={i}
+                            data={product}
+                            setIsConfirmation={setIsConfirmation}
+                            setSelectedProduct={setSelectedProduct}
+                        />
+                    ))}
             </CardContainer>
         </MainContainer>
     );
