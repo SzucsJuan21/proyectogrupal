@@ -1,28 +1,32 @@
 import React from "react";
 import useWindowSize from "../Utilidades/windowSize";
 import HeaderIconos from "./HeaderIconos";
-import Navbar from "./Navbar";
+import Navbar from "./Navbar/Navbar";
 import styled from "styled-components";
 import Menu from "./Menu";
 import Notificacion from "./Notificacion";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import useCookies from "react-cookie/cjs/useCookies";
+import Busqueda from "./Busqueda";
 
 const Header = (props) => {
   const { width } = useWindowSize();
   const [isSearchBar, setIsSearchBar] = useState(false);
   const [showNotif, setShowNotif] = useState(true);
+  const [cookies] = useCookies()
+  
 
   return (
     <motion.header
       initial={{ height: "150px" }}
-      animate={{ height: width > 779 ? (showNotif ? "150px" : "100px") : (showNotif ? "135px" : "85px")   }}
+      animate={{ height: width > 779 ? (showNotif && !cookies.NOTIF_STATE ? "150px" : "100px") : (showNotif && !cookies.NOTIF_STATE ? "135px" : "85px")   }}
       transition={{ duration: 0.4 }}
     >
       <div style={s.header}>
         <AnimatePresence>
-          {showNotif && (
+          {showNotif && !cookies.NOTIF_STATE &&(
             <motion.div
               style={{ overflow: "hidden" }}
               exit={{ height: 0 }}
@@ -36,32 +40,12 @@ const Header = (props) => {
         <Container>
           <AnimatePresence>
             {isSearchBar && (
-              <motion.div
-                style={{
-                  ...s.inputWrapper,
-                  width: `${width * 0.8}px`,
-                  left: width < 660 ? "20px" : "150px",
-                }}
-                initial={{ width: 0 }}
-                animate={{ width: null }}
-                exit={{ width: 0 }}
-                transition={{ type: "tween", duration: 0.8 }}
-              >
-                <input
-                  type="text"
-                  placeholder="Buscar..."
-                  autoFocus="autofocus"
-                  style={{
-                    ...s.input,
-                    width: `${width * 0.4}px`,
-                  }}
-                />
-              </motion.div>
+              <Busqueda width={width} />
             )}
           </AnimatePresence>
 
           <Img isSearchBar={isSearchBar} screenWidth={width}>
-            <Link to="/home">
+            <Link to="/">
               <img
                 src="https://raw.githubusercontent.com/SzucsJuan21/proyectogrupal/main/src/Assets/img/logo.webp"
                 width="100%"

@@ -1,12 +1,12 @@
-import MainContainer from "../Componentes/Seccion info/MainContainer";
-import BannerInfo from "../Componentes/Banner Info/BannerInfo";
-import Banner from "../Componentes/Banner Imagen/Banner";
-import Tc from "../Componentes/info/tc";
-import Slider from "../Componentes/Slider/Slider";
-import Section from "../Componentes/Cards/Section";
+import MainContainer from "../Componentes/Home/Seccion info/MainContainer";
+import BannerInfo from "../Componentes/Home/Banner Info/BannerInfo";
+import Banner from "../Componentes/Home/Banner Imagen/Banner";
+import Tc from "../Componentes/Home/info/tc";
+import Slider from "../Componentes/Home/Slider/Slider";
+import Section from "../Componentes/Catalogos/Cards/Section";
 import { motion } from "framer-motion";
 import styled from "styled-components";
-import ContainerCards from "../Componentes/CardsInfo/ContainerCards";
+import ContainerCards from "../Componentes/Home/CardsInfo/ContainerCards";
 
 const Home = () => {
   return (
