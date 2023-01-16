@@ -47,7 +47,7 @@ function App() {
             .catch((err) => setStatus(err.response.status))
             .then((res) => {
                 setStatus(res.status);
-                productsList = res.data;
+                productsList = res.data.data;
                 dispatch({
                     type: TYPES.GET_STATE,
                     payload: [productsList, cookies.CART_STATE ? cookies.CART_STATE : []],

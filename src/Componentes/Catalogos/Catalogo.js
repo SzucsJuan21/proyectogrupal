@@ -12,11 +12,11 @@ const Catalogo = ({ category, query }) => {
     const [isConfirmation, setIsConfirmation] = useState(false);
     const [selectedProduct, setSelectedProduct] = useState(null);
     const filteredProducts =
-        products.data &&
+        products &&
         (category
-            ? products.data.filter((item) => item.category === category)
+            ? products.filter((item) => item.category === category)
             : query
-            ? products.data.filter((item) => item.title.match(new RegExp(query.get("search"), "i")))
+            ? products.filter((item) => item.title.match(new RegExp(query.get("search"), "i")))
             : null);
 
     const addToCart = async (id, amount) => {
@@ -55,7 +55,7 @@ const Catalogo = ({ category, query }) => {
             </AnimatePresence>
 
             <CardContainer>
-                {products.data &&
+                {products &&
                     filteredProducts.map((product, i) => (
                         <Cards
                             key={product.id}
